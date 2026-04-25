@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JobTrack – Browse Jobs</title>
+<link rel="stylesheet" href="styles.css">
+<script src="https://mcp.figma.com/mcp/html-to-design/capture.js" async></script>
+</head>
+<body>
+<nav class="navbar">
+  <a href="index.html" class="navbar-brand">Job<span style="color:var(--gold)">Track</span></a>
+  <div style="margin-left:auto;display:flex;align-items:center;gap:16px">
+    <span style="color:rgba(255,255,255,0.6);font-size:13px">🔔</span>
+    <div class="navbar-user">
+      <div class="avatar" style="width:34px;height:34px;font-size:13px;background:var(--gold);color:var(--primary)">JS</div>
+      <span class="navbar-user-name">Jordan Smith</span>
+    </div>
+  </div>
+</nav>
+
+<div class="app-layout">
+  <aside class="sidebar">
+    <div style="padding:16px 20px 0">
+      <div class="avatar" style="background:var(--gold);color:var(--primary);margin:0 auto 8px">JS</div>
+      <div style="text-align:center;font-size:13px;font-weight:700;color:var(--text-dark)">Jordan Smith</div>
+      <div style="text-align:center;font-size:11px;color:var(--text-muted);margin-bottom:16px">Computer Science · 2025</div>
+    </div>
+    <div class="divider" style="margin:0 0 8px"></div>
+    <a href="student-dashboard.html" class="sidebar-link"><span class="icon">🏠</span>Dashboard</a>
+    <a href="student-jobs.html" class="sidebar-link active"><span class="icon">💼</span>Browse Jobs<span class="sidebar-badge">142</span></a>
+    <a href="student-applications.html" class="sidebar-link"><span class="icon">📋</span>My Applications</a>
+    <a href="student-interviews.html" class="sidebar-link"><span class="icon">🗓️</span>Interviews</a>
+    <a href="student-profile.html" class="sidebar-link"><span class="icon">👤</span>My Profile</a>
+  </aside>
+
+  <main class="main-content">
+    <div class="page-header-row">
+      <div>
+        <h1 class="page-title">Browse Jobs</h1>
+        <p class="page-subtitle">142 opportunities available for CMU students</p>
+      </div>
+      <div style="display:flex;gap:12px">
+        <div class="search-bar">
+          <span class="search-icon">🔍</span>
+          <input type="text" placeholder="Search jobs, companies...">
+        </div>
+        <button class="btn btn-ghost">Filters ▾</button>
+      </div>
+    </div>
+
+    <!-- FILTER ROW -->
+    <div class="filter-row">
+      <span style="font-size:12px;color:var(--text-muted);font-weight:500">Type:</span>
+      <div class="filter-chip active">All</div>
+      <div class="filter-chip">Full-time</div>
+      <div class="filter-chip">Internship</div>
+      <div class="filter-chip">Part-time</div>
+      <div class="filter-chip">Co-op</div>
+      <div style="width:1px;background:var(--border);height:24px"></div>
+      <span style="font-size:12px;color:var(--text-muted);font-weight:500">Location:</span>
+      <div class="filter-chip">Remote</div>
+      <div class="filter-chip">On-site</div>
+      <div class="filter-chip">Hybrid</div>
+      <div style="margin-left:auto">
+        <select class="form-control form-select" style="width:160px;padding:6px 32px 6px 12px;font-size:12px">
+          <option>Sort: Most Recent</option>
+          <option>Sort: Deadline</option>
+          <option>Sort: Company</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- JOBS GRID -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+      <!-- Job 1 -->
+      <a href="student-job-detail.html" style="text-decoration:none">
+      <div class="job-card">
+        <div class="job-card-header">
+          <div class="company-logo">🏢</div>
+          <div style="flex:1">
+            <div class="job-title">Software Engineer Intern</div>
+            <div class="job-company">Microsoft · Redmond, WA</div>
+          </div>
+          <span class="badge badge-pending" style="background:#e8f5e9;color:#2e7d32">New</span>
+        </div>
+        <p style="font-size:12px;color:var(--text-muted);line-height:1.6;margin-bottom:10px">Work on core Azure services and developer tools. Collaborate with senior engineers on impactful projects.</p>
+        <div class="job-meta">
+          <div class="job-meta-item">💰 $45/hr</div>
+          <div class="job-meta-item">⏱️ Full-time</div>
+          <div class="job-meta-item">📍 Hybrid</div>
+          <div class="job-meta-item">⏰ Deadline: Apr 1</div>
+        </div>
+        <div class="job-tags">
+          <span class="job-tag">Python</span>
+          <span class="job-tag">Azure</span>
+          <span class="job-tag">C#</span>
+          <span class="job-tag">Internship</span>
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-top:14px;padding-top:12px;border-top:1px solid var(--border)">
+          <span style="font-size:11px;color:var(--text-muted)">Posted 2 days ago</span>
+          <button class="btn btn-primary btn-sm" onclick="event.preventDefault()">Apply Now</button>
+        </div>
+      </div>
+      </a>
+
+      <!-- Job 2 -->
+      <a href="student-job-detail.html" style="text-decoration:none">
+      <div class="job-card">
+        <div class="job-card-header">
+          <div class="company-logo">🔍</div>
+          <div style="flex:1">
+            <div class="job-title">Data Analyst</div>
+            <div class="job-company">Google · Mountain View, CA</div>
+          </div>
+          <span class="badge badge-gold">Featured</span>
+        </div>
+        <p style="font-size:12px;color:var(--text-muted);line-height:1.6;margin-bottom:10px">Analyze large datasets to drive business decisions. Build dashboards and present insights to stakeholders.</p>
+        <div class="job-meta">
+          <div class="job-meta-item">💰 $50/hr</div>
+          <div class="job-meta-item">⏱️ Internship</div>
+          <div class="job-meta-item">📍 On-site</div>
+          <div class="job-meta-item">⏰ Deadline: Mar 31</div>
+        </div>
+        <div class="job-tags">
+          <span class="job-tag">SQL</span>
+          <span class="job-tag">Python</span>
+          <span class="job-tag">Tableau</span>
+          <span class="job-tag">BigQuery</span>
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-top:14px;padding-top:12px;border-top:1px solid var(--border)">
+          <span style="font-size:11px;color:var(--text-muted)">Posted 5 days ago</span>
+          <button class="btn btn-primary btn-sm" onclick="event.preventDefault()">Apply Now</button>
+        </div>
+      </div>
+      </a>
+
+      <!-- Job 3 -->
+      <a href="student-job-detail.html" style="text-decoration:none">
+      <div class="job-card">
+        <div class="job-card-header">
+          <div class="company-logo">📦</div>
+          <div style="flex:1">
+            <div class="job-title">ML Engineer Intern</div>
+            <div class="job-company">Amazon · Seattle, WA</div>
+          </div>
+        </div>
+        <p style="font-size:12px;color:var(--text-muted);line-height:1.6;margin-bottom:10px">Build and deploy machine learning models. Work with Alexa and AWS AI teams on cutting-edge projects.</p>
+        <div class="job-meta">
+          <div class="job-meta-item">💰 $52/hr</div>
+          <div class="job-meta-item">⏱️ Internship</div>
+          <div class="job-meta-item">📍 Hybrid</div>
+          <div class="job-meta-item">⏰ Deadline: Apr 15</div>
+        </div>
+        <div class="job-tags">
+          <span class="job-tag">Python</span>
+          <span class="job-tag">TensorFlow</span>
+          <span class="job-tag">AWS</span>
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-top:14px;padding-top:12px;border-top:1px solid var(--border)">
+          <span style="font-size:11px;color:var(--text-muted)">Posted 1 week ago</span>
+          <button class="btn btn-primary btn-sm" onclick="event.preventDefault()">Apply Now</button>
+        </div>
+      </div>
+      </a>
+
+      <!-- Job 4 -->
+      <div class="job-card">
+        <div class="job-card-header">
+          <div class="company-logo">🏦</div>
+          <div style="flex:1">
+            <div class="job-title">Financial Analyst Intern</div>
+            <div class="job-company">JP Morgan Chase · Detroit, MI</div>
+          </div>
+        </div>
+        <p style="font-size:12px;color:var(--text-muted);line-height:1.6;margin-bottom:10px">Support financial modeling, forecasting, and analysis. Work with M&A and corporate banking teams.</p>
+        <div class="job-meta">
+          <div class="job-meta-item">💰 $35/hr</div>
+          <div class="job-meta-item">⏱️ Internship</div>
+          <div class="job-meta-item">📍 On-site</div>
+          <div class="job-meta-item">⏰ Deadline: Apr 10</div>
+        </div>
+        <div class="job-tags">
+          <span class="job-tag">Excel</span>
+          <span class="job-tag">Finance</span>
+          <span class="job-tag">Modeling</span>
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-top:14px;padding-top:12px;border-top:1px solid var(--border)">
+          <span style="font-size:11px;color:var(--text-muted)">Posted 3 days ago</span>
+          <button class="btn btn-primary btn-sm">Apply Now</button>
+        </div>
+      </div>
+
+      <!-- Job 5 -->
+      <div class="job-card">
+        <div class="job-card-header">
+          <div class="company-logo">🍕</div>
+          <div style="flex:1">
+            <div class="job-title">Marketing Coordinator</div>
+            <div class="job-company">Little Caesars · Detroit, MI</div>
+          </div>
+        </div>
+        <p style="font-size:12px;color:var(--text-muted);line-height:1.6;margin-bottom:10px">Support digital marketing campaigns and social media strategy for a major national brand.</p>
+        <div class="job-meta">
+          <div class="job-meta-item">💰 $28/hr</div>
+          <div class="job-meta-item">⏱️ Full-time</div>
+          <div class="job-meta-item">📍 On-site</div>
+          <div class="job-meta-item">⏰ Deadline: May 1</div>
+        </div>
+        <div class="job-tags">
+          <span class="job-tag">Marketing</span>
+          <span class="job-tag">Social Media</span>
+          <span class="job-tag">Analytics</span>
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-top:14px;padding-top:12px;border-top:1px solid var(--border)">
+          <span style="font-size:11px;color:var(--text-muted)">Posted 4 days ago</span>
+          <button class="btn btn-primary btn-sm">Apply Now</button>
+        </div>
+      </div>
+
+      <!-- Job 6 -->
+      <div class="job-card">
+        <div class="job-card-header">
+          <div class="company-logo">🚗</div>
+          <div style="flex:1">
+            <div class="job-title">Software Engineer</div>
+            <div class="job-company">Ford Motor Co · Dearborn, MI</div>
+          </div>
+          <span class="badge badge-applied">CMU Partner</span>
+        </div>
+        <p style="font-size:12px;color:var(--text-muted);line-height:1.6;margin-bottom:10px">Join Ford's software team building next-gen vehicle connectivity and infotainment systems.</p>
+        <div class="job-meta">
+          <div class="job-meta-item">💰 $85K/yr</div>
+          <div class="job-meta-item">⏱️ Full-time</div>
+          <div class="job-meta-item">📍 Hybrid</div>
+          <div class="job-meta-item">⏰ Deadline: Apr 30</div>
+        </div>
+        <div class="job-tags">
+          <span class="job-tag">Java</span>
+          <span class="job-tag">C++</span>
+          <span class="job-tag">Embedded</span>
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-top:14px;padding-top:12px;border-top:1px solid var(--border)">
+          <span style="font-size:11px;color:var(--text-muted)">Posted 6 days ago</span>
+          <button class="btn btn-primary btn-sm">Apply Now</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- PAGINATION -->
+    <div style="display:flex;justify-content:center;align-items:center;gap:8px;margin-top:32px">
+      <button class="btn btn-ghost btn-sm">← Prev</button>
+      <button class="btn btn-primary btn-sm">1</button>
+      <button class="btn btn-ghost btn-sm">2</button>
+      <button class="btn btn-ghost btn-sm">3</button>
+      <span style="color:var(--text-muted);font-size:13px">...</span>
+      <button class="btn btn-ghost btn-sm">12</button>
+      <button class="btn btn-ghost btn-sm">Next →</button>
+    </div>
+  </main>
+</div>
+</body>
+</html>

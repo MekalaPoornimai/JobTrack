@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sign In | JobTrack CMU</title>
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="sl-styles.css">
+<script src="https://mcp.figma.com/mcp/html-to-design/capture.js" async></script>
+</head>
+<body style="display:block;">
+
+<div class="login-page">
+  <div>
+    <!-- Streamlit-style top bar -->
+    <div style="text-align:center;margin-bottom:32px;">
+      <div class="login-logo-text">Job<span>Track</span></div>
+      <div class="login-logo-sub">Central Michigan University · Career Services</div>
+    </div>
+
+    <div class="login-box">
+      <div class="login-heading">Welcome back!</div>
+      <div class="login-sub-text">
+        Sign in with your CMU credentials. Students, advisors, and employers all use the same login.
+      </div>
+
+      <div class="form-row" style="margin-bottom:14px;">
+        <div class="form-group" style="margin-bottom:0;">
+          <label class="form-label">First Name</label>
+          <input type="text" class="form-control" placeholder="Jordan" value="Jordan">
+        </div>
+        <div class="form-group" style="margin-bottom:0;">
+          <label class="form-label">Last Name</label>
+          <input type="text" class="form-control" placeholder="Smith" value="Smith">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">CMU Email Address</label>
+        <input type="email" class="form-control" placeholder="smith1js@cmich.edu" value="smith1js@cmich.edu">
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" style="display:flex;justify-content:space-between;">
+          Password
+          <a href="#" style="font-size:12px;color:#6a0032;font-weight:400;text-decoration:none;">Forgot password?</a>
+        </label>
+        <input type="password" class="form-control" placeholder="••••••••" value="••••••••">
+      </div>
+
+      <div style="margin-bottom:16px;">
+        <label style="display:flex;align-items:center;gap:8px;font-size:13px;color:#495057;cursor:pointer;">
+          <input type="checkbox" checked style="accent-color:#6a0032;width:14px;height:14px;">
+          Remember me for 30 days
+        </label>
+      </div>
+
+      <button class="btn btn-primary" style="width:100%;justify-content:center;padding:10px 18px;font-size:14.5px;">
+        Sign In
+      </button>
+
+      <div class="divider-text" style="margin:18px 0 14px;">or</div>
+
+      <button class="btn btn-outline" style="width:100%;justify-content:center;padding:9px 18px;font-size:13.5px;">
+        🔑 &nbsp;Sign in with CMU Single Sign-On
+      </button>
+
+      <div class="register-link">
+        Don't have an account? <a href="sl-register.html">Create one here</a>
+      </div>
+    </div>
+
+    <div style="text-align:center;margin-top:20px;font-size:12px;color:#9b9b9b;">
+      © 2025 Central Michigan University · Career Services · JobTrack v1.0
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

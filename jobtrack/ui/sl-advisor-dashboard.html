@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Advisor Dashboard | JobTrack CMU</title>
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="sl-styles.css">
+<script src="https://mcp.figma.com/mcp/html-to-design/capture.js" async></script>
+</head>
+<body>
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="sidebar-logo">Job<span>Track</span></div>
+    <div class="sidebar-tagline">CMU Career Services</div>
+  </div>
+  <div class="sidebar-nav">
+    <div class="nav-section">Navigation</div>
+    <a class="nav-item active" href="#"><span class="nav-icon">🏠</span> Dashboard</a>
+    <a class="nav-item" href="sl-advisor-students.html"><span class="nav-icon">🎓</span> My Students</a>
+    <a class="nav-item" href="sl-advisor-notes.html"><span class="nav-icon">📝</span> Advising Notes</a>
+    <div class="nav-section" style="margin-top:16px;">Reports</div>
+    <a class="nav-item" href="#"><span class="nav-icon">📊</span> Placement Report</a>
+    <a class="nav-item" href="#"><span class="nav-icon">📈</span> Activity Report</a>
+  </div>
+  <div class="sidebar-footer">
+    <div class="user-row">
+      <div class="user-avatar" style="background:#ffc107;color:#6a0032;">LC</div>
+      <div>
+        <div class="user-name">Dr. Lisa Chen</div>
+        <div class="user-email">chen5lc@cmich.edu</div>
+      </div>
+    </div>
+    <div class="logout-link">⬅ Sign Out</div>
+  </div>
+</div>
+
+<div class="main">
+  <div class="page-title">👩‍🏫 Advisor Dashboard</div>
+  <div class="page-subtitle">Dr. Lisa Chen · Technology &amp; Engineering · Career Services · Warriner Hall 101</div>
+
+  <!-- Metrics -->
+  <div class="metrics-row">
+    <div class="metric-card m-maroon">
+      <div class="metric-label">My Students</div>
+      <div class="metric-value">4</div>
+      <div class="metric-delta delta-neu">assigned this semester</div>
+    </div>
+    <div class="metric-card m-gold">
+      <div class="metric-label">Active Applications</div>
+      <div class="metric-value">8</div>
+      <div class="metric-delta delta-up">↑ 3 this week</div>
+    </div>
+    <div class="metric-card m-green">
+      <div class="metric-label">Interviews This Week</div>
+      <div class="metric-value">2</div>
+      <div class="metric-delta delta-up">Jordan & Kevin</div>
+    </div>
+    <div class="metric-card m-blue">
+      <div class="metric-label">Notes Written</div>
+      <div class="metric-value">8</div>
+      <div class="metric-delta delta-neu">this semester</div>
+    </div>
+  </div>
+
+  <div class="cols-7-3">
+    <div>
+      <!-- Student Overview Table -->
+      <div class="table-wrap" style="margin-bottom:20px;">
+        <div class="table-head">
+          🎓 My Students Overview
+          <a href="sl-advisor-students.html" class="btn btn-outline btn-sm">View All</a>
+        </div>
+        <table class="st-table">
+          <thead>
+            <tr>
+              <th>Student</th>
+              <th>Major</th>
+              <th>Grad Year</th>
+              <th>GPA</th>
+              <th>Applications</th>
+              <th>Interviews</th>
+              <th>Status</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <div style="display:flex;align-items:center;gap:8px;">
+                  <div class="s-avatar av-1" style="width:30px;height:30px;font-size:12px;">JS</div>
+                  <div>
+                    <div class="fw-600">Jordan Smith</div>
+                    <div class="text-muted" style="font-size:11px;">smith1js@cmich.edu</div>
+                  </div>
+                </div>
+              </td>
+              <td>Computer Science</td>
+              <td>2025</td>
+              <td><strong>3.72</strong></td>
+              <td><span style="color:#6a0032;font-weight:700;">8</span></td>
+              <td><span class="badge b-interview">2</span></td>
+              <td><span class="badge b-interview">Interview Stage</span></td>
+              <td><button class="btn btn-outline btn-sm">View</button></td>
+            </tr>
+            <tr>
+              <td>
+                <div style="display:flex;align-items:center;gap:8px;">
+                  <div class="s-avatar av-2" style="width:30px;height:30px;font-size:12px;">AJ</div>
+                  <div>
+                    <div class="fw-600">Alex Johnson</div>
+                    <div class="text-muted" style="font-size:11px;">johnson2aj@cmich.edu</div>
+                  </div>
+                </div>
+              </td>
+              <td>Information Systems</td>
+              <td>2026</td>
+              <td><strong>3.45</strong></td>
+              <td><span style="color:#6a0032;font-weight:700;">2</span></td>
+              <td><span class="badge b-applied">0</span></td>
+              <td><span class="badge b-review">Under Review</span></td>
+              <td><button class="btn btn-outline btn-sm">View</button></td>
+            </tr>
+            <tr>
+              <td>
+                <div style="display:flex;align-items:center;gap:8px;">
+                  <div class="s-avatar av-3" style="width:30px;height:30px;font-size:12px;">KP</div>
+                  <div>
+                    <div class="fw-600">Kevin Patel</div>
+                    <div class="text-muted" style="font-size:11px;">patel4kp@cmich.edu</div>
+                  </div>
+                </div>
+              </td>
+              <td>Computer Science</td>
+              <td>2027</td>
+              <td><strong>3.88</strong></td>
+              <td><span style="color:#6a0032;font-weight:700;">2</span></td>
+              <td><span class="badge b-interview">1</span></td>
+              <td><span class="badge b-interview">Interview Stage</span></td>
+              <td><button class="btn btn-outline btn-sm">View</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Upcoming Student Interviews -->
+      <div class="card">
+        <div class="card-title">🗓️ Upcoming Student Interviews (This Week)</div>
+        <div class="interview-card" style="margin-bottom:10px;">
+          <div class="interview-date-box">
+            <div class="date-day">20</div>
+            <div class="date-month">Mar</div>
+          </div>
+          <div class="interview-info">
+            <div class="interview-title">Jordan Smith → Software Eng. Intern @ TechCorp</div>
+            <div class="interview-meta">
+              <span class="badge b-video">📹 Video</span>
+              <span>2:00 PM</span>
+              <span class="badge b-scheduled">Scheduled</span>
+            </div>
+          </div>
+          <button class="btn btn-outline btn-sm">Add Note</button>
+        </div>
+        <div class="interview-card">
+          <div class="interview-date-box" style="background:#7b1fa2;">
+            <div class="date-day">22</div>
+            <div class="date-month">Mar</div>
+          </div>
+          <div class="interview-info">
+            <div class="interview-title">Kevin Patel → ML Engineer Intern @ TechCorp</div>
+            <div class="interview-meta">
+              <span class="badge b-tech">💻 Technical</span>
+              <span>10:00 AM</span>
+              <span class="badge b-scheduled">Scheduled</span>
+            </div>
+          </div>
+          <button class="btn btn-outline btn-sm">Add Note</button>
+        </div>
+      </div>
+
+      <!-- Recent Notes -->
+      <div class="section-title">📝 Recent Advising Notes</div>
+      <div class="note-card">
+        <div class="note-header">
+          <div>
+            <span class="note-student">Jordan Smith</span>
+            <span class="badge b-interview" style="margin-left:8px;">Interview Prep</span>
+          </div>
+          <span class="note-date">Mar 14, 2025</span>
+        </div>
+        <div class="note-text">Jordan has an interview with TechCorp on March 20. Advised to practice behavioral questions using STAR method and research TechCorp's product lineup.</div>
+      </div>
+      <div class="note-card">
+        <div class="note-header">
+          <div>
+            <span class="note-student">Alex Johnson</span>
+            <span class="badge b-applied" style="margin-left:8px;">Career Goal</span>
+          </div>
+          <span class="note-date">Mar 12, 2025</span>
+        </div>
+        <div class="note-text">Alex should focus on strengthening SQL and Tableau skills. Suggested completing the Tableau Public certification course before applying to more data analyst roles.</div>
+      </div>
+      <a href="sl-advisor-notes.html" style="display:block;font-size:13px;color:#6a0032;font-weight:600;text-decoration:none;margin-top:8px;">View All Notes →</a>
+    </div>
+
+    <!-- Right Panel -->
+    <div>
+      <!-- Quick Add Note -->
+      <div class="card">
+        <div class="card-title">➕ Quick Add Note</div>
+        <div class="form-group">
+          <label class="form-label">Student</label>
+          <select class="form-control">
+            <option>Select student...</option>
+            <option selected>Jordan Smith</option>
+            <option>Alex Johnson</option>
+            <option>Kevin Patel</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Note Type</label>
+          <select class="form-control">
+            <option>General</option>
+            <option>Application Advice</option>
+            <option selected>Interview Prep</option>
+            <option>Resume Review</option>
+            <option>Career Goal</option>
+            <option>Follow-up</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Note</label>
+          <textarea class="form-control" style="min-height:80px;" placeholder="Enter your advising note..."></textarea>
+        </div>
+        <button class="btn btn-primary" style="width:100%;justify-content:center;">💾 Save Note</button>
+      </div>
+
+      <!-- Application Status Breakdown -->
+      <div class="card">
+        <div class="card-title">📊 Student Application Statuses</div>
+        <div style="display:flex;flex-direction:column;gap:10px;">
+          <div class="progress-wrap">
+            <div class="progress-label"><span>Applied</span><span>3</span></div>
+            <div class="progress-bar"><div class="progress-fill pf-blue" style="width:37%"></div></div>
+          </div>
+          <div class="progress-wrap">
+            <div class="progress-label"><span>Under Review</span><span>2</span></div>
+            <div class="progress-bar"><div class="progress-fill pf-gold" style="width:25%"></div></div>
+          </div>
+          <div class="progress-wrap">
+            <div class="progress-label"><span>Interview Stage</span><span>2</span></div>
+            <div class="progress-bar"><div class="progress-fill pf-maroon" style="width:25%"></div></div>
+          </div>
+          <div class="progress-wrap">
+            <div class="progress-label"><span>Rejected</span><span>1</span></div>
+            <div class="progress-bar"><div class="progress-fill" style="width:12%;background:#dc3545;"></div></div>
+          </div>
+        </div>
+        <div style="margin-top:14px;padding:10px;background:#f8f9fa;border-radius:6px;font-size:12.5px;color:#6b6b6b;text-align:center;">
+          Total: <strong>8</strong> applications across <strong>3</strong> students
+        </div>
+      </div>
+
+      <!-- Placement Rate -->
+      <div class="card">
+        <div class="card-title">🎯 Semester Goal</div>
+        <div style="text-align:center;padding:12px 0;">
+          <div style="font-size:2.4rem;font-weight:700;color:#6a0032;">25%</div>
+          <div style="font-size:13px;color:#6b6b6b;margin-top:4px;">Placement Rate Goal: 50%</div>
+        </div>
+        <div class="progress-wrap">
+          <div class="progress-label"><span>Students Placed</span><span>1/4</span></div>
+          <div class="progress-bar"><div class="progress-fill pf-gold" style="width:25%"></div></div>
+        </div>
+        <div style="font-size:12.5px;color:#6b6b6b;margin-top:8px;text-align:center;">Keep encouraging applications!</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

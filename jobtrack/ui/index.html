@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JobTrack - Launch Your Career at CMU</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+  .public-nav { background: var(--primary); height: 64px; display: flex; align-items: center; padding: 0 80px; gap: 12px; position: fixed; top: 0; left: 0; right: 0; z-index: 100; }
+  .public-nav .brand { font-size: 22px; font-weight: 800; color: white; text-decoration: none; margin-right: 40px; }
+  .public-nav .brand span { color: var(--gold); }
+  .public-nav .links { display: flex; gap: 4px; flex: 1; }
+  .public-nav a { color: rgba(255,255,255,0.85); text-decoration: none; padding: 7px 14px; border-radius: 7px; font-size: 13px; font-weight: 500; }
+  .public-nav a:hover { background: rgba(255,255,255,0.12); color: white; }
+  .public-nav .cta-group { display: flex; gap: 10px; align-items: center; }
+
+  .hero-section {
+    background: var(--gold);
+    min-height: 100vh;
+    padding-top: 64px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+  }
+  .hero-section::after {
+    content: '';
+    position: absolute;
+    right: 0; top: 0; bottom: 0;
+    width: 45%;
+    background: rgba(106,0,50,0.06);
+  }
+  .hero-inner { max-width: 1280px; margin: 0 auto; padding: 0 80px; width: 100%; display: flex; align-items: center; gap: 60px; }
+  .hero-text { flex: 1; }
+  .hero-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--primary);
+    color: var(--gold);
+    padding: 6px 16px;
+    border-radius: 99px;
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 24px;
+  }
+  .hero-h1 { font-size: 56px; font-weight: 800; color: var(--primary); line-height: 1.1; margin-bottom: 20px; }
+  .hero-p { font-size: 18px; color: var(--primary); opacity: 0.78; margin-bottom: 36px; line-height: 1.6; max-width: 480px; }
+  .hero-buttons { display: flex; gap: 14px; align-items: center; }
+  .hero-visual { flex-shrink: 0; width: 420px; }
+  .hero-card {
+    background: white;
+    border-radius: 20px;
+    padding: 24px;
+    box-shadow: 0 20px 60px rgba(106,0,50,0.2);
+    position: relative;
+    z-index: 1;
+  }
+  .hero-card-header { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
+  .hero-stat-row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-bottom: 20px; }
+  .hero-stat { background: var(--bg); border-radius: 12px; padding: 16px; text-align: center; }
+  .hero-stat-val { font-size: 24px; font-weight: 800; color: var(--primary); }
+  .hero-stat-lbl { font-size: 11px; color: var(--text-muted); margin-top: 2px; }
+  .mini-job { display: flex; align-items: center; gap: 12px; padding: 10px; border: 1px solid var(--border); border-radius: 10px; margin-bottom: 8px; }
+  .mini-job-logo { width: 36px; height: 36px; background: var(--bg); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 16px; }
+  .mini-job-title { font-size: 13px; font-weight: 600; color: var(--text-dark); }
+  .mini-job-co { font-size: 11px; color: var(--text-muted); }
+  .mini-job-badge { margin-left: auto; background: #e8f5e9; color: #2e7d32; font-size: 10px; font-weight: 600; padding: 3px 8px; border-radius: 99px; }
+
+  .features-section { background: white; padding: 80px; }
+  .section-label { text-align: center; font-size: 12px; font-weight: 600; color: var(--primary); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 12px; }
+  .section-title { text-align: center; font-size: 36px; font-weight: 800; color: var(--text-dark); margin-bottom: 12px; }
+  .section-title span { color: var(--primary); }
+  .section-sub { text-align: center; font-size: 16px; color: var(--text-muted); max-width: 520px; margin: 0 auto 56px; }
+  .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; max-width: 1120px; margin: 0 auto; }
+  .feature-card { background: var(--bg); border-radius: 16px; padding: 28px; border: 1px solid var(--border); transition: all 0.3s; }
+  .feature-card:hover { border-color: var(--primary); box-shadow: 0 8px 32px rgba(106,0,50,0.1); transform: translateY(-3px); }
+  .feature-icon { font-size: 36px; margin-bottom: 16px; }
+  .feature-title { font-size: 16px; font-weight: 700; color: var(--text-dark); margin-bottom: 8px; }
+  .feature-desc { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
+
+  .roles-section { background: var(--bg); padding: 80px; }
+  .roles-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; max-width: 1120px; margin: 0 auto; }
+  .role-feature-card { background: white; border-radius: 16px; padding: 28px; text-align: center; border: 2px solid transparent; transition: all 0.3s; box-shadow: var(--shadow); }
+  .role-feature-card:hover { border-color: var(--gold); }
+  .role-feature-icon { width: 64px; height: 64px; border-radius: 16px; background: #fef3f8; display: flex; align-items: center; justify-content: center; font-size: 28px; margin: 0 auto 16px; }
+  .role-feature-title { font-size: 16px; font-weight: 700; color: var(--text-dark); margin-bottom: 8px; }
+  .role-feature-desc { font-size: 12px; color: var(--text-muted); line-height: 1.6; }
+
+  .cta-section { background: var(--primary); padding: 80px; text-align: center; position: relative; overflow: hidden; }
+  .cta-section::before { content: ''; position: absolute; width: 400px; height: 400px; border-radius: 50%; background: rgba(255,193,7,0.1); top: -100px; left: -100px; }
+  .cta-section::after { content: ''; position: absolute; width: 300px; height: 300px; border-radius: 50%; background: rgba(255,193,7,0.08); bottom: -80px; right: -80px; }
+  .cta-title { font-size: 40px; font-weight: 800; color: white; margin-bottom: 16px; position: relative; z-index: 1; }
+  .cta-title span { color: var(--gold); }
+  .cta-sub { font-size: 16px; color: rgba(255,255,255,0.75); margin-bottom: 36px; position: relative; z-index: 1; }
+  .cta-buttons { display: flex; justify-content: center; gap: 16px; position: relative; z-index: 1; }
+
+  .stats-banner { background: var(--primary); padding: 40px 80px; }
+  .stats-banner-inner { max-width: 1120px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+  .stats-banner-item { text-align: center; }
+  .stats-banner-val { font-size: 36px; font-weight: 800; color: var(--gold); }
+  .stats-banner-lbl { font-size: 13px; color: rgba(255,255,255,0.75); margin-top: 4px; }
+</style>
+<script src="https://mcp.figma.com/mcp/html-to-design/capture.js" async></script>
+</head>
+<body style="padding-top:0">
+
+<!-- NAVBAR -->
+<nav class="public-nav">
+  <a href="index.html" class="brand">Job<span>Track</span></a>
+  <div class="links">
+    <a href="#">Home</a>
+    <a href="#">Employers</a>
+    <a href="#">Advisors</a>
+    <a href="#">Jobs</a>
+    <a href="#">Application</a>
+    <a href="#">Resources</a>
+    <a href="#">Contact</a>
+  </div>
+  <div class="cta-group">
+    <a href="login.html" class="btn-nav-outline">Sign In</a>
+    <a href="register.html" class="btn-nav-primary">Register</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero-section">
+  <div class="hero-inner">
+    <div class="hero-text">
+      <div class="hero-label">🎓 Central Michigan University</div>
+      <h1 class="hero-h1">Launch Your Career<br>at CMU.</h1>
+      <p class="hero-p">Connecting Central Michigan University students with top employers and academic advisors to accelerate career success.</p>
+      <div class="hero-buttons">
+        <a href="register.html" class="btn btn-primary btn-lg">Get Started</a>
+        <a href="#" class="btn btn-lg" style="background: var(--primary); color: white; border: 2px solid var(--primary);">Browse Jobs</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-card">
+        <div class="hero-card-header">
+          <div class="avatar" style="background: var(--primary)">JS</div>
+          <div>
+            <div style="font-size:14px;font-weight:700;color:var(--text-dark)">Jordan Smith</div>
+            <div style="font-size:11px;color:var(--text-muted)">Computer Science · Class of 2025</div>
+          </div>
+          <div style="margin-left:auto"><span class="badge badge-active">Active</span></div>
+        </div>
+        <div class="hero-stat-row">
+          <div class="hero-stat"><div class="hero-stat-val">12</div><div class="hero-stat-lbl">Applied</div></div>
+          <div class="hero-stat"><div class="hero-stat-val">4</div><div class="hero-stat-lbl">Interviews</div></div>
+          <div class="hero-stat"><div class="hero-stat-val">2</div><div class="hero-stat-lbl">Offers</div></div>
+        </div>
+        <div style="font-size:12px;font-weight:600;color:var(--text-muted);margin-bottom:10px">RECENT APPLICATIONS</div>
+        <div class="mini-job">
+          <div class="mini-job-logo">🏢</div>
+          <div><div class="mini-job-title">Software Engineer Intern</div><div class="mini-job-co">Microsoft · Remote</div></div>
+          <span class="mini-job-badge">Interview</span>
+        </div>
+        <div class="mini-job">
+          <div class="mini-job-logo">💼</div>
+          <div><div class="mini-job-title">Data Analyst</div><div class="mini-job-co">Google · Mountain View, CA</div></div>
+          <span class="mini-job-badge">Applied</span>
+        </div>
+        <div class="mini-job">
+          <div class="mini-job-logo">🔬</div>
+          <div><div class="mini-job-title">ML Engineer Intern</div><div class="mini-job-co">Amazon · Seattle, WA</div></div>
+          <span style="margin-left:auto;background:#fff3cd;color:#9a6700;font-size:10px;font-weight:600;padding:3px 8px;border-radius:99px">Under Review</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS BANNER -->
+<div class="stats-banner">
+  <div class="stats-banner-inner">
+    <div class="stats-banner-item"><div class="stats-banner-val">2,400+</div><div class="stats-banner-lbl">Active Students</div></div>
+    <div class="stats-banner-item"><div class="stats-banner-val">850+</div><div class="stats-banner-lbl">Employer Partners</div></div>
+    <div class="stats-banner-item"><div class="stats-banner-val">5,200+</div><div class="stats-banner-lbl">Job Postings</div></div>
+    <div class="stats-banner-item"><div class="stats-banner-val">89%</div><div class="stats-banner-lbl">Placement Rate</div></div>
+  </div>
+</div>
+
+<!-- FEATURES -->
+<section class="features-section">
+  <div class="section-label">Everything You Need</div>
+  <h2 class="section-title">Built for <span>CMU Career Success</span></h2>
+  <p class="section-sub">A comprehensive platform connecting students, employers, and advisors in one powerful system.</p>
+  <div class="features-grid">
+    <div class="feature-card">
+      <div class="feature-icon">🎯</div>
+      <div class="feature-title">Smart Job Matching</div>
+      <p class="feature-desc">Find opportunities that match your major, skills, and career goals with intelligent filtering and recommendations.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">📋</div>
+      <div class="feature-title">Application Tracking</div>
+      <p class="feature-desc">Track every application in one place — status updates, deadlines, and interview schedules all organized for you.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">🗓️</div>
+      <div class="feature-title">Interview Management</div>
+      <p class="feature-desc">Schedule, track, and prepare for interviews with detailed notes, meeting links, and feedback records.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">👨‍🏫</div>
+      <div class="feature-title">Advisor Support</div>
+      <p class="feature-desc">Get personalized guidance from academic advisors who can monitor your progress and provide career advice.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">🏢</div>
+      <div class="feature-title">Employer Portal</div>
+      <p class="feature-desc">Employers can post jobs, manage applications, and connect directly with talented CMU students.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">📊</div>
+      <div class="feature-title">Placement Analytics</div>
+      <p class="feature-desc">Real-time reports and insights on placement rates, hiring trends, and student career outcomes.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ROLES -->
+<section class="roles-section">
+  <div class="section-label">Who Uses JobTrack</div>
+  <h2 class="section-title">Designed for <span>Every Role</span></h2>
+  <p class="section-sub">Tailored experiences for each user type in the CMU career ecosystem.</p>
+  <div class="roles-grid">
+    <div class="role-feature-card">
+      <div class="role-feature-icon">🎓</div>
+      <div class="role-feature-title">Students</div>
+      <p class="role-feature-desc">Browse jobs, apply, track applications, and schedule interviews — all from one dashboard.</p>
+      <a href="register.html" class="btn btn-primary btn-sm" style="margin-top:16px">Get Started</a>
+    </div>
+    <div class="role-feature-card">
+      <div class="role-feature-icon">🏢</div>
+      <div class="role-feature-title">Employers</div>
+      <p class="role-feature-desc">Post positions, review applications, and connect with exceptional CMU talent.</p>
+      <a href="register.html" class="btn btn-outline btn-sm" style="margin-top:16px">Post Jobs</a>
+    </div>
+    <div class="role-feature-card">
+      <div class="role-feature-icon">👨‍🏫</div>
+      <div class="role-feature-title">Advisors</div>
+      <p class="role-feature-desc">Monitor student pipelines, add advising notes, and guide career development.</p>
+      <a href="register.html" class="btn btn-outline btn-sm" style="margin-top:16px">Sign In</a>
+    </div>
+    <div class="role-feature-card">
+      <div class="role-feature-icon">⚙️</div>
+      <div class="role-feature-title">Admin</div>
+      <p class="role-feature-desc">Manage the platform, generate reports, and oversee all employer and student data.</p>
+      <a href="login.html" class="btn btn-ghost btn-sm" style="margin-top:16px">Admin Portal</a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <h2 class="cta-title">Ready to <span>Launch Your Career?</span></h2>
+  <p class="cta-sub">Join thousands of CMU students who've found their dream jobs through JobTrack.</p>
+  <div class="cta-buttons">
+    <a href="register.html" class="btn btn-gold btn-lg">Create Free Account</a>
+    <a href="login.html" class="btn btn-lg btn-nav-outline">Sign In</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="landing-footer">
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand">Job<span>Track</span></div>
+      <p class="footer-desc">Connecting Central Michigan University students with top employers and career advisors for a successful future.</p>
+    </div>
+    <div>
+      <div class="footer-heading">Students</div>
+      <ul class="footer-links">
+        <li><a href="#">Browse Jobs</a></li>
+        <li><a href="#">My Applications</a></li>
+        <li><a href="#">Interview Prep</a></li>
+        <li><a href="#">Career Resources</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-heading">Employers</div>
+      <ul class="footer-links">
+        <li><a href="#">Post a Job</a></li>
+        <li><a href="#">View Candidates</a></li>
+        <li><a href="#">Campus Recruiting</a></li>
+        <li><a href="#">Contact Sales</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-heading">Platform</div>
+      <ul class="footer-links">
+        <li><a href="#">About JobTrack</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms of Service</a></li>
+        <li><a href="#">Support</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 JobTrack · Central Michigan University Career Services</span>
+    <span style="color:rgba(255,255,255,0.4)">Built for CMU Fire Up Chips! 🔥</span>
+  </div>
+</footer>
+</body>
+</html>

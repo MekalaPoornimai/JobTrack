@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Post a Job | JobTrack CMU</title>
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="sl-styles.css">
+<script src="https://mcp.figma.com/mcp/html-to-design/capture.js" async></script>
+</head>
+<body>
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="sidebar-logo">Job<span>Track</span></div>
+    <div class="sidebar-tagline">CMU Career Services</div>
+  </div>
+  <div class="sidebar-nav">
+    <div class="nav-section">Navigation</div>
+    <a class="nav-item" href="sl-employer-dashboard.html"><span class="nav-icon">🏠</span> Dashboard</a>
+    <a class="nav-item active" href="#"><span class="nav-icon">➕</span> Post a Job</a>
+    <a class="nav-item" href="#"><span class="nav-icon">📂</span> My Job Postings</a>
+    <a class="nav-item" href="sl-employer-applicants.html"><span class="nav-icon">👥</span> Applicants</a>
+    <a class="nav-item" href="#"><span class="nav-icon">🗓️</span> Interviews</a>
+    <div class="nav-section" style="margin-top:16px;">Company</div>
+    <a class="nav-item" href="#"><span class="nav-icon">🏢</span> Company Profile</a>
+  </div>
+  <div class="sidebar-footer">
+    <div class="user-row">
+      <div class="user-avatar" style="background:#ffc107;color:#6a0032;font-size:11px;">TC</div>
+      <div>
+        <div class="user-name">TechCorp Inc.</div>
+        <div class="user-email">hr@techcorp.com</div>
+      </div>
+    </div>
+    <div class="logout-link">⬅ Sign Out</div>
+  </div>
+</div>
+
+<div class="main">
+  <div class="page-title">➕ Post a New Job</div>
+  <div class="page-subtitle">Create a job posting to attract CMU students and recent graduates</div>
+
+  <div class="cols-7-3">
+    <div>
+      <!-- Job Details -->
+      <div class="card">
+        <div class="card-title">📋 Job Details</div>
+        <div class="form-group">
+          <label class="form-label">Job Title *</label>
+          <input type="text" class="form-control" placeholder="e.g. Software Engineering Intern" value="Software Engineering Intern">
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Job Type *</label>
+            <select class="form-control">
+              <option selected>Internship</option>
+              <option>Full-time</option>
+              <option>Part-time</option>
+              <option>Co-op</option>
+              <option>Contract</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Work Location *</label>
+            <select class="form-control">
+              <option selected>On-site</option>
+              <option>Remote</option>
+              <option>Hybrid</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Location (City, State) *</label>
+          <input type="text" class="form-control" placeholder="e.g. Detroit, MI" value="Detroit, MI">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Job Description *</label>
+          <textarea class="form-control" style="min-height:140px;">Join our engineering team to build scalable web applications using Python and React. You will work alongside senior engineers on real features and gain hands-on experience in a fast-paced environment.</textarea>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Requirements *</label>
+          <textarea class="form-control" style="min-height:100px;">Currently pursuing a CS or related degree. Familiarity with Python or JavaScript. Strong problem-solving skills. GPA of 3.0 or above preferred.</textarea>
+        </div>
+      </div>
+
+      <!-- Compensation -->
+      <div class="card">
+        <div class="card-title">💰 Compensation</div>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Salary Type</label>
+            <select class="form-control">
+              <option selected>Hourly</option>
+              <option>Annual</option>
+              <option>Stipend</option>
+              <option>Unpaid</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Currency</label>
+            <select class="form-control">
+              <option selected>USD ($)</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Minimum ($)</label>
+            <input type="number" class="form-control" value="18" placeholder="18.00">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Maximum ($)</label>
+            <input type="number" class="form-control" value="25" placeholder="25.00">
+          </div>
+        </div>
+        <div class="alert alert-info" style="padding:10px 14px;font-size:12.5px;">
+          💡 Offering competitive pay increases application quality. Michigan's avg. for CS interns is $20–$25/hr.
+        </div>
+      </div>
+
+      <!-- Skills Required -->
+      <div class="card">
+        <div class="card-title">🛠️ Required Skills</div>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px;padding:12px;border:1px solid #d1d5db;border-radius:6px;min-height:50px;background:#fafafa;">
+          <span class="chip chip-maroon" style="display:flex;align-items:center;gap:4px;">Python <span style="cursor:pointer;opacity:.6;">✕</span></span>
+          <span class="chip chip-maroon" style="display:flex;align-items:center;gap:4px;">JavaScript <span style="cursor:pointer;opacity:.6;">✕</span></span>
+          <span class="chip chip-maroon" style="display:flex;align-items:center;gap:4px;">React <span style="cursor:pointer;opacity:.6;">✕</span></span>
+          <span class="chip chip-gray" style="display:flex;align-items:center;gap:4px;">Problem Solving <span style="cursor:pointer;opacity:.6;">✕</span></span>
+        </div>
+        <div style="display:flex;gap:8px;">
+          <select class="form-control" style="flex:1;">
+            <option>— Add required skill —</option>
+            <option>SQL</option>
+            <option>Java</option>
+            <option>Node.js</option>
+            <option>Git</option>
+            <option>HTML/CSS</option>
+            <option>Machine Learning</option>
+          </select>
+          <button class="btn btn-primary">+ Add</button>
+        </div>
+      </div>
+
+      <!-- Application Settings -->
+      <div class="card">
+        <div class="card-title">⚙️ Application Settings</div>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Application Deadline *</label>
+            <input type="date" class="form-control" value="2025-05-01">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Max Applicants (optional)</label>
+            <input type="number" class="form-control" placeholder="e.g. 50">
+          </div>
+        </div>
+        <div class="form-group">
+          <label style="display:flex;align-items:center;gap:8px;font-size:13.5px;cursor:pointer;">
+            <input type="checkbox" checked style="accent-color:#6a0032;width:14px;height:14px;">
+            Require cover letter from applicants
+          </label>
+        </div>
+        <div class="form-group">
+          <label style="display:flex;align-items:center;gap:8px;font-size:13.5px;cursor:pointer;">
+            <input type="checkbox" checked style="accent-color:#6a0032;width:14px;height:14px;">
+            Notify me by email for each new application
+          </label>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Posting Status</label>
+          <select class="form-control">
+            <option selected>Active (visible to students)</option>
+            <option>Draft (save for later)</option>
+          </select>
+        </div>
+
+        <div style="display:flex;gap:10px;margin-top:8px;">
+          <button class="btn btn-primary" style="flex:1;justify-content:center;padding:10px;">🚀 Publish Job Posting</button>
+          <button class="btn btn-outline" style="justify-content:center;padding:10px 16px;">💾 Save Draft</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right: Preview -->
+    <div>
+      <div class="card" style="position:sticky;top:20px;">
+        <div class="card-title">👁️ Preview</div>
+        <div style="border:1px solid #e6e6e6;border-radius:8px;padding:14px;">
+          <div style="font-size:15px;font-weight:700;margin-bottom:2px;">Software Engineering Intern</div>
+          <div style="font-size:12.5px;color:#6b6b6b;margin-bottom:8px;">TechCorp Inc. · Detroit, MI</div>
+          <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px;">
+            <span class="badge b-intern">Internship</span>
+            <span class="badge b-active">Active</span>
+          </div>
+          <div style="font-size:13px;color:#6a0032;font-weight:700;margin-bottom:4px;">$18 – $25/hr</div>
+          <div style="font-size:12px;color:#6b6b6b;margin-bottom:10px;">📅 Deadline: May 1, 2025</div>
+          <div style="font-size:12.5px;color:#495057;line-height:1.6;margin-bottom:10px;">
+            Join our engineering team to build scalable web applications using Python and React...
+          </div>
+          <div>
+            <span class="chip chip-maroon">Python</span>
+            <span class="chip chip-maroon">JavaScript</span>
+            <span class="chip chip-maroon">React</span>
+          </div>
+        </div>
+        <div class="alert alert-success" style="margin-top:12px;font-size:12.5px;">
+          ✅ This posting matches <strong>3</strong> active CMU student profiles.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

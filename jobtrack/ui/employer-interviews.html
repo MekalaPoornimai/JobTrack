@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JobTrack – Schedule Interview</title>
+<link rel="stylesheet" href="styles.css">
+<script src="https://mcp.figma.com/mcp/html-to-design/capture.js" async></script>
+</head>
+<body>
+<nav class="navbar">
+  <a href="index.html" class="navbar-brand">Job<span style="color:var(--gold)">Track</span></a>
+  <div style="margin-left:auto;display:flex;align-items:center;gap:16px">
+    <div class="navbar-user">
+      <div class="avatar" style="width:34px;height:34px;font-size:13px;background:var(--gold);color:var(--primary)">MS</div>
+      <span class="navbar-user-name">Microsoft · Recruiter</span>
+    </div>
+  </div>
+</nav>
+
+<div class="app-layout">
+  <aside class="sidebar">
+    <div style="padding:16px 20px;margin-bottom:4px">
+      <div style="display:flex;align-items:center;gap:10px">
+        <div style="width:40px;height:40px;background:var(--bg);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px">🏢</div>
+        <div>
+          <div style="font-size:13px;font-weight:700;color:var(--text-dark)">Microsoft</div>
+          <div style="font-size:11px;color:var(--text-muted)">Technology</div>
+        </div>
+      </div>
+    </div>
+    <div class="divider" style="margin:0 0 8px"></div>
+    <a href="employer-dashboard.html" class="sidebar-link"><span class="icon">🏠</span>Dashboard</a>
+    <a href="employer-post-job.html" class="sidebar-link"><span class="icon">➕</span>Post a Job</a>
+    <a href="employer-jobs.html" class="sidebar-link"><span class="icon">💼</span>My Job Postings</a>
+    <a href="employer-applicants.html" class="sidebar-link"><span class="icon">👥</span>Applicants</a>
+    <a href="employer-interviews.html" class="sidebar-link active"><span class="icon">🗓️</span>Interviews<span class="sidebar-badge">8</span></a>
+  </aside>
+
+  <main class="main-content">
+    <div class="page-header-row">
+      <div>
+        <h1 class="page-title">Interview Management</h1>
+        <p class="page-subtitle">Schedule and manage all candidate interviews</p>
+      </div>
+      <button class="btn btn-primary" onclick="document.getElementById('scheduleModal').style.display='flex'">+ Schedule Interview</button>
+    </div>
+
+    <div class="grid-2">
+      <!-- UPCOMING -->
+      <div>
+        <h2 style="font-size:15px;font-weight:700;margin-bottom:16px;color:var(--text-dark)">📅 Upcoming (8)</h2>
+        <div style="display:flex;flex-direction:column;gap:12px">
+          <div class="card card-sm" style="border-left:4px solid var(--primary)">
+            <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:10px">
+              <div style="display:flex;gap:10px;align-items:center">
+                <div class="avatar" style="width:36px;height:36px;font-size:12px">JS</div>
+                <div>
+                  <div style="font-size:13px;font-weight:700;color:var(--text-dark)">Jordan Smith</div>
+                  <div style="font-size:11px;color:var(--text-muted)">SWE Intern · Technical Screen</div>
+                </div>
+              </div>
+              <span class="badge badge-interview">Round 1</span>
+            </div>
+            <div style="background:var(--bg);padding:10px;border-radius:8px;margin-bottom:10px;display:flex;gap:20px;font-size:12px">
+              <span>📅 Mar 18, 2025</span>
+              <span>⏰ 2:00 PM EST</span>
+              <span>🎥 Video Call</span>
+              <span>⏱️ 60 mins</span>
+            </div>
+            <div style="display:flex;gap:8px">
+              <button class="btn btn-primary btn-sm">Join Meeting</button>
+              <button class="btn btn-ghost btn-sm">Send Reminder</button>
+              <button class="btn btn-ghost btn-sm">Reschedule</button>
+            </div>
+          </div>
+
+          <div class="card card-sm" style="border-left:4px solid var(--gold)">
+            <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:10px">
+              <div style="display:flex;gap:10px;align-items:center">
+                <div class="avatar" style="width:36px;height:36px;font-size:12px;background:#3498db">AL</div>
+                <div>
+                  <div style="font-size:13px;font-weight:700;color:var(--text-dark)">Alex Lee</div>
+                  <div style="font-size:11px;color:var(--text-muted)">Data Engineer · Final Round</div>
+                </div>
+              </div>
+              <span class="badge badge-offer">Final Round</span>
+            </div>
+            <div style="background:var(--bg);padding:10px;border-radius:8px;margin-bottom:10px;display:flex;gap:20px;font-size:12px">
+              <span>📅 Mar 18, 2025</span>
+              <span>⏰ 4:00 PM EST</span>
+              <span>💼 Teams</span>
+              <span>⏱️ 90 mins</span>
+            </div>
+            <div style="display:flex;gap:8px">
+              <button class="btn btn-primary btn-sm">Join Meeting</button>
+              <button class="btn btn-ghost btn-sm">Send Reminder</button>
+              <button class="btn btn-ghost btn-sm">Reschedule</button>
+            </div>
+          </div>
+
+          <div class="card card-sm" style="border-left:4px solid var(--info)">
+            <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:10px">
+              <div style="display:flex;gap:10px;align-items:center">
+                <div class="avatar" style="width:36px;height:36px;font-size:12px;background:#e74c3c">MR</div>
+                <div>
+                  <div style="font-size:13px;font-weight:700;color:var(--text-dark)">Maya Rodriguez</div>
+                  <div style="font-size:11px;color:var(--text-muted)">PM Intern · Behavioral</div>
+                </div>
+              </div>
+              <span class="badge badge-applied">Round 1</span>
+            </div>
+            <div style="background:var(--bg);padding:10px;border-radius:8px;margin-bottom:10px;display:flex;gap:20px;font-size:12px">
+              <span>📅 Mar 20, 2025</span>
+              <span>⏰ 11:00 AM EST</span>
+              <span>🎥 Zoom</span>
+              <span>⏱️ 45 mins</span>
+            </div>
+            <div style="display:flex;gap:8px">
+              <button class="btn btn-primary btn-sm">Join Meeting</button>
+              <button class="btn btn-ghost btn-sm">Send Reminder</button>
+              <button class="btn btn-ghost btn-sm">Reschedule</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- COMPLETED + SCHEDULE FORM -->
+      <div style="display:flex;flex-direction:column;gap:20px">
+        <h2 style="font-size:15px;font-weight:700;margin-bottom:4px;color:var(--text-dark)">✅ Completed (5)</h2>
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <div class="card card-sm" style="opacity:0.85">
+            <div style="display:flex;gap:10px;align-items:center;margin-bottom:8px">
+              <div class="avatar" style="width:32px;height:32px;font-size:11px;background:#9b59b6">SC</div>
+              <div style="flex:1">
+                <div style="font-size:13px;font-weight:600;color:var(--text-dark)">Sarah Chen · SWE Intern</div>
+                <div style="font-size:11px;color:var(--text-muted)">Mar 12, 2025 · Final Round</div>
+              </div>
+              <span class="badge badge-offer">Offer Sent</span>
+            </div>
+            <div style="font-size:12px;color:var(--text-muted);background:var(--bg);padding:8px;border-radius:8px">Feedback: Exceptional coding skills. Strong system design. Extending offer.</div>
+          </div>
+          <div class="card card-sm" style="opacity:0.85">
+            <div style="display:flex;gap:10px;align-items:center;margin-bottom:8px">
+              <div class="avatar" style="width:32px;height:32px;font-size:11px;background:#f39c12">TK</div>
+              <div style="flex:1">
+                <div style="font-size:13px;font-weight:600;color:var(--text-dark)">Tyler Kim · Data Engineer</div>
+                <div style="font-size:11px;color:var(--text-muted)">Mar 10, 2025 · Phone Screen</div>
+              </div>
+              <span class="badge badge-interview">Advanced</span>
+            </div>
+            <div style="font-size:12px;color:var(--text-muted);background:var(--bg);padding:8px;border-radius:8px">Feedback: Good foundational skills. Moving to technical round.</div>
+          </div>
+        </div>
+
+        <!-- Quick Schedule Panel -->
+        <div class="card" style="border-top:4px solid var(--primary)">
+          <div class="card-title" style="margin-bottom:16px">⚡ Quick Schedule</div>
+          <div class="form-group">
+            <label class="form-label">Candidate</label>
+            <select class="form-control form-select">
+              <option>Jordan Smith – SWE Intern</option>
+              <option>Maya Rodriguez – PM Intern</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Interview Type</label>
+            <select class="form-control form-select">
+              <option>Phone Screen</option>
+              <option selected>Video Call</option>
+              <option>Technical Screen</option>
+              <option>On-site</option>
+              <option>Final Round</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Date</label>
+              <input type="date" class="form-control" value="2025-03-25">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Time</label>
+              <input type="time" class="form-control" value="14:00">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Meeting Link</label>
+            <input type="text" class="form-control" placeholder="Zoom / Teams / Google Meet URL">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Notes for Candidate</label>
+            <textarea class="form-control" rows="2" placeholder="Any prep instructions..."></textarea>
+          </div>
+          <button class="btn btn-primary btn-block">Send Interview Invite</button>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+</body>
+</html>

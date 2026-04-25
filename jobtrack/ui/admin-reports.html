@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JobTrack – Placement Reports</title>
+<link rel="stylesheet" href="styles.css">
+<script src="https://mcp.figma.com/mcp/html-to-design/capture.js" async></script>
+</head>
+<body>
+<nav class="navbar">
+  <a href="index.html" class="navbar-brand">Job<span style="color:var(--gold)">Track</span></a>
+  <div style="flex:1;display:flex;align-items:center;justify-content:center">
+    <span style="background:rgba(255,193,7,0.2);color:var(--gold);font-size:11px;font-weight:600;padding:4px 12px;border-radius:99px;border:1px solid rgba(255,193,7,0.3)">⚙️ CAREER SERVICES ADMIN</span>
+  </div>
+  <div style="display:flex;align-items:center;gap:16px">
+    <div class="navbar-user">
+      <div class="avatar" style="width:34px;height:34px;font-size:13px;background:var(--gold);color:var(--primary)">CM</div>
+      <span class="navbar-user-name">Carol Mitchell</span>
+    </div>
+  </div>
+</nav>
+
+<div class="app-layout">
+  <aside class="sidebar">
+    <div style="padding:16px 20px;margin-bottom:4px">
+      <div style="display:flex;align-items:center;gap:10px">
+        <div class="avatar" style="background:var(--gold);color:var(--primary)">CM</div>
+        <div>
+          <div style="font-size:13px;font-weight:700;color:var(--text-dark)">Carol Mitchell</div>
+          <div style="font-size:11px;color:var(--text-muted)">Career Services Admin</div>
+        </div>
+      </div>
+    </div>
+    <div class="divider" style="margin:0 0 8px"></div>
+    <a href="admin-dashboard.html" class="sidebar-link"><span class="icon">🏠</span>Dashboard</a>
+    <a href="admin-reports.html" class="sidebar-link active"><span class="icon">📊</span>Placement Reports</a>
+    <a href="admin-employers.html" class="sidebar-link"><span class="icon">🏢</span>Employers</a>
+    <a href="#" class="sidebar-link"><span class="icon">🎓</span>Students</a>
+    <a href="#" class="sidebar-link"><span class="icon">💼</span>Job Postings</a>
+  </aside>
+
+  <main class="main-content">
+    <div class="page-header-row">
+      <div>
+        <h1 class="page-title">Placement Reports</h1>
+        <p class="page-subtitle">Comprehensive career outcome analytics for CMU students</p>
+      </div>
+      <div style="display:flex;gap:12px">
+        <select class="form-control form-select" style="width:140px">
+          <option>Spring 2025</option>
+          <option>Fall 2024</option>
+          <option>Spring 2024</option>
+        </select>
+        <button class="btn btn-outline">📤 Export PDF</button>
+        <button class="btn btn-primary">📊 Generate Report</button>
+      </div>
+    </div>
+
+    <!-- HERO STATS -->
+    <div style="background:linear-gradient(135deg,var(--primary),#8a1050);border-radius:20px;padding:32px;margin-bottom:28px;display:grid;grid-template-columns:repeat(5,1fr);gap:24px">
+      <div style="text-align:center;color:white">
+        <div style="font-size:36px;font-weight:800;color:var(--gold)">89%</div>
+        <div style="font-size:12px;opacity:0.8;margin-top:4px">Placement Rate</div>
+      </div>
+      <div style="text-align:center;color:white;border-left:1px solid rgba(255,255,255,0.2)">
+        <div style="font-size:36px;font-weight:800;color:var(--gold)">$68K</div>
+        <div style="font-size:12px;opacity:0.8;margin-top:4px">Avg Starting Salary</div>
+      </div>
+      <div style="text-align:center;color:white;border-left:1px solid rgba(255,255,255,0.2)">
+        <div style="font-size:36px;font-weight:800;color:var(--gold)">2,148</div>
+        <div style="font-size:12px;opacity:0.8;margin-top:4px">Students Placed</div>
+      </div>
+      <div style="text-align:center;color:white;border-left:1px solid rgba(255,255,255,0.2)">
+        <div style="font-size:36px;font-weight:800;color:var(--gold)">854</div>
+        <div style="font-size:12px;opacity:0.8;margin-top:4px">Partner Employers</div>
+      </div>
+      <div style="text-align:center;color:white;border-left:1px solid rgba(255,255,255,0.2)">
+        <div style="font-size:36px;font-weight:800;color:var(--gold)">3.2x</div>
+        <div style="font-size:12px;opacity:0.8;margin-top:4px">Interview-to-Offer Rate</div>
+      </div>
+    </div>
+
+    <div class="grid-2" style="margin-bottom:24px">
+      <!-- PLACEMENT BY MAJOR -->
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">Placement Rate by Major</div>
+          <span style="font-size:12px;color:var(--text-muted)">Spring 2025</span>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:12px">
+          <div class="report-bar">
+            <div class="report-bar-label" style="width:140px">Computer Science</div>
+            <div class="report-bar-track"><div class="report-bar-fill" style="width:95%"></div></div>
+            <div class="report-bar-val">95%</div>
+          </div>
+          <div class="report-bar">
+            <div class="report-bar-label" style="width:140px">Engineering</div>
+            <div class="report-bar-track"><div class="report-bar-fill" style="width:92%;background:var(--info)"></div></div>
+            <div class="report-bar-val">92%</div>
+          </div>
+          <div class="report-bar">
+            <div class="report-bar-label" style="width:140px">Finance</div>
+            <div class="report-bar-track"><div class="report-bar-fill" style="width:91%;background:var(--gold)"></div></div>
+            <div class="report-bar-val">91%</div>
+          </div>
+          <div class="report-bar">
+            <div class="report-bar-label" style="width:140px">Information Sys.</div>
+            <div class="report-bar-track"><div class="report-bar-fill" style="width:88%;background:var(--success)"></div></div>
+            <div class="report-bar-val">88%</div>
+          </div>
+          <div class="report-bar">
+            <div class="report-bar-label" style="width:140px">Business Admin.</div>
+            <div class="report-bar-track"><div class="report-bar-fill" style="width:85%;background:#9b59b6"></div></div>
+            <div class="report-bar-val">85%</div>
+          </div>
+          <div class="report-bar">
+            <div class="report-bar-label" style="width:140px">Marketing</div>
+            <div class="report-bar-track"><div class="report-bar-fill" style="width:82%;background:#e74c3c"></div></div>
+            <div class="report-bar-val">82%</div>
+          </div>
+          <div class="report-bar">
+            <div class="report-bar-label" style="width:140px">Overall</div>
+            <div class="report-bar-track"><div class="report-bar-fill" style="width:89%"></div></div>
+            <div class="report-bar-val" style="font-weight:800;color:var(--primary)">89%</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- EMPLOYMENT TYPE BREAKDOWN -->
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">Employment Type Breakdown</div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:14px;margin-bottom:20px">
+          <div>
+            <div style="display:flex;justify-content:space-between;margin-bottom:6px;font-size:13px">
+              <span>Full-time Employment</span>
+              <span style="font-weight:700">58% (1,247)</span>
+            </div>
+            <div class="progress"><div class="progress-bar" style="width:58%"></div></div>
+          </div>
+          <div>
+            <div style="display:flex;justify-content:space-between;margin-bottom:6px;font-size:13px">
+              <span>Internship / Co-op</span>
+              <span style="font-weight:700">28% (601)</span>
+            </div>
+            <div class="progress"><div class="progress-bar gold" style="width:28%"></div></div>
+          </div>
+          <div>
+            <div style="display:flex;justify-content:space-between;margin-bottom:6px;font-size:13px">
+              <span>Graduate School</span>
+              <span style="font-weight:700">8% (172)</span>
+            </div>
+            <div class="progress"><div class="progress-bar green" style="width:8%"></div></div>
+          </div>
+          <div>
+            <div style="display:flex;justify-content:space-between;margin-bottom:6px;font-size:13px">
+              <span>Still Seeking</span>
+              <span style="font-weight:700;color:var(--danger)">11% (264)</span>
+            </div>
+            <div class="progress"><div class="progress-bar" style="width:11%;background:var(--danger)"></div></div>
+          </div>
+        </div>
+        <div class="divider"></div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px">
+          <div style="background:var(--bg);padding:14px;border-radius:10px;text-align:center">
+            <div style="font-size:20px;font-weight:800;color:var(--primary)">$68,400</div>
+            <div style="font-size:11px;color:var(--text-muted)">Avg Starting Salary</div>
+          </div>
+          <div style="background:var(--bg);padding:14px;border-radius:10px;text-align:center">
+            <div style="font-size:20px;font-weight:800;color:var(--success)">$42/hr</div>
+            <div style="font-size:11px;color:var(--text-muted)">Avg Internship Rate</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- YEAR-OVER-YEAR TREND + TABLE -->
+    <div class="grid-2">
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">Year-over-Year Placement Trend</div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:12px">
+          <div style="display:flex;align-items:center;gap:12px;padding:12px;background:var(--bg);border-radius:10px">
+            <span style="font-size:13px;font-weight:600;width:80px;color:var(--text-dark)">Spring 2025</span>
+            <div style="flex:1;background:#e0e0e0;border-radius:99px;height:12px;overflow:hidden">
+              <div style="height:100%;width:89%;background:var(--primary);border-radius:99px"></div>
+            </div>
+            <span style="font-size:14px;font-weight:800;color:var(--primary);width:40px;text-align:right">89%</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:12px;padding:12px;background:var(--bg);border-radius:10px">
+            <span style="font-size:13px;font-weight:600;width:80px;color:var(--text-dark)">Fall 2024</span>
+            <div style="flex:1;background:#e0e0e0;border-radius:99px;height:12px;overflow:hidden">
+              <div style="height:100%;width:87%;background:var(--primary);border-radius:99px;opacity:0.8"></div>
+            </div>
+            <span style="font-size:14px;font-weight:700;color:var(--text-muted);width:40px;text-align:right">87%</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:12px;padding:12px;background:var(--bg);border-radius:10px">
+            <span style="font-size:13px;font-weight:600;width:80px;color:var(--text-dark)">Spring 2024</span>
+            <div style="flex:1;background:#e0e0e0;border-radius:99px;height:12px;overflow:hidden">
+              <div style="height:100%;width:86%;background:var(--primary);border-radius:99px;opacity:0.7"></div>
+            </div>
+            <span style="font-size:14px;font-weight:700;color:var(--text-muted);width:40px;text-align:right">86%</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:12px;padding:12px;background:var(--bg);border-radius:10px">
+            <span style="font-size:13px;font-weight:600;width:80px;color:var(--text-dark)">Fall 2023</span>
+            <div style="flex:1;background:#e0e0e0;border-radius:99px;height:12px;overflow:hidden">
+              <div style="height:100%;width:83%;background:var(--primary);border-radius:99px;opacity:0.6"></div>
+            </div>
+            <span style="font-size:14px;font-weight:700;color:var(--text-muted);width:40px;text-align:right">83%</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:12px;padding:12px;background:var(--bg);border-radius:10px">
+            <span style="font-size:13px;font-weight:600;width:80px;color:var(--text-dark)">Spring 2023</span>
+            <div style="flex:1;background:#e0e0e0;border-radius:99px;height:12px;overflow:hidden">
+              <div style="height:100%;width:80%;background:var(--primary);border-radius:99px;opacity:0.5"></div>
+            </div>
+            <span style="font-size:14px;font-weight:700;color:var(--text-muted);width:40px;text-align:right">80%</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- TOP PLACEMENT LOCATIONS -->
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">Top Placement Locations</div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:0">
+          <div style="display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid var(--border)">
+            <span style="font-size:18px">🏭</span>
+            <div style="flex:1">
+              <div style="font-size:13px;font-weight:600">Detroit Metro Area, MI</div>
+              <div style="font-size:11px;color:var(--text-muted)">Ford, GM, Stellantis, Beaumont</div>
+            </div>
+            <span class="badge badge-maroon">382 placed</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid var(--border)">
+            <span style="font-size:18px">💻</span>
+            <div style="flex:1">
+              <div style="font-size:13px;font-weight:600">Seattle, WA</div>
+              <div style="font-size:11px;color:var(--text-muted)">Microsoft, Amazon, Boeing</div>
+            </div>
+            <span class="badge badge-maroon">248 placed</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid var(--border)">
+            <span style="font-size:18px">🌉</span>
+            <div style="flex:1">
+              <div style="font-size:13px;font-weight:600">Chicago, IL</div>
+              <div style="font-size:11px;color:var(--text-muted)">Finance, Consulting firms</div>
+            </div>
+            <span class="badge badge-maroon">196 placed</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid var(--border)">
+            <span style="font-size:18px">🌁</span>
+            <div style="flex:1">
+              <div style="font-size:13px;font-weight:600">San Francisco Bay Area, CA</div>
+              <div style="font-size:11px;color:var(--text-muted)">Google, Meta, Apple, Salesforce</div>
+            </div>
+            <span class="badge badge-maroon">184 placed</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:10px;padding:10px 0">
+            <span style="font-size:18px">🗺️</span>
+            <div style="flex:1">
+              <div style="font-size:13px;font-weight:600">Remote / Virtual</div>
+              <div style="font-size:11px;color:var(--text-muted)">Various tech & consulting firms</div>
+            </div>
+            <span class="badge badge-maroon">312 placed</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+</body>
+</html>

@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Employer Dashboard | JobTrack CMU</title>
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="sl-styles.css">
+<script src="https://mcp.figma.com/mcp/html-to-design/capture.js" async></script>
+</head>
+<body>
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="sidebar-logo">Job<span>Track</span></div>
+    <div class="sidebar-tagline">CMU Career Services</div>
+  </div>
+  <div class="sidebar-nav">
+    <div class="nav-section">Navigation</div>
+    <a class="nav-item active" href="#"><span class="nav-icon">🏠</span> Dashboard</a>
+    <a class="nav-item" href="sl-employer-post-job.html"><span class="nav-icon">➕</span> Post a Job</a>
+    <a class="nav-item" href="#"><span class="nav-icon">📂</span> My Job Postings</a>
+    <a class="nav-item" href="sl-employer-applicants.html"><span class="nav-icon">👥</span> Applicants</a>
+    <a class="nav-item" href="#"><span class="nav-icon">🗓️</span> Interviews</a>
+    <div class="nav-section" style="margin-top:16px;">Company</div>
+    <a class="nav-item" href="#"><span class="nav-icon">🏢</span> Company Profile</a>
+  </div>
+  <div class="sidebar-footer">
+    <div class="user-row">
+      <div class="user-avatar" style="background:#ffc107;color:#6a0032;font-size:11px;">TC</div>
+      <div>
+        <div class="user-name">TechCorp Inc.</div>
+        <div class="user-email">hr@techcorp.com</div>
+      </div>
+    </div>
+    <div class="logout-link">⬅ Sign Out</div>
+  </div>
+</div>
+
+<div class="main">
+  <div class="page-title">🏢 Employer Dashboard</div>
+  <div class="page-subtitle">TechCorp Inc. · Detroit, MI · Information Technology · <span class="badge b-verified">✓ Verified</span></div>
+
+  <!-- Metrics -->
+  <div class="metrics-row">
+    <div class="metric-card m-maroon">
+      <div class="metric-label">Active Job Postings</div>
+      <div class="metric-value">3</div>
+      <div class="metric-delta delta-neu">2 internships, 1 full-time</div>
+    </div>
+    <div class="metric-card m-gold">
+      <div class="metric-label">Total Applicants</div>
+      <div class="metric-value">5</div>
+      <div class="metric-delta delta-up">↑ 2 this week</div>
+    </div>
+    <div class="metric-card m-green">
+      <div class="metric-label">Interviews Scheduled</div>
+      <div class="metric-value">2</div>
+      <div class="metric-delta delta-up">This week</div>
+    </div>
+    <div class="metric-card m-blue">
+      <div class="metric-label">Positions Filled</div>
+      <div class="metric-value">0</div>
+      <div class="metric-delta delta-neu">offers pending</div>
+    </div>
+  </div>
+
+  <div class="cols-7-3">
+    <div>
+      <!-- My Job Postings -->
+      <div class="table-wrap" style="margin-bottom:20px;">
+        <div class="table-head">
+          📂 My Job Postings
+          <a href="sl-employer-post-job.html" class="btn btn-primary btn-sm">+ Post New Job</a>
+        </div>
+        <table class="st-table">
+          <thead>
+            <tr>
+              <th>Job Title</th>
+              <th>Type</th>
+              <th>Location</th>
+              <th>Salary</th>
+              <th>Applicants</th>
+              <th>Deadline</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="fw-600">Software Eng. Intern</td>
+              <td><span class="badge b-intern">Internship</span></td>
+              <td>Detroit, MI</td>
+              <td>$18–$25/hr</td>
+              <td><strong style="color:#6a0032;">3</strong></td>
+              <td class="text-muted">May 1, 2025</td>
+              <td><span class="badge b-active">Active</span></td>
+              <td>
+                <button class="btn btn-outline btn-sm">View</button>
+                <button class="btn btn-outline btn-sm" style="margin-left:4px;">Edit</button>
+              </td>
+            </tr>
+            <tr>
+              <td class="fw-600">Full Stack Developer</td>
+              <td><span class="badge b-fulltime">Full-time</span></td>
+              <td>Detroit, MI</td>
+              <td>$65k–$85k</td>
+              <td><strong style="color:#6a0032;">1</strong></td>
+              <td class="text-muted">Apr 15, 2025</td>
+              <td><span class="badge b-active">Active</span></td>
+              <td>
+                <button class="btn btn-outline btn-sm">View</button>
+                <button class="btn btn-outline btn-sm" style="margin-left:4px;">Edit</button>
+              </td>
+            </tr>
+            <tr>
+              <td class="fw-600">ML Engineer Intern</td>
+              <td><span class="badge b-intern">Internship</span></td>
+              <td>Detroit, MI</td>
+              <td>$20–$28/hr</td>
+              <td><strong style="color:#6a0032;">2</strong></td>
+              <td class="text-muted">May 10, 2025</td>
+              <td><span class="badge b-active">Active</span></td>
+              <td>
+                <button class="btn btn-outline btn-sm">View</button>
+                <button class="btn btn-outline btn-sm" style="margin-left:4px;">Edit</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Recent Applicants -->
+      <div class="table-wrap">
+        <div class="table-head">
+          👥 Recent Applicants
+          <a href="sl-employer-applicants.html" class="btn btn-outline btn-sm">View All</a>
+        </div>
+        <table class="st-table">
+          <thead>
+            <tr>
+              <th>Applicant</th>
+              <th>Job</th>
+              <th>Major</th>
+              <th>GPA</th>
+              <th>Status</th>
+              <th>Applied</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <div style="display:flex;align-items:center;gap:8px;">
+                  <div class="s-avatar av-1" style="width:28px;height:28px;font-size:11px;">JS</div>
+                  <div class="fw-600">Jordan Smith</div>
+                </div>
+              </td>
+              <td>SE Intern</td>
+              <td>CS</td>
+              <td>3.72</td>
+              <td><span class="badge b-interview">Interview Scheduled</span></td>
+              <td class="text-muted">Mar 10</td>
+              <td><button class="btn btn-primary btn-sm">Review</button></td>
+            </tr>
+            <tr>
+              <td>
+                <div style="display:flex;align-items:center;gap:8px;">
+                  <div class="s-avatar av-3" style="width:28px;height:28px;font-size:11px;">KP</div>
+                  <div class="fw-600">Kevin Patel</div>
+                </div>
+              </td>
+              <td>ML Intern</td>
+              <td>CS</td>
+              <td>3.88</td>
+              <td><span class="badge b-interview">Interview Scheduled</span></td>
+              <td class="text-muted">Mar 14</td>
+              <td><button class="btn btn-primary btn-sm">Review</button></td>
+            </tr>
+            <tr>
+              <td>
+                <div style="display:flex;align-items:center;gap:8px;">
+                  <div class="s-avatar av-1" style="width:28px;height:28px;font-size:11px;">JS</div>
+                  <div class="fw-600">Jordan Smith</div>
+                </div>
+              </td>
+              <td>Full Stack Dev</td>
+              <td>CS</td>
+              <td>3.72</td>
+              <td><span class="badge b-applied">Applied</span></td>
+              <td class="text-muted">Mar 12</td>
+              <td><button class="btn btn-primary btn-sm">Review</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Right Panel -->
+    <div>
+      <!-- Upcoming Interviews -->
+      <div class="card">
+        <div class="card-title">🗓️ Upcoming Interviews</div>
+        <div class="interview-card" style="margin-bottom:8px;padding:12px;">
+          <div class="interview-date-box" style="padding:6px 10px;">
+            <div class="date-day">20</div>
+            <div class="date-month">Mar</div>
+          </div>
+          <div class="interview-info">
+            <div style="font-weight:600;font-size:13.5px;">Jordan Smith</div>
+            <div class="text-muted">SE Intern · 2:00 PM</div>
+            <div style="margin-top:4px;"><span class="badge b-video">📹 Video</span></div>
+          </div>
+        </div>
+        <div class="interview-card" style="padding:12px;">
+          <div class="interview-date-box" style="background:#7b1fa2;padding:6px 10px;">
+            <div class="date-day">22</div>
+            <div class="date-month">Mar</div>
+          </div>
+          <div class="interview-info">
+            <div style="font-weight:600;font-size:13.5px;">Kevin Patel</div>
+            <div class="text-muted">ML Intern · 10:00 AM</div>
+            <div style="margin-top:4px;"><span class="badge b-tech">💻 Technical</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Actions -->
+      <div class="card">
+        <div class="card-title">⚡ Quick Actions</div>
+        <div style="display:flex;flex-direction:column;gap:8px;">
+          <a href="sl-employer-post-job.html" class="btn btn-primary" style="justify-content:center;">➕ Post New Job</a>
+          <a href="sl-employer-applicants.html" class="btn btn-outline" style="justify-content:center;">👥 Review Applicants</a>
+          <button class="btn btn-outline" style="justify-content:center;">📊 Download Report</button>
+        </div>
+      </div>
+
+      <!-- Applicant Pipeline -->
+      <div class="card">
+        <div class="card-title">📊 Applicant Pipeline</div>
+        <div class="progress-wrap">
+          <div class="progress-label"><span>Applied</span><span>1</span></div>
+          <div class="progress-bar"><div class="progress-fill pf-blue" style="width:20%"></div></div>
+        </div>
+        <div class="progress-wrap">
+          <div class="progress-label"><span>Under Review</span><span>1</span></div>
+          <div class="progress-bar"><div class="progress-fill pf-gold" style="width:20%"></div></div>
+        </div>
+        <div class="progress-wrap">
+          <div class="progress-label"><span>Interview Stage</span><span>3</span></div>
+          <div class="progress-bar"><div class="progress-fill pf-maroon" style="width:60%"></div></div>
+        </div>
+        <div class="progress-wrap">
+          <div class="progress-label"><span>Offer Extended</span><span>0</span></div>
+          <div class="progress-bar"><div class="progress-fill pf-green" style="width:0%"></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

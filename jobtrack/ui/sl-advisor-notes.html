@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Advising Notes | JobTrack CMU</title>
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="sl-styles.css">
+<script src="https://mcp.figma.com/mcp/html-to-design/capture.js" async></script>
+</head>
+<body>
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="sidebar-logo">Job<span>Track</span></div>
+    <div class="sidebar-tagline">CMU Career Services</div>
+  </div>
+  <div class="sidebar-nav">
+    <div class="nav-section">Navigation</div>
+    <a class="nav-item" href="sl-advisor-dashboard.html"><span class="nav-icon">🏠</span> Dashboard</a>
+    <a class="nav-item" href="sl-advisor-students.html"><span class="nav-icon">🎓</span> My Students</a>
+    <a class="nav-item active" href="#"><span class="nav-icon">📝</span> Advising Notes</a>
+    <div class="nav-section" style="margin-top:16px;">Reports</div>
+    <a class="nav-item" href="#"><span class="nav-icon">📊</span> Placement Report</a>
+    <a class="nav-item" href="#"><span class="nav-icon">📈</span> Activity Report</a>
+  </div>
+  <div class="sidebar-footer">
+    <div class="user-row">
+      <div class="user-avatar" style="background:#ffc107;color:#6a0032;">LC</div>
+      <div>
+        <div class="user-name">Dr. Lisa Chen</div>
+        <div class="user-email">chen5lc@cmich.edu</div>
+      </div>
+    </div>
+    <div class="logout-link">⬅ Sign Out</div>
+  </div>
+</div>
+
+<div class="main">
+  <div class="page-title">📝 Advising Notes</div>
+  <div class="page-subtitle">All notes written for your assigned students · 8 notes total</div>
+
+  <div class="cols-7-3">
+    <div>
+      <!-- Filters -->
+      <div class="filter-row">
+        <input type="text" class="form-control search-box" placeholder="🔍  Search notes...">
+        <select class="form-control">
+          <option>All Students</option>
+          <option>Jordan Smith</option>
+          <option>Alex Johnson</option>
+          <option>Kevin Patel</option>
+        </select>
+        <select class="form-control">
+          <option>All Types</option>
+          <option>General</option>
+          <option>Interview Prep</option>
+          <option>Resume Review</option>
+          <option>Career Goal</option>
+          <option>Application Advice</option>
+          <option>Follow-up</option>
+        </select>
+      </div>
+
+      <div class="tabs">
+        <div class="tab active">All Notes (8)</div>
+        <div class="tab">Jordan Smith (3)</div>
+        <div class="tab">Alex Johnson (2)</div>
+        <div class="tab">Kevin Patel (1)</div>
+      </div>
+
+      <!-- Notes List -->
+      <div class="note-card">
+        <div class="note-header">
+          <div style="display:flex;align-items:center;gap:8px;">
+            <div class="s-avatar av-1" style="width:28px;height:28px;font-size:11px;">JS</div>
+            <span class="note-student">Jordan Smith</span>
+            <span class="badge b-interview">Interview Prep</span>
+          </div>
+          <span class="note-date">Mar 14, 2025</span>
+        </div>
+        <div class="note-text">Jordan has an interview with TechCorp on March 20. Advised to practice behavioral questions using STAR method and research TechCorp's product lineup before the video call.</div>
+        <div style="display:flex;justify-content:flex-end;gap:6px;margin-top:10px;">
+          <button class="btn btn-outline btn-sm">✏️ Edit</button>
+        </div>
+      </div>
+
+      <div class="note-card">
+        <div class="note-header">
+          <div style="display:flex;align-items:center;gap:8px;">
+            <div class="s-avatar av-1" style="width:28px;height:28px;font-size:11px;">JS</div>
+            <span class="note-student">Jordan Smith</span>
+            <span class="badge b-review">Resume Review</span>
+          </div>
+          <span class="note-date">Mar 10, 2025</span>
+        </div>
+        <div class="note-text">Reviewed Jordan's resume. Suggested adding quantifiable achievements — e.g. "reduced load time by 30%" and "built API serving 500+ daily requests". Strong technical section.</div>
+        <div style="display:flex;justify-content:flex-end;gap:6px;margin-top:10px;">
+          <button class="btn btn-outline btn-sm">✏️ Edit</button>
+        </div>
+      </div>
+
+      <div class="note-card">
+        <div class="note-header">
+          <div style="display:flex;align-items:center;gap:8px;">
+            <div class="s-avatar av-1" style="width:28px;height:28px;font-size:11px;">JS</div>
+            <span class="note-student">Jordan Smith</span>
+            <span class="badge" style="background:#e8f4fd;color:#1565c0;">General</span>
+          </div>
+          <span class="note-date">Mar 8, 2025</span>
+        </div>
+        <div class="note-text">Jordan has strong technical skills. Recommended updating LinkedIn profile before applying to TechCorp. Also suggested connecting with CMU alumni at TechCorp via LinkedIn.</div>
+        <div style="display:flex;justify-content:flex-end;gap:6px;margin-top:10px;">
+          <button class="btn btn-outline btn-sm">✏️ Edit</button>
+        </div>
+      </div>
+
+      <div class="note-card" style="border-left-color:#ffc107;">
+        <div class="note-header">
+          <div style="display:flex;align-items:center;gap:8px;">
+            <div class="s-avatar av-2" style="width:28px;height:28px;font-size:11px;">AJ</div>
+            <span class="note-student">Alex Johnson</span>
+            <span class="badge b-applied">Career Goal</span>
+          </div>
+          <span class="note-date">Mar 12, 2025</span>
+        </div>
+        <div class="note-text">Alex should focus on strengthening SQL and Tableau skills. Suggested completing the Tableau Public certification course before applying to more data analyst roles. Shared Coursera resource.</div>
+        <div style="display:flex;justify-content:flex-end;gap:6px;margin-top:10px;">
+          <button class="btn btn-outline btn-sm">✏️ Edit</button>
+        </div>
+      </div>
+
+      <div class="note-card" style="border-left-color:#ffc107;">
+        <div class="note-header">
+          <div style="display:flex;align-items:center;gap:8px;">
+            <div class="s-avatar av-2" style="width:28px;height:28px;font-size:11px;">AJ</div>
+            <span class="note-student">Alex Johnson</span>
+            <span class="badge b-interview">Application Advice</span>
+          </div>
+          <span class="note-date">Mar 9, 2025</span>
+        </div>
+        <div class="note-text">Alex applied to Data Analyst Intern at Innovate Solutions. Application looks strong — currently under review. Encouraged Alex to follow up if no response by March 20.</div>
+        <div style="display:flex;justify-content:flex-end;gap:6px;margin-top:10px;">
+          <button class="btn btn-outline btn-sm">✏️ Edit</button>
+        </div>
+      </div>
+
+      <div class="note-card" style="border-left-color:#0d6efd;">
+        <div class="note-header">
+          <div style="display:flex;align-items:center;gap:8px;">
+            <div class="s-avatar av-3" style="width:28px;height:28px;font-size:11px;">KP</div>
+            <span class="note-student">Kevin Patel</span>
+            <span class="badge" style="background:#e8eaf6;color:#283593;">General</span>
+          </div>
+          <span class="note-date">Mar 13, 2025</span>
+        </div>
+        <div class="note-text">Kevin is one of our top-performing juniors. His ML focus is well-aligned with the TechCorp ML Intern posting. Encouraged to apply and prepare for a technical Python/ML coding round.</div>
+        <div style="display:flex;justify-content:flex-end;gap:6px;margin-top:10px;">
+          <button class="btn btn-outline btn-sm">✏️ Edit</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right: Add Note Form -->
+    <div>
+      <div class="card" style="position:sticky;top:20px;">
+        <div class="card-title">➕ Add New Note</div>
+        <div class="form-group">
+          <label class="form-label">Student</label>
+          <select class="form-control">
+            <option>Select student...</option>
+            <option>Jordan Smith</option>
+            <option>Alex Johnson</option>
+            <option>Kevin Patel</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Note Type</label>
+          <select class="form-control">
+            <option>General</option>
+            <option>Application Advice</option>
+            <option>Career Goal</option>
+            <option>Interview Prep</option>
+            <option>Resume Review</option>
+            <option>Follow-up</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Note Content</label>
+          <textarea class="form-control" style="min-height:120px;" placeholder="Write your advising note here..."></textarea>
+        </div>
+        <div class="form-group">
+          <label style="display:flex;align-items:center;gap:8px;font-size:13px;cursor:pointer;">
+            <input type="checkbox" style="accent-color:#6a0032;width:14px;height:14px;">
+            Mark as Private (only visible to you)
+          </label>
+        </div>
+        <button class="btn btn-primary" style="width:100%;justify-content:center;">💾 Save Note</button>
+        <button class="btn btn-outline" style="width:100%;justify-content:center;margin-top:8px;">Clear</button>
+
+        <div class="divider"></div>
+        <div style="font-size:12.5px;color:#6b6b6b;">
+          <strong>Note Types:</strong><br>
+          <span class="badge b-interview" style="margin:2px;">Interview Prep</span>
+          <span class="badge b-review" style="margin:2px;">Resume Review</span>
+          <span class="badge b-applied" style="margin:2px;">Career Goal</span>
+          <span class="badge b-interview" style="margin:2px;">App. Advice</span>
+          <span class="badge" style="margin:2px;background:#e8f4fd;color:#1565c0;">General</span>
+          <span class="badge b-withdrawn" style="margin:2px;">Follow-up</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

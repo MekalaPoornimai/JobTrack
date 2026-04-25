@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JobTrack – Admin Dashboard</title>
+<link rel="stylesheet" href="styles.css">
+<script src="https://mcp.figma.com/mcp/html-to-design/capture.js" async></script>
+</head>
+<body>
+<nav class="navbar">
+  <a href="index.html" class="navbar-brand">Job<span style="color:var(--gold)">Track</span></a>
+  <div style="flex:1;display:flex;align-items:center;justify-content:center">
+    <span style="background:rgba(255,193,7,0.2);color:var(--gold);font-size:11px;font-weight:600;padding:4px 12px;border-radius:99px;border:1px solid rgba(255,193,7,0.3)">⚙️ CAREER SERVICES ADMIN</span>
+  </div>
+  <div style="display:flex;align-items:center;gap:16px">
+    <span style="color:rgba(255,255,255,0.6);font-size:13px">🔔</span>
+    <div class="navbar-user">
+      <div class="avatar" style="width:34px;height:34px;font-size:13px;background:var(--gold);color:var(--primary)">CM</div>
+      <span class="navbar-user-name">Carol Mitchell</span>
+    </div>
+  </div>
+</nav>
+
+<div class="app-layout">
+  <aside class="sidebar">
+    <div style="padding:16px 20px;margin-bottom:4px">
+      <div style="display:flex;align-items:center;gap:10px">
+        <div class="avatar" style="background:var(--gold);color:var(--primary)">CM</div>
+        <div>
+          <div style="font-size:13px;font-weight:700;color:var(--text-dark)">Carol Mitchell</div>
+          <div style="font-size:11px;color:var(--text-muted)">Career Services Admin</div>
+        </div>
+      </div>
+    </div>
+    <div class="divider" style="margin:0 0 8px"></div>
+    <div class="sidebar-section-title">Overview</div>
+    <a href="admin-dashboard.html" class="sidebar-link active"><span class="icon">🏠</span>Dashboard</a>
+    <a href="admin-reports.html" class="sidebar-link"><span class="icon">📊</span>Placement Reports</a>
+    <div class="sidebar-section-title">Manage</div>
+    <a href="admin-employers.html" class="sidebar-link"><span class="icon">🏢</span>Employers<span class="sidebar-badge">85</span></a>
+    <a href="#" class="sidebar-link"><span class="icon">🎓</span>Students<span class="sidebar-badge">2400</span></a>
+    <a href="#" class="sidebar-link"><span class="icon">👨‍🏫</span>Advisors<span class="sidebar-badge">48</span></a>
+    <a href="#" class="sidebar-link"><span class="icon">💼</span>Job Postings<span class="sidebar-badge">142</span></a>
+    <div class="sidebar-section-title">System</div>
+    <a href="#" class="sidebar-link"><span class="icon">⚙️</span>Settings</a>
+    <a href="#" class="sidebar-link"><span class="icon">📢</span>Announcements</a>
+    <a href="login.html" class="sidebar-link"><span class="icon">🚪</span>Sign Out</a>
+  </aside>
+
+  <main class="main-content">
+    <div class="page-header-row">
+      <div>
+        <h1 class="page-title">Admin Dashboard</h1>
+        <p class="page-subtitle">CMU Career Services — Spring 2025 Overview</p>
+      </div>
+      <div style="display:flex;gap:12px">
+        <button class="btn btn-ghost">📤 Export</button>
+        <a href="admin-reports.html" class="btn btn-primary">📊 View Full Report</a>
+      </div>
+    </div>
+
+    <!-- STATS -->
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-icon blue">🎓</div>
+        <div>
+          <div class="stat-value">2,412</div>
+          <div class="stat-label">Active Students</div>
+          <div class="stat-change up">↑ 12% YoY</div>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon maroon">🏢</div>
+        <div>
+          <div class="stat-value">854</div>
+          <div class="stat-label">Partner Employers</div>
+          <div class="stat-change up">↑ 8% YoY</div>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon gold">📋</div>
+        <div>
+          <div class="stat-value">5,248</div>
+          <div class="stat-label">Total Applications</div>
+          <div class="stat-change up">↑ 24% YoY</div>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon green">✅</div>
+        <div>
+          <div class="stat-value">89%</div>
+          <div class="stat-label">Placement Rate</div>
+          <div class="stat-change up">↑ 3% from last year</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:2fr 1fr;gap:24px;margin-bottom:24px">
+      <!-- PLACEMENT BY INDUSTRY -->
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">Placements by Industry</div>
+          <span style="font-size:12px;color:var(--text-muted)">Spring 2025</span>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:14px">
+          <div class="report-bar">
+            <div class="report-bar-label">Technology</div>
+            <div class="report-bar-track"><div class="report-bar-fill" style="width:72%;background:var(--primary)"></div></div>
+            <div class="report-bar-val">426</div>
+          </div>
+          <div class="report-bar">
+            <div class="report-bar-label">Finance</div>
+            <div class="report-bar-track"><div class="report-bar-fill" style="width:48%;background:var(--gold)"></div></div>
+            <div class="report-bar-val">284</div>
+          </div>
+          <div class="report-bar">
+            <div class="report-bar-label">Healthcare</div>
+            <div class="report-bar-track"><div class="report-bar-fill" style="width:32%;background:var(--success)"></div></div>
+            <div class="report-bar-val">189</div>
+          </div>
+          <div class="report-bar">
+            <div class="report-bar-label">Engineering</div>
+            <div class="report-bar-track"><div class="report-bar-fill" style="width:28%;background:#17a2b8"></div></div>
+            <div class="report-bar-val">165</div>
+          </div>
+          <div class="report-bar">
+            <div class="report-bar-label">Marketing</div>
+            <div class="report-bar-track"><div class="report-bar-fill" style="width:22%;background:#9b59b6"></div></div>
+            <div class="report-bar-val">130</div>
+          </div>
+          <div class="report-bar">
+            <div class="report-bar-label">Education</div>
+            <div class="report-bar-track"><div class="report-bar-fill" style="width:14%;background:#e74c3c"></div></div>
+            <div class="report-bar-val">82</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- QUICK STATS -->
+      <div style="display:flex;flex-direction:column;gap:16px">
+        <div class="card" style="background:linear-gradient(135deg,var(--primary),#8a1050);color:white">
+          <div style="font-size:13px;opacity:0.8;margin-bottom:6px">Overall Placement Rate</div>
+          <div style="font-size:40px;font-weight:800;color:var(--gold)">89%</div>
+          <div style="font-size:12px;opacity:0.75;margin-top:4px">Class of 2025 · As of Mar 2025</div>
+          <div class="progress" style="margin-top:12px;background:rgba(255,255,255,0.2)">
+            <div class="progress-bar gold" style="width:89%"></div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-title" style="margin-bottom:12px">⏳ Pending Reviews</div>
+          <div style="display:flex;flex-direction:column;gap:8px">
+            <div style="display:flex;justify-content:space-between;font-size:13px">
+              <span>New Employer Registrations</span>
+              <span class="badge badge-applied">12</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;font-size:13px">
+              <span>Job Postings to Approve</span>
+              <span class="badge badge-pending">8</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;font-size:13px">
+              <span>Flagged Applications</span>
+              <span class="badge badge-rejected">3</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid-2">
+      <!-- TOP EMPLOYERS -->
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">Top Hiring Employers</div>
+          <a href="admin-employers.html" style="font-size:12px;color:var(--primary);text-decoration:none">View all →</a>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:0">
+          <div style="display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid var(--border)">
+            <span style="font-weight:700;font-size:14px;width:20px;color:var(--gold)">1</span>
+            <div style="width:32px;height:32px;background:var(--bg);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:16px">🏢</div>
+            <div style="flex:1">
+              <div style="font-size:13px;font-weight:600">Microsoft</div>
+              <div style="font-size:11px;color:var(--text-muted)">Technology</div>
+            </div>
+            <span class="badge badge-interview">48 hired</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid var(--border)">
+            <span style="font-weight:700;font-size:14px;width:20px;color:var(--primary)">2</span>
+            <div style="width:32px;height:32px;background:var(--bg);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:16px">🚗</div>
+            <div style="flex:1">
+              <div style="font-size:13px;font-weight:600">Ford Motor Co.</div>
+              <div style="font-size:11px;color:var(--text-muted)">Automotive</div>
+            </div>
+            <span class="badge badge-interview">36 hired</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid var(--border)">
+            <span style="font-weight:700;font-size:14px;width:20px;color:var(--text-muted)">3</span>
+            <div style="width:32px;height:32px;background:var(--bg);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:16px">🏦</div>
+            <div style="flex:1">
+              <div style="font-size:13px;font-weight:600">JP Morgan Chase</div>
+              <div style="font-size:11px;color:var(--text-muted)">Finance</div>
+            </div>
+            <span class="badge badge-interview">28 hired</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid var(--border)">
+            <span style="font-weight:700;font-size:14px;width:20px;color:var(--text-muted)">4</span>
+            <div style="width:32px;height:32px;background:var(--bg);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:16px">🔍</div>
+            <div style="flex:1">
+              <div style="font-size:13px;font-weight:600">Google</div>
+              <div style="font-size:11px;color:var(--text-muted)">Technology</div>
+            </div>
+            <span class="badge badge-interview">24 hired</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:10px;padding:10px 0">
+            <span style="font-weight:700;font-size:14px;width:20px;color:var(--text-muted)">5</span>
+            <div style="width:32px;height:32px;background:var(--bg);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:16px">🏥</div>
+            <div style="flex:1">
+              <div style="font-size:13px;font-weight:600">Beaumont Health</div>
+              <div style="font-size:11px;color:var(--text-muted)">Healthcare</div>
+            </div>
+            <span class="badge badge-interview">22 hired</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- RECENT ACTIVITY -->
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">Recent System Activity</div>
+        </div>
+        <ul class="timeline">
+          <li class="timeline-item">
+            <div class="timeline-dot filled"></div>
+            <div class="timeline-date">Today, 9:14 AM</div>
+            <div class="timeline-title">New employer registered: Consumers Energy</div>
+            <div class="timeline-desc">Pending approval · Technology sector</div>
+          </li>
+          <li class="timeline-item">
+            <div class="timeline-dot filled"></div>
+            <div class="timeline-date">Today, 8:42 AM</div>
+            <div class="timeline-title">Job posting submitted for review</div>
+            <div class="timeline-desc">Microsoft · Software Engineer Intern · Hybrid</div>
+          </li>
+          <li class="timeline-item">
+            <div class="timeline-dot filled"></div>
+            <div class="timeline-date">Yesterday, 4:30 PM</div>
+            <div class="timeline-title">32 new student registrations</div>
+            <div class="timeline-desc">From CS, Business, and Engineering departments</div>
+          </li>
+          <li class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-date">Mar 14, 2025</div>
+            <div class="timeline-title">Monthly placement report generated</div>
+            <div class="timeline-desc">February 2025 · 89.2% placement rate</div>
+          </li>
+          <li class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-date">Mar 13, 2025</div>
+            <div class="timeline-title">Employer data export completed</div>
+            <div class="timeline-desc">Requested by Dean's Office · Excel format</div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </main>
+</div>
+</body>
+</html>

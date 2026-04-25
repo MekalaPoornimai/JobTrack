@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JobTrack – Applicants</title>
+<link rel="stylesheet" href="styles.css">
+<script src="https://mcp.figma.com/mcp/html-to-design/capture.js" async></script>
+</head>
+<body>
+<nav class="navbar">
+  <a href="index.html" class="navbar-brand">Job<span style="color:var(--gold)">Track</span></a>
+  <div style="margin-left:auto;display:flex;align-items:center;gap:16px">
+    <div class="navbar-user">
+      <div class="avatar" style="width:34px;height:34px;font-size:13px;background:var(--gold);color:var(--primary)">MS</div>
+      <span class="navbar-user-name">Microsoft · Recruiter</span>
+    </div>
+  </div>
+</nav>
+
+<div class="app-layout">
+  <aside class="sidebar">
+    <div style="padding:16px 20px;margin-bottom:4px">
+      <div style="display:flex;align-items:center;gap:10px">
+        <div style="width:40px;height:40px;background:var(--bg);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px">🏢</div>
+        <div>
+          <div style="font-size:13px;font-weight:700;color:var(--text-dark)">Microsoft</div>
+          <div style="font-size:11px;color:var(--text-muted)">Technology</div>
+        </div>
+      </div>
+    </div>
+    <div class="divider" style="margin:0 0 8px"></div>
+    <a href="employer-dashboard.html" class="sidebar-link"><span class="icon">🏠</span>Dashboard</a>
+    <a href="employer-post-job.html" class="sidebar-link"><span class="icon">➕</span>Post a Job</a>
+    <a href="employer-jobs.html" class="sidebar-link"><span class="icon">💼</span>My Job Postings</a>
+    <a href="employer-applicants.html" class="sidebar-link active"><span class="icon">👥</span>Applicants<span class="sidebar-badge">48</span></a>
+    <a href="employer-interviews.html" class="sidebar-link"><span class="icon">🗓️</span>Interviews</a>
+  </aside>
+
+  <main class="main-content">
+    <div class="page-header-row">
+      <div>
+        <h1 class="page-title">Applicants</h1>
+        <p class="page-subtitle">Review and manage all applications</p>
+      </div>
+      <div style="display:flex;gap:12px">
+        <div class="search-bar">
+          <span class="search-icon">🔍</span>
+          <input type="text" placeholder="Search applicants...">
+        </div>
+        <select class="form-control form-select" style="width:200px">
+          <option>All Positions</option>
+          <option>Software Engineer Intern</option>
+          <option>Data Engineer</option>
+          <option>Product Manager Intern</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- FILTER TABS -->
+    <div class="tabs">
+      <div class="tab active">All (86)</div>
+      <div class="tab">New (32)</div>
+      <div class="tab">Under Review (28)</div>
+      <div class="tab">Shortlisted (16)</div>
+      <div class="tab">Interview (8)</div>
+      <div class="tab">Offer (2)</div>
+      <div class="tab">Rejected (0)</div>
+    </div>
+
+    <!-- APPLICANTS TABLE -->
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Applicant</th>
+            <th>Position</th>
+            <th>Major · GPA</th>
+            <th>Applied</th>
+            <th>Resume</th>
+            <th>Status</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <div style="display:flex;align-items:center;gap:10px">
+                <div class="avatar" style="width:36px;height:36px;font-size:12px">JS</div>
+                <div>
+                  <div style="font-weight:600;font-size:13px">Jordan Smith</div>
+                  <div style="font-size:11px;color:var(--text-muted)">smith1js@cmich.edu</div>
+                </div>
+              </div>
+            </td>
+            <td style="font-size:13px">Software Engineer Intern</td>
+            <td>
+              <div style="font-size:13px">Computer Science</div>
+              <div style="font-size:11px;color:var(--success);font-weight:600">GPA: 3.7</div>
+            </td>
+            <td style="font-size:12px;color:var(--text-muted)">Mar 8, 2025</td>
+            <td><button class="btn btn-ghost btn-sm">📄 View</button></td>
+            <td><span class="badge badge-interview">Shortlisted</span></td>
+            <td>
+              <button class="btn btn-primary btn-sm">Schedule Interview</button>
+              <button class="btn btn-ghost btn-sm">✗</button>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div style="display:flex;align-items:center;gap:10px">
+                <div class="avatar" style="width:36px;height:36px;font-size:12px;background:#3498db">AL</div>
+                <div>
+                  <div style="font-weight:600;font-size:13px">Alex Lee</div>
+                  <div style="font-size:11px;color:var(--text-muted)">lee1a@cmich.edu</div>
+                </div>
+              </div>
+            </td>
+            <td style="font-size:13px">Data Engineer</td>
+            <td>
+              <div style="font-size:13px">Computer Science</div>
+              <div style="font-size:11px;color:var(--success);font-weight:600">GPA: 3.9</div>
+            </td>
+            <td style="font-size:12px;color:var(--text-muted)">Mar 9, 2025</td>
+            <td><button class="btn btn-ghost btn-sm">📄 View</button></td>
+            <td><span class="badge badge-interview">Shortlisted</span></td>
+            <td>
+              <button class="btn btn-primary btn-sm">Schedule Interview</button>
+              <button class="btn btn-ghost btn-sm">✗</button>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div style="display:flex;align-items:center;gap:10px">
+                <div class="avatar" style="width:36px;height:36px;font-size:12px;background:#e74c3c">MR</div>
+                <div>
+                  <div style="font-weight:600;font-size:13px">Maya Rodriguez</div>
+                  <div style="font-size:11px;color:var(--text-muted)">rodriguez1m@cmich.edu</div>
+                </div>
+              </div>
+            </td>
+            <td style="font-size:13px">Product Manager Intern</td>
+            <td>
+              <div style="font-size:13px">Information Systems</div>
+              <div style="font-size:11px;color:var(--success);font-weight:600">GPA: 3.8</div>
+            </td>
+            <td style="font-size:12px;color:var(--text-muted)">Mar 10, 2025</td>
+            <td><button class="btn btn-ghost btn-sm">📄 View</button></td>
+            <td><span class="badge badge-pending">Under Review</span></td>
+            <td>
+              <button class="btn btn-outline btn-sm">Shortlist</button>
+              <button class="btn btn-ghost btn-sm">✗</button>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div style="display:flex;align-items:center;gap:10px">
+                <div class="avatar" style="width:36px;height:36px;font-size:12px;background:#2ecc71">DP</div>
+                <div>
+                  <div style="font-weight:600;font-size:13px">David Park</div>
+                  <div style="font-size:11px;color:var(--text-muted)">park1d@cmich.edu</div>
+                </div>
+              </div>
+            </td>
+            <td style="font-size:13px">UX Designer</td>
+            <td>
+              <div style="font-size:13px">Graphic Design</div>
+              <div style="font-size:11px;color:var(--warning);font-weight:600">GPA: 3.5</div>
+            </td>
+            <td style="font-size:12px;color:var(--text-muted)">Mar 11, 2025</td>
+            <td><button class="btn btn-ghost btn-sm">📄 View</button></td>
+            <td><span class="badge badge-applied">New</span></td>
+            <td>
+              <button class="btn btn-outline btn-sm">Review</button>
+              <button class="btn btn-ghost btn-sm">✗</button>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div style="display:flex;align-items:center;gap:10px">
+                <div class="avatar" style="width:36px;height:36px;font-size:12px;background:#9b59b6">SC</div>
+                <div>
+                  <div style="font-weight:600;font-size:13px">Sarah Chen</div>
+                  <div style="font-size:11px;color:var(--text-muted)">chen1s@cmich.edu</div>
+                </div>
+              </div>
+            </td>
+            <td style="font-size:13px">Software Engineer Intern</td>
+            <td>
+              <div style="font-size:13px">Computer Science</div>
+              <div style="font-size:11px;color:var(--success);font-weight:600">GPA: 3.95</div>
+            </td>
+            <td style="font-size:12px;color:var(--text-muted)">Mar 12, 2025</td>
+            <td><button class="btn btn-ghost btn-sm">📄 View</button></td>
+            <td><span class="badge badge-offer">Offer Sent 🎉</span></td>
+            <td>
+              <button class="btn btn-ghost btn-sm">View Details</button>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div style="display:flex;align-items:center;gap:10px">
+                <div class="avatar" style="width:36px;height:36px;font-size:12px;background:#f39c12">TK</div>
+                <div>
+                  <div style="font-weight:600;font-size:13px">Tyler Kim</div>
+                  <div style="font-size:11px;color:var(--text-muted)">kim1t@cmich.edu</div>
+                </div>
+              </div>
+            </td>
+            <td style="font-size:13px">Data Engineer</td>
+            <td>
+              <div style="font-size:13px">Information Systems</div>
+              <div style="font-size:11px;color:var(--warning);font-weight:600">GPA: 3.3</div>
+            </td>
+            <td style="font-size:12px;color:var(--text-muted)">Mar 12, 2025</td>
+            <td><button class="btn btn-ghost btn-sm">📄 View</button></td>
+            <td><span class="badge badge-applied">New</span></td>
+            <td>
+              <button class="btn btn-outline btn-sm">Review</button>
+              <button class="btn btn-ghost btn-sm">✗</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- PAGINATION -->
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-top:20px">
+      <span style="font-size:12px;color:var(--text-muted)">Showing 1–6 of 86 applicants</span>
+      <div style="display:flex;gap:8px">
+        <button class="btn btn-ghost btn-sm">← Prev</button>
+        <button class="btn btn-primary btn-sm">1</button>
+        <button class="btn btn-ghost btn-sm">2</button>
+        <button class="btn btn-ghost btn-sm">3</button>
+        <button class="btn btn-ghost btn-sm">Next →</button>
+      </div>
+    </div>
+  </main>
+</div>
+</body>
+</html>

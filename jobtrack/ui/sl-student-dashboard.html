@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Student Dashboard | JobTrack CMU</title>
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="sl-styles.css">
+<script src="https://mcp.figma.com/mcp/html-to-design/capture.js" async></script>
+</head>
+<body>
+
+<!-- SIDEBAR -->
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="sidebar-logo">Job<span>Track</span></div>
+    <div class="sidebar-tagline">CMU Career Services</div>
+  </div>
+  <div class="sidebar-nav">
+    <div class="nav-section">Navigation</div>
+    <a class="nav-item active" href="#"><span class="nav-icon">🏠</span> Dashboard</a>
+    <a class="nav-item" href="sl-student-jobs.html"><span class="nav-icon">🔍</span> Browse Jobs</a>
+    <a class="nav-item" href="sl-student-applications.html"><span class="nav-icon">📋</span> My Applications</a>
+    <a class="nav-item" href="sl-student-interviews.html"><span class="nav-icon">🗓️</span> Interviews</a>
+    <a class="nav-item" href="sl-student-profile.html"><span class="nav-icon">👤</span> My Profile</a>
+    <div class="nav-section" style="margin-top:16px;">Resources</div>
+    <a class="nav-item" href="#"><span class="nav-icon">📄</span> Resume Builder</a>
+    <a class="nav-item" href="#"><span class="nav-icon">💡</span> Career Tips</a>
+  </div>
+  <div class="sidebar-footer">
+    <div class="user-row">
+      <div class="user-avatar">JS</div>
+      <div>
+        <div class="user-name">Jordan Smith</div>
+        <div class="user-email">smith1js@cmich.edu</div>
+      </div>
+    </div>
+    <div class="logout-link">⬅ Sign Out</div>
+  </div>
+</div>
+
+<!-- MAIN -->
+<div class="main">
+  <div class="page-title">👋 Welcome back, Jordan!</div>
+  <div class="page-subtitle">Computer Science · Class of 2025 · GPA 3.72 · Here's your job search overview</div>
+
+  <!-- METRICS -->
+  <div class="metrics-row">
+    <div class="metric-card m-maroon">
+      <div class="metric-label">Jobs Applied</div>
+      <div class="metric-value">8</div>
+      <div class="metric-delta delta-up">↑ 3 this week</div>
+    </div>
+    <div class="metric-card m-gold">
+      <div class="metric-label">Interviews Scheduled</div>
+      <div class="metric-value">2</div>
+      <div class="metric-delta delta-up">↑ 1 new</div>
+    </div>
+    <div class="metric-card m-green">
+      <div class="metric-label">Active Job Postings</div>
+      <div class="metric-value">6</div>
+      <div class="metric-delta delta-neu">matching your skills</div>
+    </div>
+    <div class="metric-card m-blue">
+      <div class="metric-label">Profile Completion</div>
+      <div class="metric-value">82%</div>
+      <div class="metric-delta delta-neu">Add portfolio URL</div>
+    </div>
+  </div>
+
+  <div class="cols-7-3">
+    <!-- LEFT COLUMN -->
+    <div>
+      <!-- Application Pipeline -->
+      <div class="card">
+        <div class="card-title">📊 Application Pipeline</div>
+        <div style="display:flex;gap:10px;margin-bottom:14px;">
+          <div style="flex:1;text-align:center;padding:12px;background:#f8f9fa;border-radius:6px;">
+            <div style="font-size:22px;font-weight:700;color:#1565c0;">3</div>
+            <div style="font-size:11.5px;color:#6b6b6b;margin-top:2px;">Applied</div>
+          </div>
+          <div style="flex:1;text-align:center;padding:12px;background:#f8f9fa;border-radius:6px;">
+            <div style="font-size:22px;font-weight:700;color:#bf360c;">2</div>
+            <div style="font-size:11.5px;color:#6b6b6b;margin-top:2px;">Under Review</div>
+          </div>
+          <div style="flex:1;text-align:center;padding:12px;background:#f8f9fa;border-radius:6px;">
+            <div style="font-size:22px;font-weight:700;color:#6a1b9a;">2</div>
+            <div style="font-size:11.5px;color:#6b6b6b;margin-top:2px;">Interview</div>
+          </div>
+          <div style="flex:1;text-align:center;padding:12px;background:#f8f9fa;border-radius:6px;">
+            <div style="font-size:22px;font-weight:700;color:#2e7d32;">0</div>
+            <div style="font-size:11.5px;color:#6b6b6b;margin-top:2px;">Offer</div>
+          </div>
+          <div style="flex:1;text-align:center;padding:12px;background:#f8f9fa;border-radius:6px;">
+            <div style="font-size:22px;font-weight:700;color:#b71c1c;">1</div>
+            <div style="font-size:11.5px;color:#6b6b6b;margin-top:2px;">Rejected</div>
+          </div>
+        </div>
+        <div class="progress-wrap">
+          <div class="progress-label"><span>Overall Progress</span><span>25% placement rate target</span></div>
+          <div class="progress-bar"><div class="progress-fill pf-maroon" style="width:25%"></div></div>
+        </div>
+      </div>
+
+      <!-- Recent Applications -->
+      <div class="table-wrap">
+        <div class="table-head">
+          Recent Applications
+          <a href="sl-student-applications.html" class="btn btn-outline btn-sm">View All</a>
+        </div>
+        <table class="st-table">
+          <thead>
+            <tr>
+              <th>Job Title</th>
+              <th>Company</th>
+              <th>Type</th>
+              <th>Status</th>
+              <th>Applied</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="fw-600">Software Eng. Intern</td>
+              <td>TechCorp Inc.</td>
+              <td><span class="badge b-intern">Internship</span></td>
+              <td><span class="badge b-interview">Interview Scheduled</span></td>
+              <td class="text-muted">Mar 10, 2025</td>
+            </tr>
+            <tr>
+              <td class="fw-600">Full Stack Developer</td>
+              <td>TechCorp Inc.</td>
+              <td><span class="badge b-fulltime">Full-time</span></td>
+              <td><span class="badge b-applied">Applied</span></td>
+              <td class="text-muted">Mar 12, 2025</td>
+            </tr>
+            <tr>
+              <td class="fw-600">ML Engineer Intern</td>
+              <td>TechCorp Inc.</td>
+              <td><span class="badge b-intern">Internship</span></td>
+              <td><span class="badge b-review">Under Review</span></td>
+              <td class="text-muted">Mar 14, 2025</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Upcoming Interview Alert -->
+      <div class="alert alert-warning">
+        🗓️ <strong>Interview Tomorrow!</strong> &nbsp;Software Eng. Intern @ TechCorp · Mar 20, 2025 at 2:00 PM via Video Call.
+        <a href="sl-student-interviews.html" style="color:#bf360c;font-weight:600;margin-left:4px;">View Details →</a>
+      </div>
+
+      <!-- Recommended Jobs -->
+      <div class="card-title" style="margin-bottom:12px;">⚡ Recommended Jobs (Matches Your Skills)</div>
+      <div class="job-card">
+        <div style="flex:1;">
+          <div class="job-title">Software Engineering Intern</div>
+          <div class="job-company">TechCorp Inc. · Detroit, MI</div>
+          <div class="job-meta">
+            <span class="badge b-intern">Internship</span>
+            <span class="chip chip-maroon">Python</span>
+            <span class="chip chip-maroon">React</span>
+            <span class="chip chip-maroon">JavaScript</span>
+            <span class="job-deadline">📅 Deadline: May 1, 2025</span>
+          </div>
+        </div>
+        <div style="text-align:right;flex-shrink:0;">
+          <div class="job-salary">$18–$25/hr</div>
+          <button class="btn btn-primary btn-sm" style="margin-top:8px;">Apply Now</button>
+        </div>
+      </div>
+      <div class="job-card">
+        <div style="flex:1;">
+          <div class="job-title">ML Engineer Intern</div>
+          <div class="job-company">TechCorp Inc. · Detroit, MI</div>
+          <div class="job-meta">
+            <span class="badge b-intern">Internship</span>
+            <span class="chip chip-maroon">Python</span>
+            <span class="chip chip-maroon">Machine Learning</span>
+            <span class="job-deadline">📅 Deadline: May 10, 2025</span>
+          </div>
+        </div>
+        <div style="text-align:right;flex-shrink:0;">
+          <div class="job-salary">$20–$28/hr</div>
+          <button class="btn btn-primary btn-sm" style="margin-top:8px;">Apply Now</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT COLUMN -->
+    <div>
+      <!-- My Advisor -->
+      <div class="card">
+        <div class="card-title">👩‍🏫 My Advisor</div>
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px;">
+          <div class="s-avatar av-1" style="width:48px;height:48px;font-size:18px;">LC</div>
+          <div>
+            <div class="fw-600">Dr. Lisa Chen</div>
+            <div class="text-muted">Technology &amp; Engineering</div>
+            <div class="text-muted">Warriner Hall 101</div>
+          </div>
+        </div>
+        <button class="btn btn-outline" style="width:100%;justify-content:center;font-size:13px;">
+          📩 Message Advisor
+        </button>
+      </div>
+
+      <!-- Skills -->
+      <div class="card">
+        <div class="card-title">🛠️ My Skills</div>
+        <div>
+          <span class="chip chip-maroon">Python</span>
+          <span class="chip chip-maroon">Java</span>
+          <span class="chip chip-maroon">JavaScript</span>
+          <span class="chip chip-maroon">SQL</span>
+          <span class="chip chip-maroon">React</span>
+          <span class="chip chip-maroon">Node.js</span>
+          <span class="chip chip-gray">Git</span>
+          <span class="chip chip-gray">HTML/CSS</span>
+        </div>
+        <a href="sl-student-profile.html" style="display:block;margin-top:12px;font-size:12.5px;color:#6a0032;text-decoration:none;">+ Edit Skills</a>
+      </div>
+
+      <!-- Advisor Notes -->
+      <div class="card">
+        <div class="card-title">📝 Latest Advisor Notes</div>
+        <div class="note-card" style="border-left-color:#ffc107;margin-bottom:8px;">
+          <div class="note-header">
+            <span class="badge b-interview">Interview Prep</span>
+            <span class="note-date">Mar 14</span>
+          </div>
+          <div class="note-text">Practice STAR behavioral responses. Research TechCorp products before your interview.</div>
+        </div>
+        <div class="note-card" style="border-left-color:#6a0032;margin-bottom:0;">
+          <div class="note-header">
+            <span class="badge b-review">Resume Review</span>
+            <span class="note-date">Mar 10</span>
+          </div>
+          <div class="note-text">Add quantifiable achievements — e.g. "reduced load time by 30%".</div>
+        </div>
+      </div>
+
+      <!-- Quick Stats -->
+      <div class="card">
+        <div class="card-title">📈 Quick Stats</div>
+        <div class="progress-wrap">
+          <div class="progress-label"><span>Applications Sent</span><span>8/20 goal</span></div>
+          <div class="progress-bar"><div class="progress-fill pf-maroon" style="width:40%"></div></div>
+        </div>
+        <div class="progress-wrap">
+          <div class="progress-label"><span>Interview Rate</span><span>25%</span></div>
+          <div class="progress-bar"><div class="progress-fill pf-gold" style="width:25%"></div></div>
+        </div>
+        <div class="progress-wrap">
+          <div class="progress-label"><span>Profile Strength</span><span>82%</span></div>
+          <div class="progress-bar"><div class="progress-fill pf-green" style="width:82%"></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

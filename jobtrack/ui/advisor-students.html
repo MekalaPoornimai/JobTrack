@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JobTrack – Student Pipeline</title>
+<link rel="stylesheet" href="styles.css">
+<script src="https://mcp.figma.com/mcp/html-to-design/capture.js" async></script>
+</head>
+<body>
+<nav class="navbar">
+  <a href="index.html" class="navbar-brand">Job<span style="color:var(--gold)">Track</span></a>
+  <div style="margin-left:auto;display:flex;align-items:center;gap:16px">
+    <div class="navbar-user">
+      <div class="avatar" style="width:34px;height:34px;font-size:13px;background:var(--gold);color:var(--primary)">RT</div>
+      <span class="navbar-user-name">Dr. Rebecca Thompson</span>
+    </div>
+  </div>
+</nav>
+
+<div class="app-layout">
+  <aside class="sidebar">
+    <div style="padding:16px 20px;margin-bottom:4px">
+      <div style="display:flex;align-items:center;gap:10px">
+        <div class="avatar">RT</div>
+        <div>
+          <div style="font-size:13px;font-weight:700;color:var(--text-dark)">Dr. R. Thompson</div>
+          <div style="font-size:11px;color:var(--text-muted)">CS Advisor</div>
+        </div>
+      </div>
+    </div>
+    <div class="divider" style="margin:0 0 8px"></div>
+    <div class="sidebar-section-title">Main</div>
+    <a href="advisor-dashboard.html" class="sidebar-link"><span class="icon">🏠</span>Dashboard</a>
+    <a href="advisor-students.html" class="sidebar-link active"><span class="icon">🎓</span>My Students<span class="sidebar-badge">24</span></a>
+    <a href="advisor-notes.html" class="sidebar-link"><span class="icon">📝</span>Advising Notes<span class="sidebar-badge">8</span></a>
+    <div class="sidebar-section-title">Tools</div>
+    <a href="#" class="sidebar-link"><span class="icon">📊</span>Reports</a>
+    <a href="advisor-settings.html" class="sidebar-link"><span class="icon">⚙️</span>Settings</a>
+    <a href="advisor-helpdesk.html" class="sidebar-link"><span class="icon">❓</span>Help Desk</a>
+    <a href="login.html" class="sidebar-link"><span class="icon">🚪</span>Sign Out</a>
+  </aside>
+
+  <main class="main-content">
+    <div class="page-header-row">
+      <div>
+        <h1 class="page-title">Student Pipeline</h1>
+        <p class="page-subtitle">Monitor all 24 assigned students and their application progress</p>
+      </div>
+      <div style="display:flex;gap:12px">
+        <div class="search-bar">
+          <span class="search-icon">🔍</span>
+          <input type="text" placeholder="Search students...">
+        </div>
+      </div>
+    </div>
+
+    <!-- FILTER -->
+    <div class="filter-row" style="margin-bottom:20px">
+      <div class="filter-chip active">All Students (24)</div>
+      <div class="filter-chip">Actively Applying (18)</div>
+      <div class="filter-chip">In Interviews (8)</div>
+      <div class="filter-chip">Offers (9)</div>
+      <div class="filter-chip" style="border-color:var(--danger);color:var(--danger)">⚠️ Needs Help (3)</div>
+    </div>
+
+    <!-- STUDENT TABLE -->
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Student</th>
+            <th>Major</th>
+            <th>Applications</th>
+            <th>Interviews</th>
+            <th>Status</th>
+            <th>Last Activity</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <div style="display:flex;align-items:center;gap:10px">
+                <div class="avatar" style="width:36px;height:36px;font-size:12px">JS</div>
+                <div>
+                  <div style="font-weight:600;font-size:13px">Jordan Smith</div>
+                  <div style="font-size:11px;color:var(--text-muted)">GPA 3.7 · 2025</div>
+                </div>
+              </div>
+            </td>
+            <td style="font-size:13px">Computer Science</td>
+            <td>
+              <div style="font-size:13px;font-weight:600">12</div>
+              <div style="font-size:11px;color:var(--success)">2 offers</div>
+            </td>
+            <td><span style="font-size:13px;font-weight:600">3</span> <span style="font-size:11px;color:var(--text-muted)">scheduled</span></td>
+            <td><span class="badge badge-offer">Strong 🌟</span></td>
+            <td style="font-size:12px;color:var(--text-muted)">Today</td>
+            <td>
+              <a href="advisor-student-view.html" class="btn btn-outline btn-sm">View</a>
+              <a href="advisor-add-note.html" class="btn btn-ghost btn-sm">Add Note</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div style="display:flex;align-items:center;gap:10px">
+                <div class="avatar" style="width:36px;height:36px;font-size:12px;background:#3498db">AL</div>
+                <div>
+                  <div style="font-weight:600;font-size:13px">Alex Lee</div>
+                  <div style="font-size:11px;color:var(--text-muted)">GPA 3.9 · 2025</div>
+                </div>
+              </div>
+            </td>
+            <td style="font-size:13px">Computer Science</td>
+            <td>
+              <div style="font-size:13px;font-weight:600">9</div>
+              <div style="font-size:11px;color:var(--success)">1 offer</div>
+            </td>
+            <td><span style="font-size:13px;font-weight:600">4</span> <span style="font-size:11px;color:var(--text-muted)">scheduled</span></td>
+            <td><span class="badge badge-offer">Excellent 🌟</span></td>
+            <td style="font-size:12px;color:var(--text-muted)">Yesterday</td>
+            <td>
+              <a href="advisor-student-view.html" class="btn btn-outline btn-sm">View</a>
+              <a href="advisor-add-note.html" class="btn btn-ghost btn-sm">Add Note</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div style="display:flex;align-items:center;gap:10px">
+                <div class="avatar" style="width:36px;height:36px;font-size:12px;background:#e74c3c">MR</div>
+                <div>
+                  <div style="font-weight:600;font-size:13px">Maya Rodriguez</div>
+                  <div style="font-size:11px;color:var(--text-muted)">GPA 3.8 · 2025</div>
+                </div>
+              </div>
+            </td>
+            <td style="font-size:13px">Information Systems</td>
+            <td>
+              <div style="font-size:13px;font-weight:600">7</div>
+              <div style="font-size:11px;color:var(--info)">1 interview upcoming</div>
+            </td>
+            <td><span style="font-size:13px;font-weight:600">2</span> <span style="font-size:11px;color:var(--text-muted)">scheduled</span></td>
+            <td><span class="badge badge-interview">On Track</span></td>
+            <td style="font-size:12px;color:var(--text-muted)">Mar 13</td>
+            <td>
+              <a href="advisor-student-view.html" class="btn btn-outline btn-sm">View</a>
+              <a href="advisor-add-note.html" class="btn btn-ghost btn-sm">Add Note</a>
+            </td>
+          </tr>
+          <tr style="background:#fff8f0">
+            <td>
+              <div style="display:flex;align-items:center;gap:10px">
+                <div class="avatar" style="width:36px;height:36px;font-size:12px;background:#e74c3c">KW</div>
+                <div>
+                  <div style="font-weight:600;font-size:13px">Kevin Wang</div>
+                  <div style="font-size:11px;color:var(--text-muted)">GPA 3.1 · 2025</div>
+                </div>
+              </div>
+            </td>
+            <td style="font-size:13px">Computer Science</td>
+            <td>
+              <div style="font-size:13px;font-weight:600;color:var(--danger)">0</div>
+              <div style="font-size:11px;color:var(--danger)">30 days inactive</div>
+            </td>
+            <td><span style="font-size:13px;font-weight:600">0</span></td>
+            <td><span class="badge badge-rejected">⚠️ At Risk</span></td>
+            <td style="font-size:12px;color:var(--danger)">30 days ago</td>
+            <td>
+              <a href="advisor-add-note.html" class="btn btn-primary btn-sm">Intervene</a>
+              <a href="advisor-add-note.html" class="btn btn-ghost btn-sm">Add Note</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div style="display:flex;align-items:center;gap:10px">
+                <div class="avatar" style="width:36px;height:36px;font-size:12px;background:#9b59b6">SC</div>
+                <div>
+                  <div style="font-weight:600;font-size:13px">Sarah Chen</div>
+                  <div style="font-size:11px;color:var(--text-muted)">GPA 3.95 · 2025</div>
+                </div>
+              </div>
+            </td>
+            <td style="font-size:13px">Computer Science</td>
+            <td>
+              <div style="font-size:13px;font-weight:600">8</div>
+              <div style="font-size:11px;color:var(--success)">1 offer</div>
+            </td>
+            <td><span style="font-size:13px;font-weight:600">3</span></td>
+            <td><span class="badge badge-offer">Excellent 🌟</span></td>
+            <td style="font-size:12px;color:var(--text-muted)">Mar 12</td>
+            <td>
+              <a href="advisor-student-view.html" class="btn btn-outline btn-sm">View</a>
+              <a href="advisor-add-note.html" class="btn btn-ghost btn-sm">Add Note</a>
+            </td>
+          </tr>
+          <tr style="background:#fff8f0">
+            <td>
+              <div style="display:flex;align-items:center;gap:10px">
+                <div class="avatar" style="width:36px;height:36px;font-size:12px;background:#f39c12">LP</div>
+                <div>
+                  <div style="font-weight:600;font-size:13px">Lisa Patel</div>
+                  <div style="font-size:11px;color:var(--text-muted)">GPA 3.4 · 2025</div>
+                </div>
+              </div>
+            </td>
+            <td style="font-size:13px">Marketing</td>
+            <td>
+              <div style="font-size:13px;font-weight:600">5</div>
+              <div style="font-size:11px;color:var(--danger)">3 recent rejections</div>
+            </td>
+            <td><span style="font-size:13px;font-weight:600">1</span></td>
+            <td><span class="badge badge-rejected">⚠️ Struggling</span></td>
+            <td style="font-size:12px;color:var(--text-muted)">Mar 14</td>
+            <td>
+              <a href="advisor-add-note.html" class="btn btn-primary btn-sm">Intervene</a>
+              <a href="advisor-add-note.html" class="btn btn-ghost btn-sm">Add Note</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div style="display:flex;align-items:center;gap:10px">
+                <div class="avatar" style="width:36px;height:36px;font-size:12px;background:#2ecc71">DP</div>
+                <div>
+                  <div style="font-weight:600;font-size:13px">David Park</div>
+                  <div style="font-size:11px;color:var(--text-muted)">GPA 3.5 · 2025</div>
+                </div>
+              </div>
+            </td>
+            <td style="font-size:13px">Graphic Design</td>
+            <td>
+              <div style="font-size:13px;font-weight:600">6</div>
+              <div style="font-size:11px;color:var(--info)">2 under review</div>
+            </td>
+            <td><span style="font-size:13px;font-weight:600">1</span></td>
+            <td><span class="badge badge-interview">On Track</span></td>
+            <td style="font-size:12px;color:var(--text-muted)">Mar 11</td>
+            <td>
+              <a href="advisor-student-view.html" class="btn btn-outline btn-sm">View</a>
+              <a href="advisor-add-note.html" class="btn btn-ghost btn-sm">Add Note</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-top:16px">
+      <span style="font-size:12px;color:var(--text-muted)">Showing 7 of 24 students</span>
+      <div style="display:flex;gap:8px">
+        <button class="btn btn-ghost btn-sm">← Prev</button>
+        <button class="btn btn-primary btn-sm">1</button>
+        <button class="btn btn-ghost btn-sm">2</button>
+        <button class="btn btn-ghost btn-sm">3</button>
+        <button class="btn btn-ghost btn-sm">Next →</button>
+      </div>
+    </div>
+  </main>
+</div>
+</body>
+</html>

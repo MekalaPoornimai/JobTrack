@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JobTrack – Advisor Dashboard</title>
+<link rel="stylesheet" href="styles.css">
+<script src="https://mcp.figma.com/mcp/html-to-design/capture.js" async></script>
+</head>
+<body>
+<nav class="navbar">
+  <a href="index.html" class="navbar-brand">Job<span style="color:var(--gold)">Track</span></a>
+  <div style="margin-left:auto;display:flex;align-items:center;gap:16px">
+    <span style="color:rgba(255,255,255,0.6);font-size:13px">🔔</span>
+    <div class="navbar-user">
+      <div class="avatar" style="width:34px;height:34px;font-size:13px;background:var(--gold);color:var(--primary)">RT</div>
+      <span class="navbar-user-name">Dr. Rebecca Thompson</span>
+    </div>
+  </div>
+</nav>
+
+<div class="app-layout">
+  <aside class="sidebar">
+    <div style="padding:16px 20px;margin-bottom:4px">
+      <div style="display:flex;align-items:center;gap:10px">
+        <div class="avatar" style="background:var(--primary)">RT</div>
+        <div>
+          <div style="font-size:13px;font-weight:700;color:var(--text-dark)">Dr. R. Thompson</div>
+          <div style="font-size:11px;color:var(--text-muted)">CS Department · Advisor</div>
+        </div>
+      </div>
+    </div>
+    <div class="divider" style="margin:0 0 8px"></div>
+    <div class="sidebar-section-title">Main</div>
+    <a href="advisor-dashboard.html" class="sidebar-link active"><span class="icon">🏠</span>Dashboard</a>
+    <a href="advisor-students.html" class="sidebar-link"><span class="icon">🎓</span>My Students<span class="sidebar-badge">24</span></a>
+    <a href="advisor-notes.html" class="sidebar-link"><span class="icon">📝</span>Advising Notes<span class="sidebar-badge">8</span></a>
+    <div class="sidebar-section-title">Tools</div>
+    <a href="#" class="sidebar-link"><span class="icon">📊</span>Reports</a>
+    <a href="#" class="sidebar-link"><span class="icon">⚙️</span>Settings</a>
+    <a href="login.html" class="sidebar-link"><span class="icon">🚪</span>Sign Out</a>
+  </aside>
+
+  <main class="main-content">
+    <div class="page-header-row">
+      <div>
+        <h1 class="page-title">Advisor Dashboard</h1>
+        <p class="page-subtitle">Monitor and support your 24 assigned students</p>
+      </div>
+      <button class="btn btn-primary" onclick="document.getElementById('noteModal').style.display='flex'">+ Add Advising Note</button>
+    </div>
+
+    <!-- STATS -->
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-icon blue">🎓</div>
+        <div>
+          <div class="stat-value">24</div>
+          <div class="stat-label">Assigned Students</div>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon maroon">📋</div>
+        <div>
+          <div class="stat-value">148</div>
+          <div class="stat-label">Total Applications</div>
+          <div class="stat-change up">↑ 18 this week</div>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon gold">🗓️</div>
+        <div>
+          <div class="stat-value">32</div>
+          <div class="stat-label">Interviews Scheduled</div>
+          <div class="stat-change up">↑ 8 this week</div>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon green">🎉</div>
+        <div>
+          <div class="stat-value">9</div>
+          <div class="stat-label">Offers Received</div>
+          <div class="stat-change up">↑ 3 new offers</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid-2" style="margin-bottom:24px">
+      <!-- STUDENT PIPELINE STATUS -->
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">Student Pipeline Overview</div>
+          <a href="advisor-students.html" style="font-size:12px;color:var(--primary);text-decoration:none">View all →</a>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:12px">
+          <div>
+            <div style="display:flex;justify-content:space-between;margin-bottom:6px;font-size:13px">
+              <div style="display:flex;align-items:center;gap:6px"><span style="width:10px;height:10px;border-radius:50%;background:#17a2b8;display:inline-block"></span>Actively Applying</div>
+              <span style="font-weight:600">18 / 24</span>
+            </div>
+            <div class="progress"><div class="progress-bar" style="width:75%;background:#17a2b8"></div></div>
+          </div>
+          <div>
+            <div style="display:flex;justify-content:space-between;margin-bottom:6px;font-size:13px">
+              <div style="display:flex;align-items:center;gap:6px"><span style="width:10px;height:10px;border-radius:50%;background:var(--gold);display:inline-block"></span>In Interviews</div>
+              <span style="font-weight:600">8 / 24</span>
+            </div>
+            <div class="progress"><div class="progress-bar" style="width:33%;background:var(--gold)"></div></div>
+          </div>
+          <div>
+            <div style="display:flex;justify-content:space-between;margin-bottom:6px;font-size:13px">
+              <div style="display:flex;align-items:center;gap:6px"><span style="width:10px;height:10px;border-radius:50%;background:var(--success);display:inline-block"></span>Offers Received</div>
+              <span style="font-weight:600">9 / 24</span>
+            </div>
+            <div class="progress"><div class="progress-bar" style="width:37%;background:var(--success)"></div></div>
+          </div>
+          <div>
+            <div style="display:flex;justify-content:space-between;margin-bottom:6px;font-size:13px">
+              <div style="display:flex;align-items:center;gap:6px"><span style="width:10px;height:10px;border-radius:50%;background:var(--danger);display:inline-block"></span>⚠️ Needs Intervention</div>
+              <span style="font-weight:600;color:var(--danger)">3 / 24</span>
+            </div>
+            <div class="progress"><div class="progress-bar" style="width:12%;background:var(--danger)"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- STUDENTS NEEDING ATTENTION -->
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">⚠️ Needs Attention</div>
+          <span class="badge badge-rejected">3 students</span>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:0">
+          <div style="display:flex;align-items:center;gap:10px;padding:12px 0;border-bottom:1px solid var(--border)">
+            <div class="avatar" style="width:36px;height:36px;font-size:12px;background:#e74c3c">KW</div>
+            <div style="flex:1">
+              <div style="font-size:13px;font-weight:600;color:var(--text-dark)">Kevin Wang</div>
+              <div style="font-size:11px;color:var(--text-muted)">CS · 0 applications in 30 days</div>
+            </div>
+            <button class="btn btn-primary btn-sm">Add Note</button>
+          </div>
+          <div style="display:flex;align-items:center;gap:10px;padding:12px 0;border-bottom:1px solid var(--border)">
+            <div class="avatar" style="width:36px;height:36px;font-size:12px;background:#f39c12">LP</div>
+            <div style="flex:1">
+              <div style="font-size:13px;font-weight:600;color:var(--text-dark)">Lisa Patel</div>
+              <div style="font-size:11px;color:var(--text-muted)">Marketing · 3 rejections recently</div>
+            </div>
+            <button class="btn btn-primary btn-sm">Add Note</button>
+          </div>
+          <div style="display:flex;align-items:center;gap:10px;padding:12px 0">
+            <div class="avatar" style="width:36px;height:36px;font-size:12px;background:#3498db">BJ</div>
+            <div style="flex:1">
+              <div style="font-size:13px;font-weight:600;color:var(--text-dark)">Brian Johnson</div>
+              <div style="font-size:11px;color:var(--text-muted)">IS · Profile incomplete</div>
+            </div>
+            <button class="btn btn-primary btn-sm">Add Note</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RECENT ADVISING NOTES + TOP PERFORMERS -->
+    <div class="grid-2">
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">Recent Advising Notes</div>
+          <a href="advisor-notes.html" style="font-size:12px;color:var(--primary);text-decoration:none">View all →</a>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:12px">
+          <div style="padding:12px;background:var(--bg);border-radius:10px;border-left:3px solid var(--primary)">
+            <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:6px">
+              <div style="font-size:13px;font-weight:600">Jordan Smith</div>
+              <span style="font-size:11px;color:var(--text-muted)">Mar 15</span>
+            </div>
+            <div style="font-size:12px;color:var(--text-muted);line-height:1.5">Great progress! Prepare case studies for Google interview. Update LinkedIn with latest projects.</div>
+          </div>
+          <div style="padding:12px;background:var(--bg);border-radius:10px;border-left:3px solid var(--warning)">
+            <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:6px">
+              <div style="font-size:13px;font-weight:600">Lisa Patel <span class="badge badge-rejected" style="margin-left:6px">Intervention</span></div>
+              <span style="font-size:11px;color:var(--text-muted)">Mar 14</span>
+            </div>
+            <div style="font-size:12px;color:var(--text-muted);line-height:1.5">Struggling with interviews. Scheduled mock interview practice sessions for this week.</div>
+          </div>
+          <div style="padding:12px;background:var(--bg);border-radius:10px;border-left:3px solid var(--success)">
+            <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:6px">
+              <div style="font-size:13px;font-weight:600">Alex Lee</div>
+              <span style="font-size:11px;color:var(--text-muted)">Mar 13</span>
+            </div>
+            <div style="font-size:12px;color:var(--text-muted);line-height:1.5">Received offer from Microsoft! Helped negotiate salary terms. Exceptional outcome.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TOP PERFORMERS -->
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">🏆 Top Performers</div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:0">
+          <div style="display:flex;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid var(--border)">
+            <span style="font-size:20px">🥇</span>
+            <div class="avatar" style="width:32px;height:32px;font-size:11px">JS</div>
+            <div style="flex:1">
+              <div style="font-size:13px;font-weight:600">Jordan Smith</div>
+              <div style="font-size:11px;color:var(--text-muted)">12 apps · 3 interviews · 2 offers</div>
+            </div>
+            <span class="badge badge-offer">2 Offers</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid var(--border)">
+            <span style="font-size:20px">🥈</span>
+            <div class="avatar" style="width:32px;height:32px;font-size:11px;background:#3498db">AL</div>
+            <div style="flex:1">
+              <div style="font-size:13px;font-weight:600">Alex Lee</div>
+              <div style="font-size:11px;color:var(--text-muted)">9 apps · 4 interviews · 1 offer</div>
+            </div>
+            <span class="badge badge-offer">1 Offer</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid var(--border)">
+            <span style="font-size:20px">🥉</span>
+            <div class="avatar" style="width:32px;height:32px;font-size:11px;background:#9b59b6">SC</div>
+            <div style="flex:1">
+              <div style="font-size:13px;font-weight:600">Sarah Chen</div>
+              <div style="font-size:11px;color:var(--text-muted)">8 apps · 3 interviews · 1 offer</div>
+            </div>
+            <span class="badge badge-offer">1 Offer</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:12px;padding:12px 0">
+            <span style="font-size:20px">4️⃣</span>
+            <div class="avatar" style="width:32px;height:32px;font-size:11px;background:#e74c3c">MR</div>
+            <div style="flex:1">
+              <div style="font-size:13px;font-weight:600">Maya Rodriguez</div>
+              <div style="font-size:11px;color:var(--text-muted)">7 apps · 2 interviews · 1 offer</div>
+            </div>
+            <span class="badge badge-interview">Interview</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+</body>
+</html>

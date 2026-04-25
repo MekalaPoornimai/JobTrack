@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JobTrack – My Applications</title>
+<link rel="stylesheet" href="styles.css">
+<script src="https://mcp.figma.com/mcp/html-to-design/capture.js" async></script>
+</head>
+<body>
+<nav class="navbar">
+  <a href="index.html" class="navbar-brand">Job<span style="color:var(--gold)">Track</span></a>
+  <div style="margin-left:auto;display:flex;align-items:center;gap:16px">
+    <span style="color:rgba(255,255,255,0.6);font-size:13px">🔔</span>
+    <div class="navbar-user">
+      <div class="avatar" style="width:34px;height:34px;font-size:13px;background:var(--gold);color:var(--primary)">JS</div>
+      <span class="navbar-user-name">Jordan Smith</span>
+    </div>
+  </div>
+</nav>
+
+<div class="app-layout">
+  <aside class="sidebar">
+    <div style="padding:16px 20px 0">
+      <div class="avatar" style="background:var(--gold);color:var(--primary);margin:0 auto 8px">JS</div>
+      <div style="text-align:center;font-size:13px;font-weight:700;color:var(--text-dark)">Jordan Smith</div>
+      <div style="text-align:center;font-size:11px;color:var(--text-muted);margin-bottom:16px">Computer Science · 2025</div>
+    </div>
+    <div class="divider" style="margin:0 0 8px"></div>
+    <a href="student-dashboard.html" class="sidebar-link"><span class="icon">🏠</span>Dashboard</a>
+    <a href="student-jobs.html" class="sidebar-link"><span class="icon">💼</span>Browse Jobs</a>
+    <a href="student-applications.html" class="sidebar-link active"><span class="icon">📋</span>My Applications</a>
+    <a href="student-interviews.html" class="sidebar-link"><span class="icon">🗓️</span>Interviews</a>
+    <a href="student-profile.html" class="sidebar-link"><span class="icon">👤</span>My Profile</a>
+  </aside>
+
+  <main class="main-content">
+    <div class="page-header-row">
+      <div>
+        <h1 class="page-title">My Applications</h1>
+        <p class="page-subtitle">Track all your job applications and their status</p>
+      </div>
+      <a href="student-jobs.html" class="btn btn-primary">+ Apply to More Jobs</a>
+    </div>
+
+    <!-- STATS ROW -->
+    <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-bottom:24px">
+      <div style="background:white;border-radius:12px;padding:16px;text-align:center;border:1px solid var(--border);box-shadow:var(--shadow)">
+        <div style="font-size:24px;font-weight:800;color:var(--text-dark)">12</div>
+        <div style="font-size:11px;color:var(--text-muted);margin-top:2px">Total</div>
+      </div>
+      <div style="background:white;border-radius:12px;padding:16px;text-align:center;border:1px solid var(--border);box-shadow:var(--shadow)">
+        <div style="font-size:24px;font-weight:800;color:#1565c0">4</div>
+        <div style="font-size:11px;color:var(--text-muted);margin-top:2px">Applied</div>
+      </div>
+      <div style="background:white;border-radius:12px;padding:16px;text-align:center;border:1px solid var(--border);box-shadow:var(--shadow)">
+        <div style="font-size:24px;font-weight:800;color:#c77700">3</div>
+        <div style="font-size:11px;color:var(--text-muted);margin-top:2px">Under Review</div>
+      </div>
+      <div style="background:white;border-radius:12px;padding:16px;text-align:center;border:1px solid var(--border);box-shadow:var(--shadow)">
+        <div style="font-size:24px;font-weight:800;color:var(--success)">3</div>
+        <div style="font-size:11px;color:var(--text-muted);margin-top:2px">Interview</div>
+      </div>
+      <div style="background:white;border-radius:12px;padding:16px;text-align:center;border:2px solid var(--gold);box-shadow:var(--shadow)">
+        <div style="font-size:24px;font-weight:800;color:#1b5e20">2</div>
+        <div style="font-size:11px;color:var(--text-muted);margin-top:2px">Offers 🎉</div>
+      </div>
+    </div>
+
+    <!-- FILTER TABS -->
+    <div class="tabs">
+      <div class="tab active">All (12)</div>
+      <div class="tab">Applied (4)</div>
+      <div class="tab">Under Review (3)</div>
+      <div class="tab">Interview (3)</div>
+      <div class="tab">Offers (2)</div>
+      <div class="tab">Rejected (0)</div>
+    </div>
+
+    <!-- APPLICATIONS TABLE -->
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Company</th>
+            <th>Position</th>
+            <th>Type</th>
+            <th>Date Applied</th>
+            <th>Last Updated</th>
+            <th>Status</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <div style="display:flex;align-items:center;gap:10px">
+                <div style="width:34px;height:34px;background:var(--bg);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:16px">💡</div>
+                <div>
+                  <div style="font-weight:600;font-size:13px">Meta</div>
+                  <div style="font-size:11px;color:var(--text-muted)">Menlo Park, CA</div>
+                </div>
+              </div>
+            </td>
+            <td style="font-weight:500">Product Manager Intern</td>
+            <td><span class="badge badge-applied">Internship</span></td>
+            <td>Mar 1, 2025</td>
+            <td>Mar 14, 2025</td>
+            <td><span class="badge badge-offer">Offer 🎉</span></td>
+            <td>
+              <button class="btn btn-success btn-sm">Accept</button>
+              <button class="btn btn-ghost btn-sm">Decline</button>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div style="display:flex;align-items:center;gap:10px">
+                <div style="width:34px;height:34px;background:var(--bg);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:16px">🏢</div>
+                <div>
+                  <div style="font-weight:600;font-size:13px">Microsoft</div>
+                  <div style="font-size:11px;color:var(--text-muted)">Redmond, WA</div>
+                </div>
+              </div>
+            </td>
+            <td style="font-weight:500">Software Engineer Intern</td>
+            <td><span class="badge badge-applied">Internship</span></td>
+            <td>Feb 15, 2025</td>
+            <td>Mar 12, 2025</td>
+            <td><span class="badge badge-interview">Interview</span></td>
+            <td>
+              <a href="student-interviews.html" class="btn btn-primary btn-sm">Prep</a>
+              <button class="btn btn-ghost btn-sm">View</button>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div style="display:flex;align-items:center;gap:10px">
+                <div style="width:34px;height:34px;background:var(--bg);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:16px">🔍</div>
+                <div>
+                  <div style="font-weight:600;font-size:13px">Google</div>
+                  <div style="font-size:11px;color:var(--text-muted)">Mountain View, CA</div>
+                </div>
+              </div>
+            </td>
+            <td style="font-weight:500">Data Analyst</td>
+            <td><span class="badge badge-applied">Internship</span></td>
+            <td>Feb 20, 2025</td>
+            <td>Mar 10, 2025</td>
+            <td><span class="badge badge-interview">Interview</span></td>
+            <td>
+              <button class="btn btn-primary btn-sm">Prep</button>
+              <button class="btn btn-ghost btn-sm">View</button>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div style="display:flex;align-items:center;gap:10px">
+                <div style="width:34px;height:34px;background:var(--bg);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:16px">📦</div>
+                <div>
+                  <div style="font-weight:600;font-size:13px">Amazon</div>
+                  <div style="font-size:11px;color:var(--text-muted)">Seattle, WA</div>
+                </div>
+              </div>
+            </td>
+            <td style="font-weight:500">ML Engineer Intern</td>
+            <td><span class="badge badge-applied">Internship</span></td>
+            <td>Mar 5, 2025</td>
+            <td>Mar 8, 2025</td>
+            <td><span class="badge badge-pending">Under Review</span></td>
+            <td>
+              <button class="btn btn-ghost btn-sm">View</button>
+              <button class="btn btn-ghost btn-sm">Withdraw</button>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div style="display:flex;align-items:center;gap:10px">
+                <div style="width:34px;height:34px;background:var(--bg);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:16px">🍎</div>
+                <div>
+                  <div style="font-weight:600;font-size:13px">Apple</div>
+                  <div style="font-size:11px;color:var(--text-muted)">Cupertino, CA</div>
+                </div>
+              </div>
+            </td>
+            <td style="font-weight:500">iOS Developer Intern</td>
+            <td><span class="badge badge-applied">Internship</span></td>
+            <td>Mar 7, 2025</td>
+            <td>Mar 7, 2025</td>
+            <td><span class="badge badge-applied">Applied</span></td>
+            <td>
+              <button class="btn btn-ghost btn-sm">View</button>
+              <button class="btn btn-ghost btn-sm">Withdraw</button>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div style="display:flex;align-items:center;gap:10px">
+                <div style="width:34px;height:34px;background:var(--bg);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:16px">🚗</div>
+                <div>
+                  <div style="font-weight:600;font-size:13px">Ford Motor Co.</div>
+                  <div style="font-size:11px;color:var(--text-muted)">Dearborn, MI</div>
+                </div>
+              </div>
+            </td>
+            <td style="font-weight:500">Software Engineer</td>
+            <td><span class="badge badge-gold">Full-time</span></td>
+            <td>Mar 10, 2025</td>
+            <td>Mar 13, 2025</td>
+            <td><span class="badge badge-offer">Offer 🎉</span></td>
+            <td>
+              <button class="btn btn-success btn-sm">Accept</button>
+              <button class="btn btn-ghost btn-sm">View</button>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div style="display:flex;align-items:center;gap:10px">
+                <div style="width:34px;height:34px;background:var(--bg);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:16px">🏦</div>
+                <div>
+                  <div style="font-weight:600;font-size:13px">JP Morgan Chase</div>
+                  <div style="font-size:11px;color:var(--text-muted)">Detroit, MI</div>
+                </div>
+              </div>
+            </td>
+            <td style="font-weight:500">Financial Analyst Intern</td>
+            <td><span class="badge badge-applied">Internship</span></td>
+            <td>Mar 11, 2025</td>
+            <td>Mar 11, 2025</td>
+            <td><span class="badge badge-applied">Applied</span></td>
+            <td>
+              <button class="btn btn-ghost btn-sm">View</button>
+              <button class="btn btn-ghost btn-sm">Withdraw</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+</div>
+</body>
+</html>

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JobTrack – Post a Job</title>
+<link rel="stylesheet" href="styles.css">
+<script src="https://mcp.figma.com/mcp/html-to-design/capture.js" async></script>
+</head>
+<body>
+<nav class="navbar">
+  <a href="index.html" class="navbar-brand">Job<span style="color:var(--gold)">Track</span></a>
+  <div style="margin-left:auto;display:flex;align-items:center;gap:16px">
+    <div class="navbar-user">
+      <div class="avatar" style="width:34px;height:34px;font-size:13px;background:var(--gold);color:var(--primary)">MS</div>
+      <span class="navbar-user-name">Microsoft · Recruiter</span>
+    </div>
+  </div>
+</nav>
+
+<div class="app-layout">
+  <aside class="sidebar">
+    <div style="padding:16px 20px;margin-bottom:4px">
+      <div style="display:flex;align-items:center;gap:10px">
+        <div style="width:40px;height:40px;background:var(--bg);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px">🏢</div>
+        <div>
+          <div style="font-size:13px;font-weight:700;color:var(--text-dark)">Microsoft</div>
+          <div style="font-size:11px;color:var(--text-muted)">Technology</div>
+        </div>
+      </div>
+    </div>
+    <div class="divider" style="margin:0 0 8px"></div>
+    <a href="employer-dashboard.html" class="sidebar-link"><span class="icon">🏠</span>Dashboard</a>
+    <a href="employer-post-job.html" class="sidebar-link active"><span class="icon">➕</span>Post a Job</a>
+    <a href="employer-jobs.html" class="sidebar-link"><span class="icon">💼</span>My Job Postings</a>
+    <a href="employer-applicants.html" class="sidebar-link"><span class="icon">👥</span>Applicants</a>
+    <a href="employer-interviews.html" class="sidebar-link"><span class="icon">🗓️</span>Interviews</a>
+  </aside>
+
+  <main class="main-content">
+    <div class="breadcrumb">
+      <a href="employer-dashboard.html">Dashboard</a>
+      <span class="breadcrumb-sep">›</span>
+      <span>Post a Job</span>
+    </div>
+    <div class="page-header-row">
+      <div>
+        <h1 class="page-title">Post a New Job</h1>
+        <p class="page-subtitle">Create a job listing for CMU students</p>
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 320px;gap:24px">
+      <!-- FORM -->
+      <div>
+        <!-- Basic Info -->
+        <div class="card" style="margin-bottom:20px">
+          <h2 style="font-size:15px;font-weight:700;color:var(--primary);margin-bottom:20px;padding-bottom:12px;border-bottom:1px solid var(--border)">📋 Basic Information</h2>
+          <div class="form-group">
+            <label class="form-label">Job Title *</label>
+            <input type="text" class="form-control" placeholder="e.g., Software Engineer Intern">
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Employment Type *</label>
+              <select class="form-control form-select">
+                <option>Full-time</option>
+                <option selected>Internship</option>
+                <option>Part-time</option>
+                <option>Co-op</option>
+                <option>Contract</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Work Mode *</label>
+              <select class="form-control form-select">
+                <option>On-site</option>
+                <option selected>Hybrid</option>
+                <option>Remote</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Location</label>
+              <input type="text" class="form-control" placeholder="Redmond, WA" value="Redmond, WA">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Department</label>
+              <input type="text" class="form-control" placeholder="Engineering" value="Azure Engineering">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Salary / Hourly Rate</label>
+              <input type="text" class="form-control" placeholder="e.g., $45/hr or $80,000/yr" value="$45–$50/hr">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Duration (if Internship)</label>
+              <input type="text" class="form-control" placeholder="12 weeks" value="12 weeks">
+            </div>
+          </div>
+        </div>
+
+        <!-- Description -->
+        <div class="card" style="margin-bottom:20px">
+          <h2 style="font-size:15px;font-weight:700;color:var(--primary);margin-bottom:20px;padding-bottom:12px;border-bottom:1px solid var(--border)">📝 Job Description</h2>
+          <div class="form-group">
+            <label class="form-label">Overview *</label>
+            <textarea class="form-control" rows="4" placeholder="Describe the role and what the candidate will work on...">Microsoft Azure is looking for passionate software engineering interns to join our team for a 12-week summer internship. You'll work on real-world projects that impact millions of users.</textarea>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Responsibilities *</label>
+            <textarea class="form-control" rows="5" placeholder="List the key responsibilities...">• Design, code, and test scalable software solutions
+• Collaborate with cross-functional teams on feature development
+• Participate in code reviews and engineering best practices
+• Present work to team members at project demos
+• Work in an Agile/Scrum development environment</textarea>
+          </div>
+        </div>
+
+        <!-- Requirements -->
+        <div class="card" style="margin-bottom:20px">
+          <h2 style="font-size:15px;font-weight:700;color:var(--primary);margin-bottom:20px;padding-bottom:12px;border-bottom:1px solid var(--border)">✅ Requirements</h2>
+          <div class="form-group">
+            <label class="form-label">Qualifications *</label>
+            <textarea class="form-control" rows="4" placeholder="List required qualifications...">• Currently pursuing Bachelor's or Master's in CS, Engineering, or related field
+• Strong foundation in data structures and algorithms
+• Experience with Python, C#, Java, or similar languages
+• Familiarity with cloud platforms (Azure, AWS, or GCP)</textarea>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Required Skills (comma-separated)</label>
+            <input type="text" class="form-control" placeholder="e.g., Python, SQL, React" value="Python, C#, Azure, REST APIs, Git, Agile, SQL, Docker">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Minimum GPA (optional)</label>
+            <input type="number" class="form-control" placeholder="e.g., 3.0" value="3.0" style="width:120px">
+          </div>
+        </div>
+
+        <!-- Timeline -->
+        <div class="card" style="margin-bottom:24px">
+          <h2 style="font-size:15px;font-weight:700;color:var(--primary);margin-bottom:20px;padding-bottom:12px;border-bottom:1px solid var(--border)">📅 Timeline</h2>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Application Deadline *</label>
+              <input type="date" class="form-control" value="2025-04-01">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Expected Start Date</label>
+              <input type="date" class="form-control" value="2025-06-02">
+            </div>
+          </div>
+        </div>
+
+        <!-- ACTIONS -->
+        <div style="display:flex;gap:12px">
+          <button class="btn btn-primary btn-lg">Publish Job Posting</button>
+          <button class="btn btn-ghost btn-lg">Save as Draft</button>
+          <button class="btn btn-ghost btn-lg" style="margin-left:auto;color:var(--danger)">Discard</button>
+        </div>
+      </div>
+
+      <!-- PREVIEW SIDEBAR -->
+      <div>
+        <div class="card" style="position:sticky;top:84px">
+          <div class="card-title" style="margin-bottom:16px">📣 Posting Preview</div>
+          <div style="background:var(--bg);border-radius:12px;padding:16px;margin-bottom:16px">
+            <div style="display:flex;gap:10px;align-items:flex-start;margin-bottom:12px">
+              <div style="width:40px;height:40px;background:white;border:1px solid var(--border);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px">🏢</div>
+              <div>
+                <div style="font-size:14px;font-weight:700;color:var(--text-dark)">Software Engineer Intern</div>
+                <div style="font-size:12px;color:var(--text-muted)">Microsoft</div>
+              </div>
+            </div>
+            <div style="display:flex;flex-wrap:wrap;gap:8px;font-size:11px;color:var(--text-muted)">
+              <span>📍 Redmond, WA</span>
+              <span>💰 $45–$50/hr</span>
+              <span>⏱️ Internship</span>
+              <span>🏠 Hybrid</span>
+            </div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:8px;font-size:12px;color:var(--text-muted)">
+            <div style="display:flex;justify-content:space-between">
+              <span>Visibility</span>
+              <span style="font-weight:600;color:var(--success)">Public</span>
+            </div>
+            <div style="display:flex;justify-content:space-between">
+              <span>Audience</span>
+              <span style="font-weight:600;color:var(--text-dark)">All CMU Students</span>
+            </div>
+            <div style="display:flex;justify-content:space-between">
+              <span>Estimated reach</span>
+              <span style="font-weight:600;color:var(--primary)">2,400+ students</span>
+            </div>
+          </div>
+          <div class="alert alert-info" style="margin-top:16px;font-size:12px">
+            <span>ℹ️</span>
+            <span>Your posting will be reviewed by CMU Career Services before going live (usually within 24 hours).</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+</body>
+</html>

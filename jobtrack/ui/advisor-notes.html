@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JobTrack – Advising Notes</title>
+<link rel="stylesheet" href="styles.css">
+<script src="https://mcp.figma.com/mcp/html-to-design/capture.js" async></script>
+</head>
+<body>
+<nav class="navbar">
+  <a href="index.html" class="navbar-brand">Job<span style="color:var(--gold)">Track</span></a>
+  <div style="margin-left:auto;display:flex;align-items:center;gap:16px">
+    <div class="navbar-user">
+      <div class="avatar" style="width:34px;height:34px;font-size:13px;background:var(--gold);color:var(--primary)">RT</div>
+      <span class="navbar-user-name">Dr. Rebecca Thompson</span>
+    </div>
+  </div>
+</nav>
+
+<div class="app-layout">
+  <aside class="sidebar">
+    <div style="padding:16px 20px;margin-bottom:4px">
+      <div style="display:flex;align-items:center;gap:10px">
+        <div class="avatar">RT</div>
+        <div>
+          <div style="font-size:13px;font-weight:700;color:var(--text-dark)">Dr. R. Thompson</div>
+          <div style="font-size:11px;color:var(--text-muted)">CS Advisor</div>
+        </div>
+      </div>
+    </div>
+    <div class="divider" style="margin:0 0 8px"></div>
+    <div class="sidebar-section-title">Main</div>
+    <a href="advisor-dashboard.html" class="sidebar-link"><span class="icon">🏠</span>Dashboard</a>
+    <a href="advisor-students.html" class="sidebar-link"><span class="icon">🎓</span>My Students<span class="sidebar-badge">24</span></a>
+    <a href="advisor-notes.html" class="sidebar-link active"><span class="icon">📝</span>Advising Notes<span class="sidebar-badge">8</span></a>
+    <div class="sidebar-section-title">Tools</div>
+    <a href="#" class="sidebar-link"><span class="icon">📊</span>Reports</a>
+    <a href="advisor-settings.html" class="sidebar-link"><span class="icon">⚙️</span>Settings</a>
+    <a href="advisor-helpdesk.html" class="sidebar-link"><span class="icon">❓</span>Help Desk</a>
+    <a href="login.html" class="sidebar-link"><span class="icon">🚪</span>Sign Out</a>
+  </aside>
+
+  <main class="main-content">
+    <div class="page-header-row">
+      <div>
+        <h1 class="page-title">Advising Notes</h1>
+        <p class="page-subtitle">Track all notes and interventions for your students</p>
+      </div>
+      <button class="btn btn-primary">+ Add New Note</button>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 380px;gap:24px">
+      <!-- NOTES LIST -->
+      <div>
+        <div class="filter-row">
+          <div class="filter-chip active">All Notes (24)</div>
+          <div class="filter-chip">This Week (8)</div>
+          <div class="filter-chip">Interventions (3)</div>
+          <div class="filter-chip">Positive (12)</div>
+        </div>
+
+        <div style="display:flex;flex-direction:column;gap:12px">
+          <!-- Note 1 - Positive -->
+          <div class="card" style="border-left:4px solid var(--success)">
+            <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px">
+              <div style="display:flex;gap:10px;align-items:center">
+                <div class="avatar" style="width:36px;height:36px;font-size:12px">JS</div>
+                <div>
+                  <div style="font-size:14px;font-weight:700;color:var(--text-dark)">Jordan Smith</div>
+                  <div style="font-size:11px;color:var(--text-muted)">Computer Science · GPA 3.7</div>
+                </div>
+              </div>
+              <div style="text-align:right">
+                <div style="font-size:11px;color:var(--text-muted)">Mar 15, 2025 · 2:30 PM</div>
+                <span class="badge badge-interview" style="margin-top:4px;display:inline-flex">Career Advice</span>
+              </div>
+            </div>
+            <p style="font-size:13px;color:var(--text-body);line-height:1.7;margin-bottom:12px">
+              Great progress on your applications! Make sure to prepare case studies for the Google interview. Also, update your LinkedIn profile with your latest project. Let me know if you need mock interview help. Consider following up with Microsoft recruiter this week.
+            </p>
+            <div style="display:flex;justify-content:space-between;align-items:center">
+              <div style="display:flex;gap:8px">
+                <span class="badge badge-interview">Interview Prep</span>
+                <span class="badge badge-gold">LinkedIn</span>
+              </div>
+              <div style="display:flex;gap:8px">
+                <button class="btn btn-ghost btn-sm">✏️ Edit</button>
+                <button class="btn btn-ghost btn-sm">🗑️</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Note 2 - Intervention -->
+          <div class="card" style="border-left:4px solid var(--danger)">
+            <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px">
+              <div style="display:flex;gap:10px;align-items:center">
+                <div class="avatar" style="width:36px;height:36px;font-size:12px;background:#f39c12">LP</div>
+                <div>
+                  <div style="font-size:14px;font-weight:700;color:var(--text-dark)">Lisa Patel</div>
+                  <div style="font-size:11px;color:var(--text-muted)">Marketing · GPA 3.4</div>
+                </div>
+              </div>
+              <div style="text-align:right">
+                <div style="font-size:11px;color:var(--text-muted)">Mar 14, 2025 · 10:00 AM</div>
+                <span class="badge badge-rejected" style="margin-top:4px;display:inline-flex">⚠️ Intervention</span>
+              </div>
+            </div>
+            <p style="font-size:13px;color:var(--text-body);line-height:1.7;margin-bottom:12px">
+              Student is struggling with interviews. Has received 3 rejections in the past 2 weeks. Scheduled mock interview practice sessions for Mon/Wed this week. Recommended resume workshop. Will follow up on Mar 21.
+            </p>
+            <div style="display:flex;justify-content:space-between;align-items:center">
+              <div style="display:flex;gap:8px">
+                <span class="badge badge-rejected">Interview Practice</span>
+                <span class="badge badge-maroon">Follow-up Needed</span>
+              </div>
+              <div style="display:flex;gap:8px">
+                <button class="btn btn-ghost btn-sm">✏️ Edit</button>
+                <button class="btn btn-ghost btn-sm">🗑️</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Note 3 - Positive -->
+          <div class="card" style="border-left:4px solid var(--gold)">
+            <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px">
+              <div style="display:flex;gap:10px;align-items:center">
+                <div class="avatar" style="width:36px;height:36px;font-size:12px;background:#3498db">AL</div>
+                <div>
+                  <div style="font-size:14px;font-weight:700;color:var(--text-dark)">Alex Lee</div>
+                  <div style="font-size:11px;color:var(--text-muted)">Computer Science · GPA 3.9</div>
+                </div>
+              </div>
+              <div style="text-align:right">
+                <div style="font-size:11px;color:var(--text-muted)">Mar 13, 2025 · 3:00 PM</div>
+                <span class="badge badge-offer" style="margin-top:4px;display:inline-flex">🎉 Offer Received</span>
+              </div>
+            </div>
+            <p style="font-size:13px;color:var(--text-body);line-height:1.7;margin-bottom:12px">
+              Alex received an offer from Microsoft for Data Engineer position ($120K). Helped negotiate salary terms — counter-offered and received $5K signing bonus. Exceptional outcome. Encouraged to also explore the Google final round before deciding.
+            </p>
+            <div style="display:flex;justify-content:space-between;align-items:center">
+              <div style="display:flex;gap:8px">
+                <span class="badge badge-interview">Salary Negotiation</span>
+              </div>
+              <div style="display:flex;gap:8px">
+                <button class="btn btn-ghost btn-sm">✏️ Edit</button>
+                <button class="btn btn-ghost btn-sm">🗑️</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Note 4 -->
+          <div class="card" style="border-left:4px solid var(--danger)">
+            <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px">
+              <div style="display:flex;gap:10px;align-items:center">
+                <div class="avatar" style="width:36px;height:36px;font-size:12px;background:#e74c3c">KW</div>
+                <div>
+                  <div style="font-size:14px;font-weight:700;color:var(--text-dark)">Kevin Wang</div>
+                  <div style="font-size:11px;color:var(--text-muted)">Computer Science · GPA 3.1</div>
+                </div>
+              </div>
+              <div style="text-align:right">
+                <div style="font-size:11px;color:var(--text-muted)">Mar 12, 2025 · 11:00 AM</div>
+                <span class="badge badge-rejected" style="margin-top:4px;display:inline-flex">⚠️ Intervention</span>
+              </div>
+            </div>
+            <p style="font-size:13px;color:var(--text-body);line-height:1.7;margin-bottom:12px">
+              No applications submitted in 30+ days. Met with student — expressed anxiety about job search. Referred to campus counseling services. Created action plan: apply to 2 jobs per week minimum. Next check-in scheduled for Mar 20.
+            </p>
+            <div style="display:flex;justify-content:space-between;align-items:center">
+              <div style="display:flex;gap:8px">
+                <span class="badge badge-rejected">Counseling Referral</span>
+                <span class="badge badge-maroon">Action Plan</span>
+              </div>
+              <div style="display:flex;gap:8px">
+                <button class="btn btn-ghost btn-sm">✏️ Edit</button>
+                <button class="btn btn-ghost btn-sm">🗑️</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ADD NOTE PANEL -->
+      <div>
+        <div class="card" style="position:sticky;top:84px;border-top:4px solid var(--primary)">
+          <div class="card-title" style="margin-bottom:20px">+ Add Advising Note</div>
+          <div class="form-group">
+            <label class="form-label">Student *</label>
+            <select class="form-control form-select">
+              <option>Select student...</option>
+              <option>Jordan Smith</option>
+              <option>Alex Lee</option>
+              <option>Maya Rodriguez</option>
+              <option>Kevin Wang</option>
+              <option>Lisa Patel</option>
+              <option>Sarah Chen</option>
+              <option>David Park</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Note Category *</label>
+            <select class="form-control form-select">
+              <option>Career Advice</option>
+              <option>Interview Prep</option>
+              <option>Resume Review</option>
+              <option>Salary Negotiation</option>
+              <option>Intervention Required</option>
+              <option>Offer Guidance</option>
+              <option>Follow-up Needed</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label" style="display:flex;align-items:center;gap:8px">
+              <input type="checkbox" style="accent-color:var(--danger)">
+              <span style="color:var(--danger)">⚠️ Mark as Intervention</span>
+            </label>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Note Content *</label>
+            <textarea class="form-control" rows="6" placeholder="Write your advising note here...
+
+Include:
+- Current status observations
+- Action items for the student
+- Resources recommended
+- Follow-up plans"></textarea>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Related Application (optional)</label>
+            <select class="form-control form-select">
+              <option>Not linked to application</option>
+              <option>Microsoft – SWE Intern</option>
+              <option>Google – Data Analyst</option>
+              <option>Amazon – ML Intern</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Tags</label>
+            <input type="text" class="form-control" placeholder="e.g., interview-prep, offer, follow-up">
+          </div>
+          <button class="btn btn-primary btn-block btn-lg">Save Advising Note</button>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+</body>
+</html>

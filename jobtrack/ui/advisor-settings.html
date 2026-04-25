@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JobTrack – Settings</title>
+<link rel="stylesheet" href="styles.css">
+<script src="https://mcp.figma.com/mcp/html-to-design/capture.js" async></script>
+<style>
+  .toggle-switch {
+    position: relative;
+    width: 42px;
+    height: 24px;
+    flex-shrink: 0;
+  }
+  .toggle-switch input { opacity: 0; width: 0; height: 0; }
+  .toggle-slider {
+    position: absolute;
+    inset: 0;
+    background: #ccc;
+    border-radius: 99px;
+    cursor: pointer;
+    transition: 0.2s;
+  }
+  .toggle-slider:before {
+    content: '';
+    position: absolute;
+    width: 18px; height: 18px;
+    left: 3px; bottom: 3px;
+    background: white;
+    border-radius: 50%;
+    transition: 0.2s;
+  }
+  .toggle-switch input:checked + .toggle-slider { background: var(--primary); }
+  .toggle-switch input:checked + .toggle-slider:before { transform: translateX(18px); }
+  .settings-section {
+    margin-bottom: 32px;
+    scroll-margin-top: 90px;
+  }
+  .settings-section-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-bottom: 16px;
+    border-bottom: 2px solid var(--border);
+    margin-bottom: 24px;
+  }
+  .settings-section-icon {
+    width: 40px; height: 40px;
+    border-radius: 10px;
+    background: #fef3f8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    flex-shrink: 0;
+  }
+  .toggle-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .toggle-row:last-child { border-bottom: none; }
+  .avatar-upload {
+    position: relative;
+    width: 96px;
+    height: 96px;
+    cursor: pointer;
+  }
+  .avatar-upload:hover .avatar-overlay { opacity: 1; }
+  .avatar-overlay {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: rgba(106,0,50,0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: 0.2s;
+    font-size: 20px;
+  }
+</style>
+</head>
+<body>
+<nav class="navbar">
+  <a href="index.html" class="navbar-brand">Job<span style="color:var(--gold)">Track</span></a>
+  <div style="margin-left:auto;display:flex;align-items:center;gap:16px">
+    <span style="color:rgba(255,255,255,0.6);font-size:13px">🔔</span>
+    <div class="navbar-user">
+      <div class="avatar" style="width:34px;height:34px;font-size:13px;background:var(--gold);color:var(--primary)">RT</div>
+      <span class="navbar-user-name">Dr. Rebecca Thompson</span>
+    </div>
+  </div>
+</nav>
+
+<div class="app-layout">
+  <aside class="sidebar">
+    <div style="padding:16px 20px;margin-bottom:4px">
+      <div style="display:flex;align-items:center;gap:10px">
+        <div class="avatar" style="background:var(--primary)">RT</div>
+        <div>
+          <div style="font-size:13px;font-weight:700;color:var(--text-dark)">Dr. R. Thompson</div>
+          <div style="font-size:11px;color:var(--text-muted)">CS Department · Advisor</div>
+        </div>
+      </div>
+    </div>
+    <div class="divider" style="margin:0 0 8px"></div>
+    <div class="sidebar-section-title">Main</div>
+    <a href="advisor-dashboard.html" class="sidebar-link"><span class="icon">🏠</span>Dashboard</a>
+    <a href="advisor-students.html" class="sidebar-link"><span class="icon">🎓</span>My Students<span class="sidebar-badge">24</span></a>
+    <a href="advisor-notes.html" class="sidebar-link"><span class="icon">📝</span>Advising Notes<span class="sidebar-badge">8</span></a>
+    <div class="sidebar-section-title">Tools</div>
+    <a href="#" class="sidebar-link"><span class="icon">📊</span>Reports</a>
+    <a href="advisor-settings.html" class="sidebar-link active"><span class="icon">⚙️</span>Settings</a>
+    <a href="advisor-helpdesk.html" class="sidebar-link"><span class="icon">❓</span>Help Desk</a>
+    <a href="login.html" class="sidebar-link"><span class="icon">🚪</span>Sign Out</a>
+  </aside>
+
+  <main class="main-content">
+    <div class="page-header-row">
+      <div>
+        <h1 class="page-title">Settings</h1>
+        <p class="page-subtitle">Manage your profile, preferences, and account security</p>
+      </div>
+      <button class="btn btn-primary" onclick="saveAll()">💾 Save All Changes</button>
+    </div>
+
+    <!-- QUICK NAV -->
+    <div style="display:flex;gap:8px;margin-bottom:28px;flex-wrap:wrap">
+      <a href="#profile" class="btn btn-ghost btn-sm">👤 Profile</a>
+      <a href="#notifications" class="btn btn-ghost btn-sm">🔔 Notifications</a>
+      <a href="#privacy" class="btn btn-ghost btn-sm">🔒 Privacy</a>
+      <a href="#security" class="btn btn-ghost btn-sm">🛡️ Security</a>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 300px;gap:24px">
+      <div>
+
+        <!-- ═══ SECTION 1: PROFILE ═══ -->
+        <div class="card settings-section" id="profile">
+          <div class="settings-section-header">
+            <div class="settings-section-icon">👤</div>
+            <div>
+              <div style="font-size:16px;font-weight:700;color:var(--text-dark)">Profile Information</div>
+              <div style="font-size:12px;color:var(--text-muted)">Update your personal and professional details</div>
+            </div>
+          </div>
+
+          <!-- AVATAR -->
+          <div style="display:flex;align-items:center;gap:20px;margin-bottom:24px;padding:16px;background:var(--bg);border-radius:12px">
+            <div class="avatar-upload">
+              <div style="width:96px;height:96px;border-radius:50%;background:var(--gold);display:flex;align-items:center;justify-content:center;font-size:32px;font-weight:800;color:var(--primary);border:3px solid white;box-shadow:var(--shadow)">RT</div>
+              <div class="avatar-overlay">📷</div>
+            </div>
+            <div>
+              <div style="font-size:14px;font-weight:600;color:var(--text-dark);margin-bottom:4px">Profile Photo</div>
+              <div style="font-size:12px;color:var(--text-muted);margin-bottom:12px">JPG, PNG or GIF · Max 2MB</div>
+              <div style="display:flex;gap:8px">
+                <button class="btn btn-outline btn-sm">📷 Upload Photo</button>
+                <button class="btn btn-ghost btn-sm">Remove</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- FIELDS -->
+          <div class="form-row" style="margin-bottom:0">
+            <div class="form-group">
+              <label class="form-label">First Name *</label>
+              <input type="text" class="form-control" value="Rebecca">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Last Name *</label>
+              <input type="text" class="form-control" value="Thompson">
+            </div>
+          </div>
+          <div class="form-row" style="margin-bottom:0">
+            <div class="form-group">
+              <label class="form-label">Title / Role</label>
+              <input type="text" class="form-control" value="Dr.">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Department</label>
+              <input type="text" class="form-control" value="Computer Science">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">CMU Email *</label>
+            <input type="email" class="form-control" value="thompson1r@cmich.edu">
+          </div>
+          <div class="form-row" style="margin-bottom:0">
+            <div class="form-group">
+              <label class="form-label">Office Location</label>
+              <input type="text" class="form-control" value="Pearce Hall 202">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Phone</label>
+              <input type="text" class="form-control" value="(989) 774-3000">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Office Hours</label>
+            <input type="text" class="form-control" value="Mon/Wed 10:00–12:00 PM, Fri 2:00–4:00 PM">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Bio / About</label>
+            <textarea class="form-control" rows="3" placeholder="Brief description for students viewing your profile...">Career advisor specializing in Computer Science and Information Systems. 8+ years helping CMU students launch careers in tech. Former software engineer at Ford Motor Company.</textarea>
+          </div>
+          <button class="btn btn-primary" onclick="showToast('Profile saved successfully!')">Save Profile</button>
+        </div>
+
+        <!-- ═══ SECTION 2: NOTIFICATIONS ═══ -->
+        <div class="card settings-section" id="notifications">
+          <div class="settings-section-header">
+            <div class="settings-section-icon">🔔</div>
+            <div>
+              <div style="font-size:16px;font-weight:700;color:var(--text-dark)">Notification Preferences</div>
+              <div style="font-size:12px;color:var(--text-muted)">Choose what alerts you receive and how</div>
+            </div>
+          </div>
+
+          <div style="margin-bottom:20px">
+            <div style="font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:0.5px;color:var(--text-muted);margin-bottom:12px">Student Activity</div>
+            <div class="toggle-row">
+              <div>
+                <div style="font-size:13px;font-weight:600;color:var(--text-dark)">New Application Submitted</div>
+                <div style="font-size:12px;color:var(--text-muted)">When an assigned student submits a job application</div>
+              </div>
+              <label class="toggle-switch"><input type="checkbox" checked><span class="toggle-slider"></span></label>
+            </div>
+            <div class="toggle-row">
+              <div>
+                <div style="font-size:13px;font-weight:600;color:var(--text-dark)">Interview Scheduled</div>
+                <div style="font-size:12px;color:var(--text-muted)">When a student gets an interview invitation</div>
+              </div>
+              <label class="toggle-switch"><input type="checkbox" checked><span class="toggle-slider"></span></label>
+            </div>
+            <div class="toggle-row">
+              <div>
+                <div style="font-size:13px;font-weight:600;color:var(--text-dark)">Offer Received</div>
+                <div style="font-size:12px;color:var(--text-muted)">When a student receives a job or internship offer</div>
+              </div>
+              <label class="toggle-switch"><input type="checkbox" checked><span class="toggle-slider"></span></label>
+            </div>
+            <div class="toggle-row">
+              <div>
+                <div style="font-size:13px;font-weight:600;color:var(--text-dark)">⚠️ Student Inactivity Alert</div>
+                <div style="font-size:12px;color:var(--text-muted)">When a student has no activity for 14+ days</div>
+              </div>
+              <label class="toggle-switch"><input type="checkbox" checked><span class="toggle-slider"></span></label>
+            </div>
+            <div class="toggle-row">
+              <div>
+                <div style="font-size:13px;font-weight:600;color:var(--text-dark)">Profile Updated</div>
+                <div style="font-size:12px;color:var(--text-muted)">When a student updates their profile or resume</div>
+              </div>
+              <label class="toggle-switch"><input type="checkbox"><span class="toggle-slider"></span></label>
+            </div>
+          </div>
+
+          <div style="margin-bottom:20px">
+            <div style="font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:0.5px;color:var(--text-muted);margin-bottom:12px">Advising & Notes</div>
+            <div class="toggle-row">
+              <div>
+                <div style="font-size:13px;font-weight:600;color:var(--text-dark)">Follow-up Reminders</div>
+                <div style="font-size:12px;color:var(--text-muted)">Reminders for scheduled student follow-ups</div>
+              </div>
+              <label class="toggle-switch"><input type="checkbox" checked><span class="toggle-slider"></span></label>
+            </div>
+            <div class="toggle-row">
+              <div>
+                <div style="font-size:13px;font-weight:600;color:var(--text-dark)">Weekly Pipeline Summary</div>
+                <div style="font-size:12px;color:var(--text-muted)">Weekly digest of all student pipeline activity</div>
+              </div>
+              <label class="toggle-switch"><input type="checkbox" checked><span class="toggle-slider"></span></label>
+            </div>
+            <div class="toggle-row">
+              <div>
+                <div style="font-size:13px;font-weight:600;color:var(--text-dark)">New Student Assigned</div>
+                <div style="font-size:12px;color:var(--text-muted)">When a new student is assigned to you</div>
+              </div>
+              <label class="toggle-switch"><input type="checkbox" checked><span class="toggle-slider"></span></label>
+            </div>
+          </div>
+
+          <div>
+            <div style="font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:0.5px;color:var(--text-muted);margin-bottom:12px">Delivery Method</div>
+            <div class="toggle-row">
+              <div>
+                <div style="font-size:13px;font-weight:600;color:var(--text-dark)">Email Notifications</div>
+                <div style="font-size:12px;color:var(--text-muted)">Receive alerts at thompson1r@cmich.edu</div>
+              </div>
+              <label class="toggle-switch"><input type="checkbox" checked><span class="toggle-slider"></span></label>
+            </div>
+            <div class="toggle-row">
+              <div>
+                <div style="font-size:13px;font-weight:600;color:var(--text-dark)">In-App Notifications</div>
+                <div style="font-size:12px;color:var(--text-muted)">Show notification bell alerts in JobTrack</div>
+              </div>
+              <label class="toggle-switch"><input type="checkbox" checked><span class="toggle-slider"></span></label>
+            </div>
+            <div class="toggle-row">
+              <div>
+                <div style="font-size:13px;font-weight:600;color:var(--text-dark)">SMS Notifications</div>
+                <div style="font-size:12px;color:var(--text-muted)">Text message alerts for urgent items only</div>
+              </div>
+              <label class="toggle-switch"><input type="checkbox"><span class="toggle-slider"></span></label>
+            </div>
+          </div>
+          <button class="btn btn-primary" style="margin-top:16px" onclick="showToast('Notification preferences saved!')">Save Preferences</button>
+        </div>
+
+        <!-- ═══ SECTION 3: PRIVACY ═══ -->
+        <div class="card settings-section" id="privacy">
+          <div class="settings-section-header">
+            <div class="settings-section-icon">🔒</div>
+            <div>
+              <div style="font-size:16px;font-weight:700;color:var(--text-dark)">Privacy & Visibility</div>
+              <div style="font-size:12px;color:var(--text-muted)">Control what students and administrators can see</div>
+            </div>
+          </div>
+
+          <div class="toggle-row">
+            <div>
+              <div style="font-size:13px;font-weight:600;color:var(--text-dark)">Show Profile to Students</div>
+              <div style="font-size:12px;color:var(--text-muted)">Students can view your name, photo, and office hours</div>
+            </div>
+            <label class="toggle-switch"><input type="checkbox" checked><span class="toggle-slider"></span></label>
+          </div>
+          <div class="toggle-row">
+            <div>
+              <div style="font-size:13px;font-weight:600;color:var(--text-dark)">Show Office Hours Publicly</div>
+              <div style="font-size:12px;color:var(--text-muted)">All CMU students can see your office hours</div>
+            </div>
+            <label class="toggle-switch"><input type="checkbox" checked><span class="toggle-slider"></span></label>
+          </div>
+          <div class="toggle-row">
+            <div>
+              <div style="font-size:13px;font-weight:600;color:var(--text-dark)">Allow Students to Message Me</div>
+              <div style="font-size:12px;color:var(--text-muted)">Assigned students can send you direct messages</div>
+            </div>
+            <label class="toggle-switch"><input type="checkbox" checked><span class="toggle-slider"></span></label>
+          </div>
+          <div class="toggle-row">
+            <div>
+              <div style="font-size:13px;font-weight:600;color:var(--text-dark)">Show in Advisor Directory</div>
+              <div style="font-size:12px;color:var(--text-muted)">Listed in CMU's public advisor directory</div>
+            </div>
+            <label class="toggle-switch"><input type="checkbox" checked><span class="toggle-slider"></span></label>
+          </div>
+          <div class="toggle-row">
+            <div>
+              <div style="font-size:13px;font-weight:600;color:var(--text-dark)">Share Activity with Admins</div>
+              <div style="font-size:12px;color:var(--text-muted)">Administrators can view your advising activity reports</div>
+            </div>
+            <label class="toggle-switch"><input type="checkbox" checked><span class="toggle-slider"></span></label>
+          </div>
+          <div class="toggle-row">
+            <div>
+              <div style="font-size:13px;font-weight:600;color:var(--text-dark)">Private Note Default</div>
+              <div style="font-size:12px;color:var(--text-muted)">New notes are private by default (hidden from students)</div>
+            </div>
+            <label class="toggle-switch"><input type="checkbox"><span class="toggle-slider"></span></label>
+          </div>
+          <button class="btn btn-primary" style="margin-top:16px" onclick="showToast('Privacy settings saved!')">Save Privacy Settings</button>
+        </div>
+
+        <!-- ═══ SECTION 4: SECURITY ═══ -->
+        <div class="card settings-section" id="security">
+          <div class="settings-section-header">
+            <div class="settings-section-icon">🛡️</div>
+            <div>
+              <div style="font-size:16px;font-weight:700;color:var(--text-dark)">Account & Security</div>
+              <div style="font-size:12px;color:var(--text-muted)">Manage your password and two-factor authentication</div>
+            </div>
+          </div>
+
+          <!-- PASSWORD CHANGE -->
+          <div style="margin-bottom:28px">
+            <div style="font-size:14px;font-weight:600;color:var(--text-dark);margin-bottom:16px">Change Password</div>
+            <div class="form-group">
+              <label class="form-label">Current Password</label>
+              <input type="password" class="form-control" placeholder="Enter current password">
+            </div>
+            <div class="form-row" style="margin-bottom:0">
+              <div class="form-group">
+                <label class="form-label">New Password</label>
+                <input type="password" class="form-control" placeholder="Min. 8 characters">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Confirm New Password</label>
+                <input type="password" class="form-control" placeholder="Repeat new password">
+              </div>
+            </div>
+            <div style="padding:10px 14px;background:#e8f5e9;border-radius:8px;font-size:12px;color:#2e7d32;margin-bottom:16px">
+              ✅ Password must be 8+ characters, include uppercase, number, and special character
+            </div>
+            <button class="btn btn-outline btn-sm" onclick="showToast('Password updated successfully!')">Update Password</button>
+          </div>
+
+          <div class="divider"></div>
+
+          <!-- TWO-FACTOR AUTH -->
+          <div style="margin-bottom:24px">
+            <div style="font-size:14px;font-weight:600;color:var(--text-dark);margin-bottom:8px">Two-Factor Authentication (2FA)</div>
+            <div class="alert alert-success" style="margin-bottom:16px">
+              <span>🔐</span><span>2FA is currently <strong>enabled</strong> — your account is protected</span>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:10px">
+              <div style="display:flex;align-items:center;gap:12px;padding:14px;border:1px solid var(--border);border-radius:10px">
+                <span style="font-size:22px">📱</span>
+                <div style="flex:1">
+                  <div style="font-size:13px;font-weight:600;color:var(--text-dark)">Authenticator App</div>
+                  <div style="font-size:12px;color:var(--text-muted)">Google Authenticator · Last verified 3 days ago</div>
+                </div>
+                <span class="badge badge-interview">Active</span>
+              </div>
+              <div style="display:flex;align-items:center;gap:12px;padding:14px;border:1px solid var(--border);border-radius:10px">
+                <span style="font-size:22px">📧</span>
+                <div style="flex:1">
+                  <div style="font-size:13px;font-weight:600;color:var(--text-dark)">Email Backup Code</div>
+                  <div style="font-size:12px;color:var(--text-muted)">thompson1r@cmich.edu · Backup method</div>
+                </div>
+                <span class="badge badge-applied">Backup</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <!-- SESSION INFO -->
+          <div style="margin-bottom:24px">
+            <div style="font-size:14px;font-weight:600;color:var(--text-dark);margin-bottom:16px">Active Sessions</div>
+            <div style="display:flex;flex-direction:column;gap:8px">
+              <div style="display:flex;align-items:center;gap:12px;padding:12px;background:var(--bg);border-radius:10px">
+                <span style="font-size:18px">💻</span>
+                <div style="flex:1">
+                  <div style="font-size:13px;font-weight:600;color:var(--text-dark)">Chrome – Windows 11</div>
+                  <div style="font-size:11px;color:var(--text-muted)">Mt. Pleasant, MI · Current session</div>
+                </div>
+                <span class="badge badge-interview" style="font-size:10px">Current</span>
+              </div>
+              <div style="display:flex;align-items:center;gap:12px;padding:12px;background:var(--bg);border-radius:10px">
+                <span style="font-size:18px">📱</span>
+                <div style="flex:1">
+                  <div style="font-size:13px;font-weight:600;color:var(--text-dark)">Safari – iPhone 15</div>
+                  <div style="font-size:11px;color:var(--text-muted)">Mt. Pleasant, MI · 2 days ago</div>
+                </div>
+                <button class="btn btn-ghost btn-sm" style="font-size:11px">Revoke</button>
+              </div>
+            </div>
+            <button class="btn btn-danger btn-sm" style="margin-top:12px" onclick="showToast('All other sessions signed out.')">Sign Out All Other Sessions</button>
+          </div>
+
+          <div class="divider"></div>
+
+          <!-- DANGER ZONE -->
+          <div>
+            <div style="font-size:14px;font-weight:700;color:var(--danger);margin-bottom:12px">⚠️ Danger Zone</div>
+            <div style="padding:16px;border:2px solid #fce4ec;border-radius:10px;background:#fffbfb">
+              <div style="font-size:13px;font-weight:600;color:var(--text-dark);margin-bottom:4px">Delete Account</div>
+              <div style="font-size:12px;color:var(--text-muted);margin-bottom:12px">Permanently delete your JobTrack account and all associated data. This action cannot be undone.</div>
+              <button class="btn btn-danger btn-sm">Delete My Account</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- RIGHT STICKY NAV -->
+      <div>
+        <div class="card" style="position:sticky;top:84px">
+          <div class="card-title" style="margin-bottom:16px;font-size:14px">Jump To Section</div>
+          <div style="display:flex;flex-direction:column;gap:4px">
+            <a href="#profile" style="display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:8px;color:var(--text-body);text-decoration:none;font-size:13px;font-weight:500;transition:background 0.2s" onmouseover="this.style.background='var(--bg)'" onmouseout="this.style.background=''">
+              <span>👤</span> Profile Information
+            </a>
+            <a href="#notifications" style="display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:8px;color:var(--text-body);text-decoration:none;font-size:13px;font-weight:500;transition:background 0.2s" onmouseover="this.style.background='var(--bg)'" onmouseout="this.style.background=''">
+              <span>🔔</span> Notifications
+            </a>
+            <a href="#privacy" style="display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:8px;color:var(--text-body);text-decoration:none;font-size:13px;font-weight:500;transition:background 0.2s" onmouseover="this.style.background='var(--bg)'" onmouseout="this.style.background=''">
+              <span>🔒</span> Privacy & Visibility
+            </a>
+            <a href="#security" style="display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:8px;color:var(--text-body);text-decoration:none;font-size:13px;font-weight:500;transition:background 0.2s" onmouseover="this.style.background='var(--bg)'" onmouseout="this.style.background=''">
+              <span>🛡️</span> Account & Security
+            </a>
+          </div>
+          <div class="divider"></div>
+          <button class="btn btn-primary btn-block" onclick="saveAll()">💾 Save All Changes</button>
+          <button class="btn btn-ghost btn-block" style="margin-top:8px">Discard Changes</button>
+          <div style="margin-top:16px;padding:12px;background:var(--bg);border-radius:8px;font-size:11px;color:var(--text-muted);line-height:1.6">
+            <strong style="color:var(--text-dark)">Last saved:</strong><br>Today at 9:42 AM
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<!-- TOAST -->
+<div id="toast" style="display:none;position:fixed;bottom:28px;right:28px;background:#1a1a1a;color:white;padding:14px 20px;border-radius:10px;font-size:13px;font-weight:500;box-shadow:0 8px 24px rgba(0,0,0,0.2);z-index:999;align-items:center;gap:10px">
+  <span>✅</span><span id="toastMsg">Settings saved!</span>
+</div>
+<script>
+  function showToast(msg) {
+    const t = document.getElementById('toast');
+    document.getElementById('toastMsg').textContent = msg || 'Settings saved!';
+    t.style.display = 'flex';
+    setTimeout(() => t.style.display = 'none', 3000);
+  }
+  function saveAll() { showToast('All settings saved successfully!'); }
+</script>
+</body>
+</html>

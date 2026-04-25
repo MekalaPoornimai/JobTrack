@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JobTrack – Manage Employers</title>
+<link rel="stylesheet" href="styles.css">
+<script src="https://mcp.figma.com/mcp/html-to-design/capture.js" async></script>
+</head>
+<body>
+<nav class="navbar">
+  <a href="index.html" class="navbar-brand">Job<span style="color:var(--gold)">Track</span></a>
+  <div style="flex:1;display:flex;align-items:center;justify-content:center">
+    <span style="background:rgba(255,193,7,0.2);color:var(--gold);font-size:11px;font-weight:600;padding:4px 12px;border-radius:99px;border:1px solid rgba(255,193,7,0.3)">⚙️ CAREER SERVICES ADMIN</span>
+  </div>
+  <div style="display:flex;align-items:center;gap:16px">
+    <div class="navbar-user">
+      <div class="avatar" style="width:34px;height:34px;font-size:13px;background:var(--gold);color:var(--primary)">CM</div>
+      <span class="navbar-user-name">Carol Mitchell</span>
+    </div>
+  </div>
+</nav>
+
+<div class="app-layout">
+  <aside class="sidebar">
+    <div style="padding:16px 20px;margin-bottom:4px">
+      <div style="display:flex;align-items:center;gap:10px">
+        <div class="avatar" style="background:var(--gold);color:var(--primary)">CM</div>
+        <div>
+          <div style="font-size:13px;font-weight:700;color:var(--text-dark)">Carol Mitchell</div>
+          <div style="font-size:11px;color:var(--text-muted)">Career Services Admin</div>
+        </div>
+      </div>
+    </div>
+    <div class="divider" style="margin:0 0 8px"></div>
+    <a href="admin-dashboard.html" class="sidebar-link"><span class="icon">🏠</span>Dashboard</a>
+    <a href="admin-reports.html" class="sidebar-link"><span class="icon">📊</span>Placement Reports</a>
+    <a href="admin-employers.html" class="sidebar-link active"><span class="icon">🏢</span>Employers<span class="sidebar-badge">85</span></a>
+    <a href="#" class="sidebar-link"><span class="icon">🎓</span>Students</a>
+    <a href="#" class="sidebar-link"><span class="icon">💼</span>Job Postings</a>
+  </aside>
+
+  <main class="main-content">
+    <div class="page-header-row">
+      <div>
+        <h1 class="page-title">Manage Employers</h1>
+        <p class="page-subtitle">Review, approve, and manage employer partner accounts</p>
+      </div>
+      <div style="display:flex;gap:12px">
+        <div class="search-bar">
+          <span class="search-icon">🔍</span>
+          <input type="text" placeholder="Search employers...">
+        </div>
+        <button class="btn btn-primary">+ Add Employer</button>
+      </div>
+    </div>
+
+    <!-- PENDING APPROVALS -->
+    <div class="alert alert-warning" style="margin-bottom:20px">
+      <span>⚠️</span>
+      <strong style="margin-right:8px">12 employer registrations pending approval.</strong>
+      <span>Review and approve new employer accounts below.</span>
+      <button class="btn btn-ghost btn-sm" style="margin-left:auto">Review All</button>
+    </div>
+
+    <!-- FILTER TABS -->
+    <div class="tabs">
+      <div class="tab active">All Employers (854)</div>
+      <div class="tab">Pending (12)</div>
+      <div class="tab">Active (832)</div>
+      <div class="tab">Suspended (10)</div>
+      <div class="tab">Top Partners (50)</div>
+    </div>
+
+    <!-- TABLE -->
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Company</th>
+            <th>Industry</th>
+            <th>Location</th>
+            <th>Active Jobs</th>
+            <th>Total Hires</th>
+            <th>Status</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="background:#fffde7">
+            <td>
+              <div style="display:flex;align-items:center;gap:10px">
+                <div style="width:36px;height:36px;background:var(--bg);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:18px;border:2px solid var(--warning)">⚡</div>
+                <div>
+                  <div style="font-weight:600;font-size:13px">Consumers Energy</div>
+                  <div style="font-size:11px;color:var(--text-muted)">consumersenergy.com</div>
+                </div>
+              </div>
+            </td>
+            <td><span class="badge badge-gold">Energy/Utilities</span></td>
+            <td style="font-size:13px">Jackson, MI</td>
+            <td style="font-size:13px;text-align:center">—</td>
+            <td style="font-size:13px;text-align:center">—</td>
+            <td><span class="badge badge-pending">⏳ Pending</span></td>
+            <td>
+              <button class="btn btn-success btn-sm">✓ Approve</button>
+              <button class="btn btn-danger btn-sm">✗ Reject</button>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div style="display:flex;align-items:center;gap:10px">
+                <div style="width:36px;height:36px;background:var(--bg);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:18px">🏢</div>
+                <div>
+                  <div style="font-weight:600;font-size:13px">Microsoft</div>
+                  <div style="font-size:11px;color:var(--text-muted)">microsoft.com</div>
+                </div>
+              </div>
+            </td>
+            <td><span class="badge badge-applied">Technology</span></td>
+            <td style="font-size:13px">Redmond, WA</td>
+            <td style="font-size:13px;text-align:center;font-weight:600">6</td>
+            <td style="font-size:13px;text-align:center;font-weight:600;color:var(--success)">48</td>
+            <td><span class="badge badge-active">✓ Active</span></td>
+            <td>
+              <button class="btn btn-outline btn-sm">View</button>
+              <button class="btn btn-ghost btn-sm">Suspend</button>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div style="display:flex;align-items:center;gap:10px">
+                <div style="width:36px;height:36px;background:var(--bg);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:18px">🚗</div>
+                <div>
+                  <div style="font-weight:600;font-size:13px">Ford Motor Co.</div>
+                  <div style="font-size:11px;color:var(--text-muted)">ford.com</div>
+                </div>
+              </div>
+            </td>
+            <td><span class="badge badge-gold">Automotive</span></td>
+            <td style="font-size:13px">Dearborn, MI</td>
+            <td style="font-size:13px;text-align:center;font-weight:600">8</td>
+            <td style="font-size:13px;text-align:center;font-weight:600;color:var(--success)">36</td>
+            <td><span class="badge badge-active">✓ Active</span></td>
+            <td>
+              <button class="btn btn-outline btn-sm">View</button>
+              <button class="btn btn-ghost btn-sm">Suspend</button>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div style="display:flex;align-items:center;gap:10px">
+                <div style="width:36px;height:36px;background:var(--bg);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:18px">🔍</div>
+                <div>
+                  <div style="font-weight:600;font-size:13px">Google LLC</div>
+                  <div style="font-size:11px;color:var(--text-muted)">google.com</div>
+                </div>
+              </div>
+            </td>
+            <td><span class="badge badge-applied">Technology</span></td>
+            <td style="font-size:13px">Mountain View, CA</td>
+            <td style="font-size:13px;text-align:center;font-weight:600">4</td>
+            <td style="font-size:13px;text-align:center;font-weight:600;color:var(--success)">24</td>
+            <td><span class="badge badge-active">✓ Active</span></td>
+            <td>
+              <button class="btn btn-outline btn-sm">View</button>
+              <button class="btn btn-ghost btn-sm">Suspend</button>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div style="display:flex;align-items:center;gap:10px">
+                <div style="width:36px;height:36px;background:var(--bg);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:18px">🏦</div>
+                <div>
+                  <div style="font-weight:600;font-size:13px">JP Morgan Chase</div>
+                  <div style="font-size:11px;color:var(--text-muted)">jpmorgan.com</div>
+                </div>
+              </div>
+            </td>
+            <td><span class="badge badge-maroon">Finance</span></td>
+            <td style="font-size:13px">New York, NY / Detroit</td>
+            <td style="font-size:13px;text-align:center;font-weight:600">5</td>
+            <td style="font-size:13px;text-align:center;font-weight:600;color:var(--success)">28</td>
+            <td><span class="badge badge-active">✓ Active</span></td>
+            <td>
+              <button class="btn btn-outline btn-sm">View</button>
+              <button class="btn btn-ghost btn-sm">Suspend</button>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div style="display:flex;align-items:center;gap:10px">
+                <div style="width:36px;height:36px;background:var(--bg);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:18px">📦</div>
+                <div>
+                  <div style="font-weight:600;font-size:13px">Amazon</div>
+                  <div style="font-size:11px;color:var(--text-muted)">amazon.jobs</div>
+                </div>
+              </div>
+            </td>
+            <td><span class="badge badge-applied">Technology / E-commerce</span></td>
+            <td style="font-size:13px">Seattle, WA</td>
+            <td style="font-size:13px;text-align:center;font-weight:600">3</td>
+            <td style="font-size:13px;text-align:center;font-weight:600;color:var(--success)">19</td>
+            <td><span class="badge badge-active">✓ Active</span></td>
+            <td>
+              <button class="btn btn-outline btn-sm">View</button>
+              <button class="btn btn-ghost btn-sm">Suspend</button>
+            </td>
+          </tr>
+          <tr style="opacity:0.7;background:#fef9f9">
+            <td>
+              <div style="display:flex;align-items:center;gap:10px">
+                <div style="width:36px;height:36px;background:var(--bg);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:18px">❌</div>
+                <div>
+                  <div style="font-weight:600;font-size:13px">GenericStaff Inc.</div>
+                  <div style="font-size:11px;color:var(--text-muted)">genericstaff.com</div>
+                </div>
+              </div>
+            </td>
+            <td><span class="badge badge-closed">Staffing</span></td>
+            <td style="font-size:13px">Unknown</td>
+            <td style="font-size:13px;text-align:center">0</td>
+            <td style="font-size:13px;text-align:center">0</td>
+            <td><span class="badge badge-closed">Suspended</span></td>
+            <td>
+              <button class="btn btn-success btn-sm">Restore</button>
+              <button class="btn btn-danger btn-sm">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-top:16px">
+      <span style="font-size:12px;color:var(--text-muted)">Showing 7 of 854 employers</span>
+      <div style="display:flex;gap:8px">
+        <button class="btn btn-ghost btn-sm">← Prev</button>
+        <button class="btn btn-primary btn-sm">1</button>
+        <button class="btn btn-ghost btn-sm">2</button>
+        <button class="btn btn-ghost btn-sm">...</button>
+        <button class="btn btn-ghost btn-sm">86</button>
+        <button class="btn btn-ghost btn-sm">Next →</button>
+      </div>
+    </div>
+  </main>
+</div>
+</body>
+</html>

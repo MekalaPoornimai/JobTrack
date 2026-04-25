@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JobTrack – Employer Dashboard</title>
+<link rel="stylesheet" href="styles.css">
+<script src="https://mcp.figma.com/mcp/html-to-design/capture.js" async></script>
+</head>
+<body>
+<nav class="navbar">
+  <a href="index.html" class="navbar-brand">Job<span style="color:var(--gold)">Track</span></a>
+  <div style="margin-left:auto;display:flex;align-items:center;gap:16px">
+    <span style="color:rgba(255,255,255,0.6);font-size:13px">🔔</span>
+    <div class="navbar-user">
+      <div class="avatar" style="width:34px;height:34px;font-size:13px;background:var(--gold);color:var(--primary)">MS</div>
+      <span class="navbar-user-name">Microsoft · Recruiter</span>
+    </div>
+  </div>
+</nav>
+
+<div class="app-layout">
+  <aside class="sidebar">
+    <div style="padding:16px 20px;margin-bottom:4px">
+      <div style="display:flex;align-items:center;gap:10px">
+        <div style="width:40px;height:40px;background:var(--bg);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px">🏢</div>
+        <div>
+          <div style="font-size:13px;font-weight:700;color:var(--text-dark)">Microsoft</div>
+          <div style="font-size:11px;color:var(--text-muted)">Technology · 220K+ employees</div>
+        </div>
+      </div>
+    </div>
+    <div class="divider" style="margin:0 0 8px"></div>
+    <div class="sidebar-section-title">Main</div>
+    <a href="employer-dashboard.html" class="sidebar-link active"><span class="icon">🏠</span>Dashboard</a>
+    <a href="employer-post-job.html" class="sidebar-link"><span class="icon">➕</span>Post a Job</a>
+    <a href="employer-jobs.html" class="sidebar-link"><span class="icon">💼</span>My Job Postings<span class="sidebar-badge">6</span></a>
+    <a href="employer-applicants.html" class="sidebar-link"><span class="icon">👥</span>Applicants<span class="sidebar-badge">48</span></a>
+    <a href="employer-interviews.html" class="sidebar-link"><span class="icon">🗓️</span>Interviews<span class="sidebar-badge">8</span></a>
+    <div class="sidebar-section-title">Account</div>
+    <a href="employer-profile.html" class="sidebar-link"><span class="icon">🏢</span>Company Profile</a>
+    <a href="#" class="sidebar-link"><span class="icon">⚙️</span>Settings</a>
+    <a href="login.html" class="sidebar-link"><span class="icon">🚪</span>Sign Out</a>
+  </aside>
+
+  <main class="main-content">
+    <div class="page-header-row">
+      <div>
+        <h1 class="page-title">Employer Dashboard</h1>
+        <p class="page-subtitle">Welcome back, Microsoft! Here's your recruiting overview.</p>
+      </div>
+      <a href="employer-post-job.html" class="btn btn-primary">+ Post New Job</a>
+    </div>
+
+    <!-- STATS -->
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-icon gold">💼</div>
+        <div>
+          <div class="stat-value">6</div>
+          <div class="stat-label">Active Job Posts</div>
+          <div class="stat-change up">↑ 2 new</div>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon maroon">👥</div>
+        <div>
+          <div class="stat-value">248</div>
+          <div class="stat-label">Total Applicants</div>
+          <div class="stat-change up">↑ 32 this week</div>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon blue">🗓️</div>
+        <div>
+          <div class="stat-value">12</div>
+          <div class="stat-label">Scheduled Interviews</div>
+          <div class="stat-change up">↑ 4 this week</div>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon green">🎉</div>
+        <div>
+          <div class="stat-value">5</div>
+          <div class="stat-label">Offers Extended</div>
+          <div class="stat-change up">↑ 2 accepted</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid-2" style="margin-bottom:24px">
+      <!-- ACTIVE JOB POSTINGS -->
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">Active Job Postings</div>
+          <a href="employer-jobs.html" style="font-size:12px;color:var(--primary);text-decoration:none;font-weight:500">View all →</a>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:0">
+          <div style="display:flex;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid var(--border)">
+            <div style="flex:1">
+              <div style="font-size:13px;font-weight:600;color:var(--text-dark)">Software Engineer Intern</div>
+              <div style="font-size:11px;color:var(--text-muted)">Deadline: Apr 1, 2025</div>
+            </div>
+            <span class="badge badge-applied" style="white-space:nowrap">86 applicants</span>
+            <span class="badge badge-active">Active</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid var(--border)">
+            <div style="flex:1">
+              <div style="font-size:13px;font-weight:600;color:var(--text-dark)">Data Engineer</div>
+              <div style="font-size:11px;color:var(--text-muted)">Deadline: Apr 15, 2025</div>
+            </div>
+            <span class="badge badge-applied" style="white-space:nowrap">54 applicants</span>
+            <span class="badge badge-active">Active</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid var(--border)">
+            <div style="flex:1">
+              <div style="font-size:13px;font-weight:600;color:var(--text-dark)">Product Manager Intern</div>
+              <div style="font-size:11px;color:var(--text-muted)">Deadline: Apr 20, 2025</div>
+            </div>
+            <span class="badge badge-applied" style="white-space:nowrap">62 applicants</span>
+            <span class="badge badge-active">Active</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:12px;padding:12px 0">
+            <div style="flex:1">
+              <div style="font-size:13px;font-weight:600;color:var(--text-dark)">UX Designer</div>
+              <div style="font-size:11px;color:var(--text-muted)">Deadline: May 1, 2025</div>
+            </div>
+            <span class="badge badge-applied" style="white-space:nowrap">46 applicants</span>
+            <span class="badge badge-active">Active</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- RECENT APPLICANTS -->
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">Recent Applicants</div>
+          <a href="employer-applicants.html" style="font-size:12px;color:var(--primary);text-decoration:none;font-weight:500">View all →</a>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:0">
+          <div style="display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid var(--border)">
+            <div class="avatar" style="width:34px;height:34px;font-size:12px">JS</div>
+            <div style="flex:1">
+              <div style="font-size:13px;font-weight:600;color:var(--text-dark)">Jordan Smith</div>
+              <div style="font-size:11px;color:var(--text-muted)">CS · 3.7 GPA · SWE Intern</div>
+            </div>
+            <button class="btn btn-primary btn-sm">Review</button>
+          </div>
+          <div style="display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid var(--border)">
+            <div class="avatar" style="width:34px;height:34px;font-size:12px;background:#3498db">AL</div>
+            <div style="flex:1">
+              <div style="font-size:13px;font-weight:600;color:var(--text-dark)">Alex Lee</div>
+              <div style="font-size:11px;color:var(--text-muted)">CS · 3.9 GPA · Data Engineer</div>
+            </div>
+            <button class="btn btn-primary btn-sm">Review</button>
+          </div>
+          <div style="display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid var(--border)">
+            <div class="avatar" style="width:34px;height:34px;font-size:12px;background:#e74c3c">MR</div>
+            <div style="flex:1">
+              <div style="font-size:13px;font-weight:600;color:var(--text-dark)">Maya Rodriguez</div>
+              <div style="font-size:11px;color:var(--text-muted)">IS · 3.8 GPA · PM Intern</div>
+            </div>
+            <button class="btn btn-primary btn-sm">Review</button>
+          </div>
+          <div style="display:flex;align-items:center;gap:10px;padding:10px 0">
+            <div class="avatar" style="width:34px;height:34px;font-size:12px;background:#2ecc71">DP</div>
+            <div style="flex:1">
+              <div style="font-size:13px;font-weight:600;color:var(--text-dark)">David Park</div>
+              <div style="font-size:11px;color:var(--text-muted)">Design · 3.5 GPA · UX Designer</div>
+            </div>
+            <button class="btn btn-primary btn-sm">Review</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- UPCOMING INTERVIEWS + APPLICATION PIPELINE -->
+    <div class="grid-2">
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">Upcoming Interviews (Today)</div>
+          <a href="employer-interviews.html" style="font-size:12px;color:var(--primary);text-decoration:none">View all →</a>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <div style="padding:12px;background:var(--bg);border-radius:10px;display:flex;align-items:center;gap:12px">
+            <div class="avatar" style="width:36px;height:36px;font-size:12px">JS</div>
+            <div style="flex:1">
+              <div style="font-size:13px;font-weight:600">Jordan Smith</div>
+              <div style="font-size:11px;color:var(--text-muted)">SWE Intern · Technical Screen</div>
+            </div>
+            <div style="text-align:right">
+              <div style="font-size:12px;font-weight:600;color:var(--primary)">2:00 PM</div>
+              <div style="font-size:11px;color:var(--text-muted)">Zoom</div>
+            </div>
+          </div>
+          <div style="padding:12px;background:var(--bg);border-radius:10px;display:flex;align-items:center;gap:12px">
+            <div class="avatar" style="width:36px;height:36px;font-size:12px;background:#3498db">AL</div>
+            <div style="flex:1">
+              <div style="font-size:13px;font-weight:600">Alex Lee</div>
+              <div style="font-size:11px;color:var(--text-muted)">Data Engineer · Final Round</div>
+            </div>
+            <div style="text-align:right">
+              <div style="font-size:12px;font-weight:600;color:var(--primary)">4:00 PM</div>
+              <div style="font-size:11px;color:var(--text-muted)">Teams</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">Application Pipeline</div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:12px">
+          <div>
+            <div style="display:flex;justify-content:space-between;margin-bottom:4px;font-size:12px">
+              <span style="color:var(--text-muted)">Under Review</span>
+              <span style="font-weight:600">142 / 248</span>
+            </div>
+            <div class="progress"><div class="progress-bar" style="width:57%;background:var(--info)"></div></div>
+          </div>
+          <div>
+            <div style="display:flex;justify-content:space-between;margin-bottom:4px;font-size:12px">
+              <span style="color:var(--text-muted)">Shortlisted</span>
+              <span style="font-weight:600">38 / 248</span>
+            </div>
+            <div class="progress"><div class="progress-bar" style="width:15%;background:var(--gold)"></div></div>
+          </div>
+          <div>
+            <div style="display:flex;justify-content:space-between;margin-bottom:4px;font-size:12px">
+              <span style="color:var(--text-muted)">Interviewed</span>
+              <span style="font-weight:600">18 / 248</span>
+            </div>
+            <div class="progress"><div class="progress-bar" style="width:7%;background:var(--success)"></div></div>
+          </div>
+          <div>
+            <div style="display:flex;justify-content:space-between;margin-bottom:4px;font-size:12px">
+              <span style="color:var(--text-muted)">Offers Extended</span>
+              <span style="font-weight:600">5 / 248</span>
+            </div>
+            <div class="progress"><div class="progress-bar" style="width:2%;background:#8bc34a"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+</body>
+</html>

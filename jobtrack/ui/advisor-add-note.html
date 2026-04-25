@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JobTrack – Add Advising Note</title>
+<link rel="stylesheet" href="styles.css">
+<script src="https://mcp.figma.com/mcp/html-to-design/capture.js" async></script>
+<style>
+  .priority-btn {
+    padding: 8px 18px;
+    border-radius: 99px;
+    border: 2px solid var(--border);
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    background: white;
+    color: var(--text-muted);
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.2s;
+  }
+  .priority-btn.low.active  { background: #e8f5e9; border-color: var(--success); color: var(--success); }
+  .priority-btn.med.active  { background: #fff3cd; border-color: #9a6700; color: #9a6700; }
+  .priority-btn.high.active { background: #fce4ec; border-color: var(--danger); color: var(--danger); }
+  .tag-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 12px;
+    background: #fef3f8;
+    border-radius: 99px;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--primary);
+    border: 1px solid rgba(106,0,50,0.15);
+  }
+  .tag-pill button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--primary);
+    font-size: 14px;
+    line-height: 1;
+    padding: 0;
+  }
+  .toggle-switch {
+    position: relative;
+    width: 40px;
+    height: 22px;
+    flex-shrink: 0;
+  }
+  .toggle-switch input { opacity: 0; width: 0; height: 0; }
+  .toggle-slider {
+    position: absolute;
+    inset: 0;
+    background: #ccc;
+    border-radius: 99px;
+    cursor: pointer;
+    transition: 0.2s;
+  }
+  .toggle-slider:before {
+    content: '';
+    position: absolute;
+    width: 16px; height: 16px;
+    left: 3px; bottom: 3px;
+    background: white;
+    border-radius: 50%;
+    transition: 0.2s;
+  }
+  .toggle-switch input:checked + .toggle-slider { background: var(--primary); }
+  .toggle-switch input:checked + .toggle-slider:before { transform: translateX(18px); }
+</style>
+</head>
+<body>
+<nav class="navbar">
+  <a href="index.html" class="navbar-brand">Job<span style="color:var(--gold)">Track</span></a>
+  <div style="margin-left:auto;display:flex;align-items:center;gap:16px">
+    <span style="color:rgba(255,255,255,0.6);font-size:13px">🔔</span>
+    <div class="navbar-user">
+      <div class="avatar" style="width:34px;height:34px;font-size:13px;background:var(--gold);color:var(--primary)">RT</div>
+      <span class="navbar-user-name">Dr. Rebecca Thompson</span>
+    </div>
+  </div>
+</nav>
+
+<div class="app-layout">
+  <aside class="sidebar">
+    <div style="padding:16px 20px;margin-bottom:4px">
+      <div style="display:flex;align-items:center;gap:10px">
+        <div class="avatar" style="background:var(--primary)">RT</div>
+        <div>
+          <div style="font-size:13px;font-weight:700;color:var(--text-dark)">Dr. R. Thompson</div>
+          <div style="font-size:11px;color:var(--text-muted)">CS Department · Advisor</div>
+        </div>
+      </div>
+    </div>
+    <div class="divider" style="margin:0 0 8px"></div>
+    <div class="sidebar-section-title">Main</div>
+    <a href="advisor-dashboard.html" class="sidebar-link"><span class="icon">🏠</span>Dashboard</a>
+    <a href="advisor-students.html" class="sidebar-link active"><span class="icon">🎓</span>My Students<span class="sidebar-badge">24</span></a>
+    <a href="advisor-notes.html" class="sidebar-link"><span class="icon">📝</span>Advising Notes<span class="sidebar-badge">8</span></a>
+    <div class="sidebar-section-title">Tools</div>
+    <a href="#" class="sidebar-link"><span class="icon">📊</span>Reports</a>
+    <a href="advisor-settings.html" class="sidebar-link"><span class="icon">⚙️</span>Settings</a>
+    <a href="advisor-helpdesk.html" class="sidebar-link"><span class="icon">❓</span>Help Desk</a>
+    <a href="login.html" class="sidebar-link"><span class="icon">🚪</span>Sign Out</a>
+  </aside>
+
+  <main class="main-content">
+    <!-- BREADCRUMB -->
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px">
+      <div class="breadcrumb">
+        <a href="advisor-students.html">← Student Pipeline</a>
+        <span class="breadcrumb-sep">/</span>
+        <a href="advisor-student-view.html">Jordan Smith</a>
+        <span class="breadcrumb-sep">/</span>
+        <span>Add Note</span>
+      </div>
+      <button class="btn btn-ghost btn-sm" onclick="window.location='advisor-student-view.html'">← Back to Profile</button>
+    </div>
+
+    <!-- STUDENT BANNER -->
+    <div style="background:linear-gradient(135deg, var(--primary) 0%, #8a1050 100%);border-radius:14px;padding:20px 24px;margin-bottom:24px;display:flex;align-items:center;gap:16px">
+      <div style="width:52px;height:52px;border-radius:50%;background:var(--gold);display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:800;color:var(--primary);border:3px solid rgba(255,255,255,0.3);flex-shrink:0">JS</div>
+      <div>
+        <div style="font-size:16px;font-weight:700;color:white">Jordan Smith</div>
+        <div style="font-size:13px;color:rgba(255,255,255,0.7)">Computer Science · GPA 3.7 · Class of 2025 · smith1js@cmich.edu</div>
+      </div>
+      <div style="margin-left:auto;display:flex;gap:8px">
+        <span class="badge badge-offer" style="font-size:11px">🌟 Strong Candidate</span>
+        <span class="badge badge-gold" style="font-size:11px">12 Apps</span>
+      </div>
+    </div>
+
+    <!-- FORM + SIDEBAR -->
+    <div style="display:grid;grid-template-columns:1fr 360px;gap:24px">
+
+      <!-- MAIN FORM -->
+      <div class="card" style="border-top:4px solid var(--primary)">
+        <div class="card-title" style="margin-bottom:24px;font-size:18px">📝 New Advising Note</div>
+
+        <!-- CATEGORY -->
+        <div class="form-group">
+          <label class="form-label">Note Category *</label>
+          <select class="form-control form-select">
+            <option value="">Select a category...</option>
+            <option selected>Career Advice</option>
+            <option>Resume Review</option>
+            <option>Interview Practice</option>
+            <option>Salary Negotiation</option>
+            <option>Follow-up</option>
+            <option>⚠️ Intervention</option>
+            <option>Offer Guidance</option>
+            <option>General Check-in</option>
+          </select>
+        </div>
+
+        <!-- PRIORITY -->
+        <div class="form-group">
+          <label class="form-label">Priority Level</label>
+          <div style="display:flex;gap:10px;flex-wrap:wrap">
+            <button class="priority-btn low active" onclick="setPriority(this,'low')">🟢 Low</button>
+            <button class="priority-btn med" onclick="setPriority(this,'med')">🟡 Medium</button>
+            <button class="priority-btn high" onclick="setPriority(this,'high')">🔴 High</button>
+          </div>
+        </div>
+
+        <!-- NOTE CONTENT -->
+        <div class="form-group">
+          <label class="form-label">Note Content *</label>
+          <textarea class="form-control" id="noteContent" rows="8" placeholder="Write your advising note here...
+
+Include:
+- Current status observations
+- Action items for the student
+- Resources recommended
+- Follow-up plans
+- Goals set for next meeting"></textarea>
+          <div style="font-size:11px;color:var(--text-muted);margin-top:6px;text-align:right" id="charCount">0 / 2000 characters</div>
+        </div>
+
+        <!-- TAGS INPUT -->
+        <div class="form-group">
+          <label class="form-label">Tags <span style="color:var(--text-muted);font-weight:400">(press Enter to add)</span></label>
+          <input type="text" id="tagInput" class="form-control" placeholder="e.g., interview-prep, offer, follow-up">
+          <div id="tagContainer" style="display:flex;flex-wrap:wrap;gap:8px;margin-top:10px">
+            <span class="tag-pill">interview-prep <button onclick="removeTag(this)">×</button></span>
+            <span class="tag-pill">linkedin <button onclick="removeTag(this)">×</button></span>
+          </div>
+        </div>
+
+        <!-- RELATED APPLICATION -->
+        <div class="form-group">
+          <label class="form-label">Related Application <span style="color:var(--text-muted);font-weight:400">(optional)</span></label>
+          <select class="form-control form-select">
+            <option>Not linked to application</option>
+            <option>Google – Software Engineer Intern</option>
+            <option selected>Microsoft – Data Engineer</option>
+            <option>Amazon – ML Intern</option>
+            <option>Meta – Backend Engineer Intern</option>
+            <option>Apple – iOS Developer Intern</option>
+          </select>
+        </div>
+
+        <!-- TOGGLES -->
+        <div class="form-group">
+          <div style="display:flex;flex-direction:column;gap:14px">
+            <label style="display:flex;align-items:center;justify-content:space-between;cursor:pointer">
+              <div>
+                <div style="font-size:13px;font-weight:600;color:var(--text-dark)">🔒 Private Note</div>
+                <div style="font-size:11px;color:var(--text-muted)">Only visible to advisors — not shown to student</div>
+              </div>
+              <label class="toggle-switch">
+                <input type="checkbox" id="togglePrivate">
+                <span class="toggle-slider"></span>
+              </label>
+            </label>
+            <div class="divider" style="margin:0"></div>
+            <label style="display:flex;align-items:center;justify-content:space-between;cursor:pointer">
+              <div>
+                <div style="font-size:13px;font-weight:600;color:var(--text-dark)">📅 Set Follow-up Reminder</div>
+                <div style="font-size:11px;color:var(--text-muted)">Get reminded to check in with this student</div>
+              </div>
+              <label class="toggle-switch">
+                <input type="checkbox" id="toggleFollowup" onchange="toggleFollowupDate()">
+                <span class="toggle-slider"></span>
+              </label>
+            </label>
+            <div id="followupDate" style="display:none">
+              <label class="form-label" style="margin-bottom:6px">Follow-up Date</label>
+              <input type="date" class="form-control" value="2026-03-31" style="max-width:240px">
+            </div>
+          </div>
+        </div>
+
+        <!-- ACTIONS -->
+        <div style="display:flex;gap:12px;margin-top:8px">
+          <button class="btn btn-primary btn-lg" style="flex:1" onclick="saveNote()">💾 Save Advising Note</button>
+          <button class="btn btn-ghost" onclick="window.location='advisor-student-view.html'">Cancel</button>
+        </div>
+      </div>
+
+      <!-- SIDEBAR -->
+      <div style="display:flex;flex-direction:column;gap:20px">
+        <!-- RECENT NOTES FOR THIS STUDENT -->
+        <div class="card" style="border-top:4px solid var(--gold)">
+          <div class="card-header">
+            <div class="card-title" style="font-size:14px">Recent Notes for Jordan</div>
+            <span style="font-size:11px;color:var(--text-muted)">3 of 8</span>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:10px">
+            <div style="padding:10px;background:var(--bg);border-radius:8px;border-left:3px solid var(--success)">
+              <div style="display:flex;justify-content:space-between;margin-bottom:4px">
+                <span style="font-size:11px;font-weight:600;color:var(--success)">Career Advice</span>
+                <span style="font-size:10px;color:var(--text-muted)">Mar 15</span>
+              </div>
+              <div style="font-size:12px;color:var(--text-body);line-height:1.5">Great progress! Prepare case studies for Google interview. Update LinkedIn profile.</div>
+            </div>
+            <div style="padding:10px;background:var(--bg);border-radius:8px;border-left:3px solid var(--gold)">
+              <div style="display:flex;justify-content:space-between;margin-bottom:4px">
+                <span style="font-size:11px;font-weight:600;color:#9a6700">Resume Review</span>
+                <span style="font-size:10px;color:var(--text-muted)">Mar 8</span>
+              </div>
+              <div style="font-size:12px;color:var(--text-body);line-height:1.5">Reviewed resume — strong project section. Quantify impact on bullet points.</div>
+            </div>
+            <div style="padding:10px;background:var(--bg);border-radius:8px;border-left:3px solid var(--primary)">
+              <div style="display:flex;justify-content:space-between;margin-bottom:4px">
+                <span style="font-size:11px;font-weight:600;color:var(--primary)">Salary Negotiation</span>
+                <span style="font-size:10px;color:var(--text-muted)">Mar 14</span>
+              </div>
+              <div style="font-size:12px;color:var(--text-body);line-height:1.5">Helped negotiate MS offer. Counter-offered → $5K signing bonus secured.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- NOTE TYPE LEGEND -->
+        <div class="card">
+          <div class="card-title" style="margin-bottom:14px;font-size:14px">Note Type Guide</div>
+          <div style="display:flex;flex-direction:column;gap:8px">
+            <div style="display:flex;align-items:flex-start;gap:10px;font-size:12px">
+              <div style="width:10px;height:10px;border-radius:50%;background:var(--success);flex-shrink:0;margin-top:2px"></div>
+              <div><span style="font-weight:600;color:var(--text-dark)">Career Advice</span><br><span style="color:var(--text-muted)">General guidance & progress updates</span></div>
+            </div>
+            <div style="display:flex;align-items:flex-start;gap:10px;font-size:12px">
+              <div style="width:10px;height:10px;border-radius:50%;background:var(--gold);flex-shrink:0;margin-top:2px"></div>
+              <div><span style="font-weight:600;color:var(--text-dark)">Resume Review</span><br><span style="color:var(--text-muted)">Feedback on resume or profile</span></div>
+            </div>
+            <div style="display:flex;align-items:flex-start;gap:10px;font-size:12px">
+              <div style="width:10px;height:10px;border-radius:50%;background:var(--info);flex-shrink:0;margin-top:2px"></div>
+              <div><span style="font-weight:600;color:var(--text-dark)">Interview Practice</span><br><span style="color:var(--text-muted)">Mock interview notes & tips</span></div>
+            </div>
+            <div style="display:flex;align-items:flex-start;gap:10px;font-size:12px">
+              <div style="width:10px;height:10px;border-radius:50%;background:var(--primary);flex-shrink:0;margin-top:2px"></div>
+              <div><span style="font-weight:600;color:var(--text-dark)">Salary Negotiation</span><br><span style="color:var(--text-muted)">Offer discussion and guidance</span></div>
+            </div>
+            <div style="display:flex;align-items:flex-start;gap:10px;font-size:12px">
+              <div style="width:10px;height:10px;border-radius:50%;background:var(--danger);flex-shrink:0;margin-top:2px"></div>
+              <div><span style="font-weight:600;color:var(--text-dark)">⚠️ Intervention</span><br><span style="color:var(--text-muted)">Flagged issue requiring attention</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- TIPS -->
+        <div class="alert alert-info">
+          <span style="font-size:18px">💡</span>
+          <div>
+            <div style="font-weight:600;margin-bottom:4px">Writing Tips</div>
+            <ul style="font-size:12px;padding-left:16px;line-height:1.8">
+              <li>Be specific about action items</li>
+              <li>Set measurable goals</li>
+              <li>Include follow-up timelines</li>
+              <li>Note resources provided</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<!-- TOAST -->
+<div id="toast" style="display:none;position:fixed;bottom:28px;right:28px;background:#1a1a1a;color:white;padding:14px 20px;border-radius:10px;font-size:13px;font-weight:500;box-shadow:0 8px 24px rgba(0,0,0,0.2);z-index:999;align-items:center;gap:10px">
+  <span>✅</span><span id="toastMsg">Note saved successfully!</span>
+</div>
+
+<script>
+  // Priority toggle
+  function setPriority(btn, level) {
+    document.querySelectorAll('.priority-btn').forEach(b => {
+      b.classList.remove('active');
+    });
+    btn.classList.add('active', level);
+    setTimeout(() => btn.classList.add('active'), 10);
+  }
+
+  // Character count
+  document.getElementById('noteContent').addEventListener('input', function() {
+    document.getElementById('charCount').textContent = this.value.length + ' / 2000 characters';
+  });
+
+  // Tag input
+  document.getElementById('tagInput').addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      const val = this.value.trim();
+      if (!val) return;
+      const pill = document.createElement('span');
+      pill.className = 'tag-pill';
+      pill.innerHTML = val + ' <button onclick="removeTag(this)">×</button>';
+      document.getElementById('tagContainer').appendChild(pill);
+      this.value = '';
+    }
+  });
+
+  function removeTag(btn) {
+    btn.parentElement.remove();
+  }
+
+  // Follow-up date toggle
+  function toggleFollowupDate() {
+    const el = document.getElementById('followupDate');
+    el.style.display = document.getElementById('toggleFollowup').checked ? 'block' : 'none';
+  }
+
+  // Save note
+  function saveNote() {
+    const content = document.getElementById('noteContent').value;
+    if (!content.trim()) {
+      alert('Please add note content before saving.');
+      return;
+    }
+    const t = document.getElementById('toast');
+    t.style.display = 'flex';
+    setTimeout(() => {
+      t.style.display = 'none';
+      window.location = 'advisor-student-view.html';
+    }, 2000);
+  }
+</script>
+</body>
+</html>

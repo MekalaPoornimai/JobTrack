@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>My Profile | JobTrack CMU</title>
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="sl-styles.css">
+<script src="https://mcp.figma.com/mcp/html-to-design/capture.js" async></script>
+</head>
+<body>
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="sidebar-logo">Job<span>Track</span></div>
+    <div class="sidebar-tagline">CMU Career Services</div>
+  </div>
+  <div class="sidebar-nav">
+    <div class="nav-section">Navigation</div>
+    <a class="nav-item" href="sl-student-dashboard.html"><span class="nav-icon">🏠</span> Dashboard</a>
+    <a class="nav-item" href="sl-student-jobs.html"><span class="nav-icon">🔍</span> Browse Jobs</a>
+    <a class="nav-item" href="sl-student-applications.html"><span class="nav-icon">📋</span> My Applications</a>
+    <a class="nav-item" href="sl-student-interviews.html"><span class="nav-icon">🗓️</span> Interviews</a>
+    <a class="nav-item active" href="#"><span class="nav-icon">👤</span> My Profile</a>
+    <div class="nav-section" style="margin-top:16px;">Resources</div>
+    <a class="nav-item" href="#"><span class="nav-icon">📄</span> Resume Builder</a>
+    <a class="nav-item" href="#"><span class="nav-icon">💡</span> Career Tips</a>
+  </div>
+  <div class="sidebar-footer">
+    <div class="user-row">
+      <div class="user-avatar">JS</div>
+      <div>
+        <div class="user-name">Jordan Smith</div>
+        <div class="user-email">smith1js@cmich.edu</div>
+      </div>
+    </div>
+    <div class="logout-link">⬅ Sign Out</div>
+  </div>
+</div>
+
+<div class="main">
+  <div class="flex-between" style="margin-bottom:6px;">
+    <div class="page-title">👤 My Profile</div>
+    <button class="btn btn-primary">💾 Save Changes</button>
+  </div>
+  <div class="page-subtitle">Keep your profile updated to get matched with the best opportunities</div>
+
+  <!-- Profile Completion -->
+  <div class="alert alert-warning">
+    ⚠️ Your profile is <strong>82% complete</strong>. Add your portfolio URL to reach 100% and improve job matching.
+  </div>
+
+  <div class="cols-7-3">
+    <div>
+      <!-- Basic Info -->
+      <div class="card">
+        <div class="card-title">📋 Basic Information</div>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">First Name</label>
+            <input type="text" class="form-control" value="Jordan">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Last Name</label>
+            <input type="text" class="form-control" value="Smith">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">CMU Email</label>
+            <input type="email" class="form-control" value="smith1js@cmich.edu" disabled style="background:#f8f9fa;">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Phone</label>
+            <input type="text" class="form-control" value="989-555-0101">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Student ID</label>
+            <input type="text" class="form-control" value="CMU2025001" disabled style="background:#f8f9fa;">
+          </div>
+          <div class="form-group">
+            <label class="form-label">GPA</label>
+            <input type="text" class="form-control" value="3.72">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Major</label>
+            <select class="form-control">
+              <option selected>Computer Science</option>
+              <option>Information Systems</option>
+              <option>Business Administration</option>
+              <option>Data Science</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Graduation Year</label>
+            <select class="form-control">
+              <option selected>2025</option>
+              <option>2026</option>
+              <option>2027</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Bio / About Me</label>
+          <textarea class="form-control">Passionate CS student interested in full-stack development and AI. Looking for internship opportunities to apply my Python and React skills in real-world projects.</textarea>
+        </div>
+      </div>
+
+      <!-- Links -->
+      <div class="card">
+        <div class="card-title">🔗 Links &amp; Documents</div>
+        <div class="form-group">
+          <label class="form-label">Resume URL / Upload</label>
+          <div style="display:flex;gap:10px;">
+            <input type="text" class="form-control" placeholder="https://drive.google.com/resume..." value="https://drive.google.com/file/jordan-smith-resume">
+            <button class="btn btn-outline" style="white-space:nowrap;">📎 Upload</button>
+          </div>
+          <div class="form-hint">PDF preferred · Max 5MB</div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">LinkedIn Profile</label>
+          <input type="text" class="form-control" placeholder="https://linkedin.com/in/..." value="https://linkedin.com/in/jordansmith-cmu">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Portfolio / GitHub <span style="color:#9b9b9b;font-weight:400;">(optional)</span></label>
+          <input type="text" class="form-control" placeholder="https://github.com/yourusername">
+          <div class="form-hint" style="color:#bf360c;">⚠️ Missing — add this to complete your profile</div>
+        </div>
+      </div>
+
+      <!-- Skills -->
+      <div class="card">
+        <div class="card-title">🛠️ Skills</div>
+        <div class="form-group">
+          <label class="form-label">My Skills</label>
+          <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px;padding:12px;border:1px solid #d1d5db;border-radius:6px;min-height:60px;background:#fafafa;">
+            <span class="chip chip-maroon" style="display:flex;align-items:center;gap:4px;">Python <span style="cursor:pointer;opacity:.6;">✕</span></span>
+            <span class="chip chip-maroon" style="display:flex;align-items:center;gap:4px;">Java <span style="cursor:pointer;opacity:.6;">✕</span></span>
+            <span class="chip chip-maroon" style="display:flex;align-items:center;gap:4px;">JavaScript <span style="cursor:pointer;opacity:.6;">✕</span></span>
+            <span class="chip chip-maroon" style="display:flex;align-items:center;gap:4px;">SQL <span style="cursor:pointer;opacity:.6;">✕</span></span>
+            <span class="chip chip-maroon" style="display:flex;align-items:center;gap:4px;">React <span style="cursor:pointer;opacity:.6;">✕</span></span>
+            <span class="chip chip-maroon" style="display:flex;align-items:center;gap:4px;">Node.js <span style="cursor:pointer;opacity:.6;">✕</span></span>
+            <span class="chip chip-gray" style="display:flex;align-items:center;gap:4px;">Git <span style="cursor:pointer;opacity:.6;">✕</span></span>
+            <span class="chip chip-gray" style="display:flex;align-items:center;gap:4px;">HTML/CSS <span style="cursor:pointer;opacity:.6;">✕</span></span>
+          </div>
+          <div style="display:flex;gap:8px;">
+            <select class="form-control" style="flex:1;">
+              <option>— Add a skill —</option>
+              <option>Machine Learning</option>
+              <option>Tableau</option>
+              <option>Data Analysis</option>
+              <option>Project Management</option>
+            </select>
+            <button class="btn btn-primary">+ Add</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Panel -->
+    <div>
+      <!-- Profile Card Preview -->
+      <div class="card" style="text-align:center;">
+        <div style="width:72px;height:72px;border-radius:50%;background:#6a0032;color:#fff;font-size:28px;font-weight:700;display:flex;align-items:center;justify-content:center;margin:0 auto 12px;">JS</div>
+        <div style="font-size:17px;font-weight:700;">Jordan Smith</div>
+        <div style="font-size:13px;color:#6b6b6b;margin-bottom:4px;">Computer Science · Class of 2025</div>
+        <div style="font-size:13px;color:#6b6b6b;margin-bottom:16px;">GPA: 3.72</div>
+        <div style="display:flex;justify-content:space-around;padding:12px 0;border-top:1px solid #f0f0f0;border-bottom:1px solid #f0f0f0;margin-bottom:14px;">
+          <div style="text-align:center;">
+            <div style="font-size:20px;font-weight:700;color:#6a0032;">8</div>
+            <div style="font-size:11px;color:#6b6b6b;">Applied</div>
+          </div>
+          <div style="text-align:center;">
+            <div style="font-size:20px;font-weight:700;color:#6a0032;">2</div>
+            <div style="font-size:11px;color:#6b6b6b;">Interviews</div>
+          </div>
+          <div style="text-align:center;">
+            <div style="font-size:20px;font-weight:700;color:#6a0032;">8</div>
+            <div style="font-size:11px;color:#6b6b6b;">Skills</div>
+          </div>
+        </div>
+        <div class="progress-wrap">
+          <div class="progress-label"><span>Profile Strength</span><span>82%</span></div>
+          <div class="progress-bar"><div class="progress-fill pf-maroon" style="width:82%"></div></div>
+        </div>
+      </div>
+
+      <!-- My Advisor -->
+      <div class="card">
+        <div class="card-title">👩‍🏫 My Advisor</div>
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
+          <div class="s-avatar av-1">LC</div>
+          <div>
+            <div class="fw-600" style="font-size:14px;">Dr. Lisa Chen</div>
+            <div class="text-muted">Technology &amp; Engineering</div>
+          </div>
+        </div>
+        <div style="font-size:12.5px;color:#6b6b6b;">📍 Warriner Hall 101</div>
+        <div style="font-size:12.5px;color:#6b6b6b;margin-top:3px;">📞 989-774-0201</div>
+        <button class="btn btn-outline" style="width:100%;justify-content:center;margin-top:12px;font-size:13px;">📩 Send Message</button>
+      </div>
+
+      <!-- Privacy Settings -->
+      <div class="card">
+        <div class="card-title">🔒 Privacy Settings</div>
+        <div style="display:flex;flex-direction:column;gap:10px;font-size:13px;">
+          <label style="display:flex;align-items:center;justify-content:space-between;">
+            <span>Show profile to employers</span>
+            <input type="checkbox" checked style="accent-color:#6a0032;width:15px;height:15px;">
+          </label>
+          <label style="display:flex;align-items:center;justify-content:space-between;">
+            <span>Allow advisor to view notes</span>
+            <input type="checkbox" checked style="accent-color:#6a0032;width:15px;height:15px;">
+          </label>
+          <label style="display:flex;align-items:center;justify-content:space-between;">
+            <span>Email notifications</span>
+            <input type="checkbox" checked style="accent-color:#6a0032;width:15px;height:15px;">
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

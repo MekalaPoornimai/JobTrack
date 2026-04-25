@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JobTrack – Student Profile View</title>
+<link rel="stylesheet" href="styles.css">
+<script src="https://mcp.figma.com/mcp/html-to-design/capture.js" async></script>
+</head>
+<body>
+<nav class="navbar">
+  <a href="index.html" class="navbar-brand">Job<span style="color:var(--gold)">Track</span></a>
+  <div style="margin-left:auto;display:flex;align-items:center;gap:16px">
+    <span style="color:rgba(255,255,255,0.6);font-size:13px">🔔</span>
+    <div class="navbar-user">
+      <div class="avatar" style="width:34px;height:34px;font-size:13px;background:var(--gold);color:var(--primary)">RT</div>
+      <span class="navbar-user-name">Dr. Rebecca Thompson</span>
+    </div>
+  </div>
+</nav>
+
+<div class="app-layout">
+  <aside class="sidebar">
+    <div style="padding:16px 20px;margin-bottom:4px">
+      <div style="display:flex;align-items:center;gap:10px">
+        <div class="avatar" style="background:var(--primary)">RT</div>
+        <div>
+          <div style="font-size:13px;font-weight:700;color:var(--text-dark)">Dr. R. Thompson</div>
+          <div style="font-size:11px;color:var(--text-muted)">CS Department · Advisor</div>
+        </div>
+      </div>
+    </div>
+    <div class="divider" style="margin:0 0 8px"></div>
+    <div class="sidebar-section-title">Main</div>
+    <a href="advisor-dashboard.html" class="sidebar-link"><span class="icon">🏠</span>Dashboard</a>
+    <a href="advisor-students.html" class="sidebar-link active"><span class="icon">🎓</span>My Students<span class="sidebar-badge">24</span></a>
+    <a href="advisor-notes.html" class="sidebar-link"><span class="icon">📝</span>Advising Notes<span class="sidebar-badge">8</span></a>
+    <div class="sidebar-section-title">Tools</div>
+    <a href="#" class="sidebar-link"><span class="icon">📊</span>Reports</a>
+    <a href="advisor-settings.html" class="sidebar-link"><span class="icon">⚙️</span>Settings</a>
+    <a href="advisor-helpdesk.html" class="sidebar-link"><span class="icon">❓</span>Help Desk</a>
+    <a href="login.html" class="sidebar-link"><span class="icon">🚪</span>Sign Out</a>
+  </aside>
+
+  <main class="main-content">
+    <!-- BREADCRUMB & BACK -->
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px">
+      <div class="breadcrumb">
+        <a href="advisor-students.html">← Student Pipeline</a>
+        <span class="breadcrumb-sep">/</span>
+        <span>Jordan Smith</span>
+      </div>
+      <div style="display:flex;gap:10px">
+        <a href="advisor-add-note.html" class="btn btn-primary">+ Add Note for Student</a>
+        <button class="btn btn-ghost btn-sm" onclick="window.location='advisor-students.html'">← Back to Pipeline</button>
+      </div>
+    </div>
+
+    <!-- PROFILE HERO -->
+    <div style="margin-bottom:24px">
+      <div style="background:linear-gradient(135deg, var(--primary) 0%, #8a1050 100%);height:140px;border-radius:16px 16px 0 0;position:relative">
+        <span class="badge badge-offer" style="position:absolute;top:16px;right:16px;font-size:12px;padding:6px 14px">🌟 Strong Candidate</span>
+      </div>
+      <div style="background:white;padding:0 28px 24px;border-radius:0 0 16px 16px;border:1px solid var(--border);border-top:none">
+        <div style="display:flex;align-items:flex-end;gap:20px;transform:translateY(-44px);margin-bottom:-18px">
+          <div style="width:88px;height:88px;border-radius:50%;background:var(--gold);display:flex;align-items:center;justify-content:center;font-size:32px;font-weight:800;color:var(--primary);border:4px solid white;flex-shrink:0">JS</div>
+          <div style="padding-bottom:8px">
+            <h1 style="font-size:22px;font-weight:700;color:var(--text-dark);margin-bottom:2px">Jordan Smith</h1>
+            <div style="font-size:13px;color:var(--text-muted)">Computer Science · Central Michigan University · Class of 2025</div>
+          </div>
+          <div style="margin-left:auto;padding-bottom:8px;display:flex;gap:8px">
+            <span class="badge badge-applied">Open to Work</span>
+            <span class="badge badge-gold">GPA 3.7</span>
+          </div>
+        </div>
+        <div style="display:flex;gap:24px;padding-top:8px;border-top:1px solid var(--border)">
+          <div style="display:flex;align-items:center;gap:6px;font-size:13px;color:var(--text-muted)">📧 smith1js@cmich.edu</div>
+          <div style="display:flex;align-items:center;gap:6px;font-size:13px;color:var(--text-muted)">📍 Mt. Pleasant, MI</div>
+          <div style="display:flex;align-items:center;gap:6px;font-size:13px;color:var(--text-muted)">📞 (989) 555-0142</div>
+          <div style="display:flex;align-items:center;gap:6px;font-size:13px;color:var(--primary)">🔗 LinkedIn</div>
+          <div style="display:flex;align-items:center;gap:6px;font-size:13px;color:var(--primary)">💻 GitHub</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAT BOXES -->
+    <div class="stats-grid" style="margin-bottom:24px">
+      <div class="stat-card">
+        <div class="stat-icon maroon">📋</div>
+        <div>
+          <div class="stat-value">12</div>
+          <div class="stat-label">Total Applications</div>
+          <div class="stat-change up">↑ 3 this week</div>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon green">🎉</div>
+        <div>
+          <div class="stat-value">2</div>
+          <div class="stat-label">Offers Received</div>
+          <div class="stat-change up">↑ 1 new offer</div>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon gold">🗓️</div>
+        <div>
+          <div class="stat-value">3</div>
+          <div class="stat-label">Interviews Scheduled</div>
+          <div class="stat-change up">1 this week</div>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon blue">📊</div>
+        <div>
+          <div class="stat-value">78%</div>
+          <div class="stat-label">Profile Strength</div>
+          <div class="progress" style="margin-top:8px;width:80px"><div class="progress-bar" style="width:78%"></div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MAIN GRID -->
+    <div style="display:grid;grid-template-columns:1fr 360px;gap:24px">
+
+      <!-- LEFT COLUMN -->
+      <div style="display:flex;flex-direction:column;gap:20px">
+
+        <!-- RECENT APPLICATIONS -->
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">Recent Applications</div>
+            <span style="font-size:12px;color:var(--text-muted)">12 total</span>
+          </div>
+          <div class="table-container" style="border:none;box-shadow:none;border-radius:8px;overflow:hidden">
+            <table>
+              <thead>
+                <tr>
+                  <th>Company & Role</th>
+                  <th>Status</th>
+                  <th>Applied</th>
+                  <th>Last Update</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <div style="font-weight:600;font-size:13px">Google</div>
+                    <div style="font-size:11px;color:var(--text-muted)">Software Engineer Intern</div>
+                  </td>
+                  <td><span class="badge badge-interview">Interview</span></td>
+                  <td style="font-size:12px;color:var(--text-muted)">Mar 10</td>
+                  <td style="font-size:12px;color:var(--text-muted)">Today</td>
+                </tr>
+                <tr>
+                  <td>
+                    <div style="font-weight:600;font-size:13px">Microsoft</div>
+                    <div style="font-size:11px;color:var(--text-muted)">Data Engineer</div>
+                  </td>
+                  <td><span class="badge badge-offer">Offer 🎉</span></td>
+                  <td style="font-size:12px;color:var(--text-muted)">Feb 28</td>
+                  <td style="font-size:12px;color:var(--text-muted)">Mar 14</td>
+                </tr>
+                <tr>
+                  <td>
+                    <div style="font-weight:600;font-size:13px">Amazon</div>
+                    <div style="font-size:11px;color:var(--text-muted)">ML Intern</div>
+                  </td>
+                  <td><span class="badge badge-offer">Offer 🎉</span></td>
+                  <td style="font-size:12px;color:var(--text-muted)">Feb 20</td>
+                  <td style="font-size:12px;color:var(--text-muted)">Mar 12</td>
+                </tr>
+                <tr>
+                  <td>
+                    <div style="font-weight:600;font-size:13px">Meta</div>
+                    <div style="font-size:11px;color:var(--text-muted)">Backend Engineer Intern</div>
+                  </td>
+                  <td><span class="badge badge-applied">Applied</span></td>
+                  <td style="font-size:12px;color:var(--text-muted)">Mar 15</td>
+                  <td style="font-size:12px;color:var(--text-muted)">Mar 15</td>
+                </tr>
+                <tr>
+                  <td>
+                    <div style="font-weight:600;font-size:13px">Apple</div>
+                    <div style="font-size:11px;color:var(--text-muted)">iOS Developer Intern</div>
+                  </td>
+                  <td><span class="badge badge-pending">Under Review</span></td>
+                  <td style="font-size:12px;color:var(--text-muted)">Mar 5</td>
+                  <td style="font-size:12px;color:var(--text-muted)">Mar 13</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- SKILLS & TECHNOLOGIES -->
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">Skills & Technologies</div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:14px">
+            <div>
+              <div style="font-size:11px;font-weight:600;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:8px">Programming Languages</div>
+              <div style="display:flex;flex-wrap:wrap;gap:6px">
+                <span class="badge badge-maroon">Python</span>
+                <span class="badge badge-maroon">Java</span>
+                <span class="badge badge-maroon">JavaScript</span>
+                <span class="badge badge-maroon">C++</span>
+                <span class="badge badge-maroon">SQL</span>
+              </div>
+            </div>
+            <div>
+              <div style="font-size:11px;font-weight:600;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:8px">Frameworks & Tools</div>
+              <div style="display:flex;flex-wrap:wrap;gap:6px">
+                <span class="badge badge-gold">React</span>
+                <span class="badge badge-gold">Node.js</span>
+                <span class="badge badge-gold">Django</span>
+                <span class="badge badge-gold">TensorFlow</span>
+                <span class="badge badge-gold">Docker</span>
+                <span class="badge badge-gold">Git</span>
+              </div>
+            </div>
+            <div>
+              <div style="font-size:11px;font-weight:600;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:8px">Cloud & Databases</div>
+              <div style="display:flex;flex-wrap:wrap;gap:6px">
+                <span class="badge badge-applied">AWS</span>
+                <span class="badge badge-applied">Azure</span>
+                <span class="badge badge-applied">PostgreSQL</span>
+                <span class="badge badge-applied">MongoDB</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- UPCOMING INTERVIEWS -->
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">Upcoming Interviews</div>
+            <span class="badge badge-interview">3 scheduled</span>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:12px">
+            <div style="display:flex;align-items:center;gap:14px;padding:14px;background:var(--bg);border-radius:10px;border-left:4px solid var(--primary)">
+              <div style="width:44px;height:44px;background:white;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;border:1px solid var(--border)">🏢</div>
+              <div style="flex:1">
+                <div style="font-size:13px;font-weight:700;color:var(--text-dark)">Google – Software Engineer Intern</div>
+                <div style="font-size:12px;color:var(--text-muted);margin-top:2px">Technical Interview · Round 2</div>
+              </div>
+              <div style="text-align:right">
+                <div style="font-size:13px;font-weight:600;color:var(--primary)">Mar 25</div>
+                <div style="font-size:11px;color:var(--text-muted)">2:00 PM EST</div>
+              </div>
+            </div>
+            <div style="display:flex;align-items:center;gap:14px;padding:14px;background:var(--bg);border-radius:10px;border-left:4px solid var(--gold)">
+              <div style="width:44px;height:44px;background:white;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;border:1px solid var(--border)">🍎</div>
+              <div style="flex:1">
+                <div style="font-size:13px;font-weight:700;color:var(--text-dark)">Apple – iOS Developer Intern</div>
+                <div style="font-size:12px;color:var(--text-muted);margin-top:2px">HR Screening · Phone Call</div>
+              </div>
+              <div style="text-align:right">
+                <div style="font-size:13px;font-weight:600;color:#9a6700">Mar 27</div>
+                <div style="font-size:11px;color:var(--text-muted)">11:00 AM EST</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT COLUMN -->
+      <div style="display:flex;flex-direction:column;gap:20px">
+
+        <!-- ADVISOR NOTES HISTORY -->
+        <div class="card" style="border-top:4px solid var(--primary)">
+          <div class="card-header">
+            <div class="card-title">Advisor Notes</div>
+            <a href="advisor-add-note.html" style="font-size:12px;color:var(--primary);text-decoration:none;font-weight:600">+ Add Note</a>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:12px">
+            <!-- Note 1 -->
+            <div style="padding:12px;background:var(--bg);border-radius:10px;border-left:3px solid var(--success)">
+              <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:6px">
+                <span class="badge badge-interview" style="font-size:10px">Career Advice</span>
+                <span style="font-size:11px;color:var(--text-muted)">Mar 15</span>
+              </div>
+              <div style="font-size:12px;color:var(--text-body);line-height:1.6">Great progress! Prepare case studies for Google interview. Update LinkedIn with latest projects. Consider following up with MS recruiter.</div>
+              <div style="display:flex;gap:6px;margin-top:8px">
+                <span class="badge badge-gold" style="font-size:10px">Interview Prep</span>
+                <span class="badge badge-gold" style="font-size:10px">LinkedIn</span>
+              </div>
+            </div>
+            <!-- Note 2 -->
+            <div style="padding:12px;background:var(--bg);border-radius:10px;border-left:3px solid var(--gold)">
+              <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:6px">
+                <span class="badge badge-gold" style="font-size:10px">Resume Review</span>
+                <span style="font-size:11px;color:var(--text-muted)">Mar 8</span>
+              </div>
+              <div style="font-size:12px;color:var(--text-body);line-height:1.6">Reviewed resume — strong project section. Suggested quantifying impact on each bullet point. Format looks clean and professional.</div>
+              <div style="display:flex;gap:6px;margin-top:8px">
+                <span class="badge badge-gold" style="font-size:10px">Resume</span>
+              </div>
+            </div>
+            <!-- Note 3 -->
+            <div style="padding:12px;background:var(--bg);border-radius:10px;border-left:3px solid var(--primary)">
+              <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:6px">
+                <span class="badge badge-maroon" style="font-size:10px">Salary Negotiation</span>
+                <span style="font-size:11px;color:var(--text-muted)">Mar 14</span>
+              </div>
+              <div style="font-size:12px;color:var(--text-body);line-height:1.6">Advised on salary negotiation for Microsoft offer. Counter-offered for $5K signing bonus — accepted. Great outcome!</div>
+              <div style="display:flex;gap:6px;margin-top:8px">
+                <span class="badge badge-maroon" style="font-size:10px">Offer</span>
+              </div>
+            </div>
+          </div>
+          <a href="advisor-add-note.html" class="btn btn-primary btn-block" style="margin-top:16px">+ Add Note for Jordan</a>
+        </div>
+
+        <!-- NOTE TYPE LEGEND -->
+        <div class="card">
+          <div class="card-title" style="margin-bottom:14px">Note Type Legend</div>
+          <div style="display:flex;flex-direction:column;gap:8px">
+            <div style="display:flex;align-items:center;gap:10px;font-size:12px">
+              <div style="width:12px;height:12px;border-radius:50%;background:var(--success);flex-shrink:0"></div>
+              <span style="color:var(--text-muted)">Career Advice / Progress</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:10px;font-size:12px">
+              <div style="width:12px;height:12px;border-radius:50%;background:var(--gold);flex-shrink:0"></div>
+              <span style="color:var(--text-muted)">Resume / Profile Review</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:10px;font-size:12px">
+              <div style="width:12px;height:12px;border-radius:50%;background:var(--primary);flex-shrink:0"></div>
+              <span style="color:var(--text-muted)">Salary / Offer Guidance</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:10px;font-size:12px">
+              <div style="width:12px;height:12px;border-radius:50%;background:var(--danger);flex-shrink:0"></div>
+              <span style="color:var(--text-muted)">⚠️ Intervention Needed</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:10px;font-size:12px">
+              <div style="width:12px;height:12px;border-radius:50%;background:var(--info);flex-shrink:0"></div>
+              <span style="color:var(--text-muted)">Interview Practice</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- STUDENT QUICK INFO -->
+        <div class="card" style="border-left:4px solid var(--gold)">
+          <div class="card-title" style="margin-bottom:14px">Quick Info</div>
+          <div style="display:flex;flex-direction:column;gap:10px;font-size:13px">
+            <div style="display:flex;justify-content:space-between">
+              <span style="color:var(--text-muted)">Expected Grad</span>
+              <span style="font-weight:600">May 2025</span>
+            </div>
+            <div style="display:flex;justify-content:space-between">
+              <span style="color:var(--text-muted)">GPA</span>
+              <span style="font-weight:600;color:var(--success)">3.7 / 4.0</span>
+            </div>
+            <div style="display:flex;justify-content:space-between">
+              <span style="color:var(--text-muted)">Major</span>
+              <span style="font-weight:600">Computer Science</span>
+            </div>
+            <div style="display:flex;justify-content:space-between">
+              <span style="color:var(--text-muted)">Job Type</span>
+              <span style="font-weight:600">Full-time / Intern</span>
+            </div>
+            <div style="display:flex;justify-content:space-between">
+              <span style="color:var(--text-muted)">Last Active</span>
+              <span style="font-weight:600;color:var(--success)">Today</span>
+            </div>
+            <div style="display:flex;justify-content:space-between">
+              <span style="color:var(--text-muted)">Pipeline Status</span>
+              <span class="badge badge-offer">Strong 🌟</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<!-- TOAST NOTIFICATION -->
+<div id="toast" style="display:none;position:fixed;bottom:28px;right:28px;background:#1a1a1a;color:white;padding:14px 20px;border-radius:10px;font-size:13px;font-weight:500;box-shadow:0 8px 24px rgba(0,0,0,0.2);z-index:999;align-items:center;gap:10px">
+  <span>✅</span><span id="toastMsg">Action completed</span>
+</div>
+<script>
+  function showToast(msg) {
+    const t = document.getElementById('toast');
+    document.getElementById('toastMsg').textContent = msg;
+    t.style.display = 'flex';
+    setTimeout(() => t.style.display = 'none', 3000);
+  }
+  // Filter chips
+  document.querySelectorAll('.filter-chip').forEach(chip => {
+    chip.addEventListener('click', function() {
+      document.querySelectorAll('.filter-chip').forEach(c => c.classList.remove('active'));
+      this.classList.add('active');
+    });
+  });
+</script>
+</body>
+</html>

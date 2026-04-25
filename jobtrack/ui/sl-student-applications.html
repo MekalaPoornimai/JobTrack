@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>My Applications | JobTrack CMU</title>
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="sl-styles.css">
+<script src="https://mcp.figma.com/mcp/html-to-design/capture.js" async></script>
+</head>
+<body>
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="sidebar-logo">Job<span>Track</span></div>
+    <div class="sidebar-tagline">CMU Career Services</div>
+  </div>
+  <div class="sidebar-nav">
+    <div class="nav-section">Navigation</div>
+    <a class="nav-item" href="sl-student-dashboard.html"><span class="nav-icon">🏠</span> Dashboard</a>
+    <a class="nav-item" href="sl-student-jobs.html"><span class="nav-icon">🔍</span> Browse Jobs</a>
+    <a class="nav-item active" href="#"><span class="nav-icon">📋</span> My Applications</a>
+    <a class="nav-item" href="sl-student-interviews.html"><span class="nav-icon">🗓️</span> Interviews</a>
+    <a class="nav-item" href="sl-student-profile.html"><span class="nav-icon">👤</span> My Profile</a>
+    <div class="nav-section" style="margin-top:16px;">Resources</div>
+    <a class="nav-item" href="#"><span class="nav-icon">📄</span> Resume Builder</a>
+    <a class="nav-item" href="#"><span class="nav-icon">💡</span> Career Tips</a>
+  </div>
+  <div class="sidebar-footer">
+    <div class="user-row">
+      <div class="user-avatar">JS</div>
+      <div>
+        <div class="user-name">Jordan Smith</div>
+        <div class="user-email">smith1js@cmich.edu</div>
+      </div>
+    </div>
+    <div class="logout-link">⬅ Sign Out</div>
+  </div>
+</div>
+
+<div class="main">
+  <div class="page-title">📋 My Applications</div>
+  <div class="page-subtitle">Track the status of all your job applications in one place</div>
+
+  <!-- Metrics -->
+  <div class="metrics-row">
+    <div class="metric-card m-maroon">
+      <div class="metric-label">Total Applications</div>
+      <div class="metric-value">8</div>
+      <div class="metric-delta delta-neu">this semester</div>
+    </div>
+    <div class="metric-card m-gold">
+      <div class="metric-label">Interview Scheduled</div>
+      <div class="metric-value">2</div>
+      <div class="metric-delta delta-up">↑ 1 this week</div>
+    </div>
+    <div class="metric-card m-green">
+      <div class="metric-label">Under Review</div>
+      <div class="metric-value">2</div>
+      <div class="metric-delta delta-neu">awaiting response</div>
+    </div>
+    <div class="metric-card m-blue">
+      <div class="metric-label">Response Rate</div>
+      <div class="metric-value">50%</div>
+      <div class="metric-delta delta-up">↑ above avg</div>
+    </div>
+  </div>
+
+  <!-- Tabs -->
+  <div class="tabs">
+    <div class="tab active">All (8)</div>
+    <div class="tab">Applied (3)</div>
+    <div class="tab">Under Review (2)</div>
+    <div class="tab">Interview (2)</div>
+    <div class="tab">Offers (0)</div>
+    <div class="tab">Closed (1)</div>
+  </div>
+
+  <!-- Filter -->
+  <div class="filter-row">
+    <input type="text" class="form-control search-box" placeholder="🔍  Search applications...">
+    <select class="form-control">
+      <option>All Statuses</option>
+      <option>Applied</option>
+      <option>Under Review</option>
+      <option>Interview Scheduled</option>
+    </select>
+    <select class="form-control">
+      <option>All Types</option>
+      <option>Internship</option>
+      <option>Full-time</option>
+    </select>
+  </div>
+
+  <!-- Applications Table -->
+  <div class="table-wrap">
+    <div class="table-head">
+      Applications — Jordan Smith
+      <button class="btn btn-outline btn-sm">📥 Export CSV</button>
+    </div>
+    <table class="st-table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Job Title</th>
+          <th>Company</th>
+          <th>Type</th>
+          <th>Salary</th>
+          <th>Status</th>
+          <th>Applied Date</th>
+          <th>Last Updated</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="text-muted">1</td>
+          <td class="fw-600">Software Eng. Intern</td>
+          <td>TechCorp Inc.</td>
+          <td><span class="badge b-intern">Internship</span></td>
+          <td>$18–$25/hr</td>
+          <td><span class="badge b-interview">🎯 Interview Scheduled</span></td>
+          <td class="text-muted">Mar 10, 2025</td>
+          <td class="text-muted">Mar 15, 2025</td>
+          <td><button class="btn btn-outline btn-sm">View</button></td>
+        </tr>
+        <tr>
+          <td class="text-muted">2</td>
+          <td class="fw-600">ML Engineer Intern</td>
+          <td>TechCorp Inc.</td>
+          <td><span class="badge b-intern">Internship</span></td>
+          <td>$20–$28/hr</td>
+          <td><span class="badge b-interview">🎯 Interview Scheduled</span></td>
+          <td class="text-muted">Mar 14, 2025</td>
+          <td class="text-muted">Mar 16, 2025</td>
+          <td><button class="btn btn-outline btn-sm">View</button></td>
+        </tr>
+        <tr>
+          <td class="text-muted">3</td>
+          <td class="fw-600">Full Stack Developer</td>
+          <td>TechCorp Inc.</td>
+          <td><span class="badge b-fulltime">Full-time</span></td>
+          <td>$65k–$85k</td>
+          <td><span class="badge b-applied">Applied</span></td>
+          <td class="text-muted">Mar 12, 2025</td>
+          <td class="text-muted">Mar 12, 2025</td>
+          <td>
+            <button class="btn btn-outline btn-sm">View</button>
+            <button class="btn btn-sm" style="background:#ffebee;color:#c62828;margin-left:4px;">Withdraw</button>
+          </td>
+        </tr>
+        <tr>
+          <td class="text-muted">4</td>
+          <td class="fw-600">Data Analyst Intern</td>
+          <td>Innovate Solutions</td>
+          <td><span class="badge b-intern">Internship</span></td>
+          <td>$17–$22/hr</td>
+          <td><span class="badge b-review">Under Review</span></td>
+          <td class="text-muted">Mar 8, 2025</td>
+          <td class="text-muted">Mar 13, 2025</td>
+          <td><button class="btn btn-outline btn-sm">View</button></td>
+        </tr>
+        <tr>
+          <td class="text-muted">5</td>
+          <td class="fw-600">Business Analyst</td>
+          <td>Innovate Solutions</td>
+          <td><span class="badge b-fulltime">Full-time</span></td>
+          <td>$55k–$70k</td>
+          <td><span class="badge b-applied">Applied</span></td>
+          <td class="text-muted">Mar 9, 2025</td>
+          <td class="text-muted">Mar 9, 2025</td>
+          <td><button class="btn btn-outline btn-sm">View</button></td>
+        </tr>
+        <tr>
+          <td class="text-muted">6</td>
+          <td class="fw-600">Financial Systems Intern</td>
+          <td>Global Finance Co.</td>
+          <td><span class="badge b-intern">Internship</span></td>
+          <td>$16–$20/hr</td>
+          <td><span class="badge b-applied">Applied</span></td>
+          <td class="text-muted">Mar 11, 2025</td>
+          <td class="text-muted">Mar 11, 2025</td>
+          <td><button class="btn btn-outline btn-sm">View</button></td>
+        </tr>
+        <tr>
+          <td class="text-muted">7</td>
+          <td class="fw-600">Software Dev Intern</td>
+          <td>Innovate Solutions</td>
+          <td><span class="badge b-intern">Internship</span></td>
+          <td>$18–$22/hr</td>
+          <td><span class="badge b-review">Under Review</span></td>
+          <td class="text-muted">Mar 5, 2025</td>
+          <td class="text-muted">Mar 14, 2025</td>
+          <td><button class="btn btn-outline btn-sm">View</button></td>
+        </tr>
+        <tr>
+          <td class="text-muted">8</td>
+          <td class="fw-600">IT Support Intern</td>
+          <td>Global Finance Co.</td>
+          <td><span class="badge b-intern">Internship</span></td>
+          <td>$15–$18/hr</td>
+          <td><span class="badge b-rejected">Rejected</span></td>
+          <td class="text-muted">Feb 28, 2025</td>
+          <td class="text-muted">Mar 7, 2025</td>
+          <td><button class="btn btn-outline btn-sm">View</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Application Detail Expanders -->
+  <div class="section-title">📂 Application Details</div>
+  <div class="expander">
+    <div class="expander-header">
+      <span>🎯 Software Engineering Intern — TechCorp Inc. <span class="badge b-interview" style="margin-left:8px;">Interview Scheduled</span></span>
+      <span style="font-size:18px;color:#9b9b9b;">▼</span>
+    </div>
+    <div class="expander-body">
+      <div class="cols-2">
+        <div>
+          <div class="form-label">Cover Letter</div>
+          <div style="background:#f8f9fa;padding:12px;border-radius:6px;font-size:13px;color:#495057;line-height:1.6;">
+            I am excited to apply for the Software Engineering Internship at TechCorp. My experience with Python and React aligns well with this role...
+          </div>
+        </div>
+        <div>
+          <div class="form-label">Application Timeline</div>
+          <div style="font-size:13px;">
+            <div style="display:flex;gap:10px;margin-bottom:8px;align-items:center;">
+              <div style="width:10px;height:10px;border-radius:50%;background:#6a0032;flex-shrink:0;"></div>
+              <span class="text-muted">Mar 10</span> <span>Application Submitted</span>
+            </div>
+            <div style="display:flex;gap:10px;margin-bottom:8px;align-items:center;">
+              <div style="width:10px;height:10px;border-radius:50%;background:#6a0032;flex-shrink:0;"></div>
+              <span class="text-muted">Mar 13</span> <span>Under Review</span>
+            </div>
+            <div style="display:flex;gap:10px;align-items:center;">
+              <div style="width:10px;height:10px;border-radius:50%;background:#ffc107;flex-shrink:0;"></div>
+              <span class="text-muted">Mar 15</span> <span class="fw-600">Interview Scheduled → Mar 20</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="expander">
+    <div class="expander-header">
+      <span>📝 Full Stack Developer — TechCorp Inc. <span class="badge b-applied" style="margin-left:8px;">Applied</span></span>
+      <span style="font-size:18px;color:#9b9b9b;">▶</span>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

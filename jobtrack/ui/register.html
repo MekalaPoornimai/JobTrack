@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JobTrack – Create Account</title>
+<link rel="stylesheet" href="styles.css">
+<script src="https://mcp.figma.com/mcp/html-to-design/capture.js" async></script>
+</head>
+<body style="background:white;margin:0;padding:0">
+<div class="auth-page">
+  <!-- LEFT: FORM -->
+  <div class="auth-left" style="max-width:620px">
+    <a href="index.html" style="display:inline-block;text-decoration:none;margin-bottom:32px;">
+      <span style="font-size:20px;font-weight:800;color:var(--primary)">Job<span style="color:var(--gold)">Track</span></span>
+    </a>
+    <h1 class="auth-title">Get Started Now</h1>
+    <p class="auth-subtitle">Create your account and launch your career journey</p>
+
+    <!-- ROLE SELECTOR -->
+    <div style="margin-bottom:24px">
+      <label class="form-label">I am a...</label>
+      <div class="role-selector" style="grid-template-columns:repeat(3,1fr)">
+        <div class="role-card selected" onclick="selectRole(this)">
+          <div class="role-icon">🎓</div>
+          <div class="role-name">Student</div>
+          <div style="font-size:11px;color:var(--text-muted);margin-top:4px">Browse & apply for jobs</div>
+        </div>
+        <div class="role-card" onclick="selectRole(this)">
+          <div class="role-icon">👨‍🏫</div>
+          <div class="role-name">Advisor</div>
+          <div style="font-size:11px;color:var(--text-muted);margin-top:4px">Monitor & advise students</div>
+        </div>
+        <div class="role-card" onclick="selectRole(this)">
+          <div class="role-icon">🏢</div>
+          <div class="role-name">Employer</div>
+          <div style="font-size:11px;color:var(--text-muted);margin-top:4px">Post jobs & find talent</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label class="form-label">First Name</label>
+        <input type="text" class="form-control" placeholder="Jordan">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Last Name</label>
+        <input type="text" class="form-control" placeholder="Smith">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="form-label">CMU Email Address</label>
+      <input type="email" class="form-control" placeholder="smith1js@cmich.edu">
+    </div>
+
+    <!-- Student-specific fields -->
+    <div class="form-row">
+      <div class="form-group">
+        <label class="form-label">Major</label>
+        <select class="form-control form-select">
+          <option>Select your major</option>
+          <option>Computer Science</option>
+          <option>Business Administration</option>
+          <option>Information Systems</option>
+          <option>Engineering</option>
+          <option>Marketing</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Graduation Year</label>
+        <select class="form-control form-select">
+          <option>2025</option>
+          <option>2026</option>
+          <option>2027</option>
+          <option>2028</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="form-label">Password</label>
+      <input type="password" class="form-control" placeholder="Create a strong password">
+    </div>
+
+    <div style="display:flex;align-items:flex-start;gap:8px;margin-bottom:24px">
+      <input type="checkbox" id="terms" style="width:16px;height:16px;accent-color:var(--primary);margin-top:2px;flex-shrink:0">
+      <label for="terms" style="font-size:13px;color:var(--text-muted);cursor:pointer;line-height:1.5">
+        I agree to the <a href="#" style="color:var(--primary);font-weight:500;text-decoration:none">Terms of Service</a> and <a href="#" style="color:var(--primary);font-weight:500;text-decoration:none">Privacy Policy</a>
+      </label>
+    </div>
+
+    <button class="btn btn-gold btn-block btn-lg" style="margin-bottom:20px;color:var(--primary)">Create Account</button>
+
+    <div class="auth-divider">Or sign up with</div>
+    <div class="social-row" style="margin-bottom:24px">
+      <button class="social-btn">
+        <svg width="18" height="18" viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+        Sign up with Google
+      </button>
+      <button class="social-btn">
+        <svg width="18" height="18" viewBox="0 0 814 1000"><path d="M788.1 340.9c-5.8 4.5-108.2 62.2-108.2 190.5 0 148.4 130.3 200.9 134.2 202.2-.6 3.2-20.7 71.9-68.7 141.9-42.8 61.6-87.5 123.1-155.5 123.1s-85.5-39.5-164-39.5c-76 0-103.7 40.8-165.9 40.8s-105-57.8-155.5-127.4C46 612 0 495.5 0 382.8c0-165.7 115.4-253.2 230.2-253.2 57.6 0 105.6 38.3 141.8 38.3 34.4 0 87.9-40.8 154.6-40.8 24.7 0 108.2 2.6 168.6 79.6zm-159.8-52.4c-7.7 36.1-28.4 66.3-55.7 86.8-23.1 17.6-48.8 27.7-75.4 27.7-2.4 0-4.8-.1-7.2-.4 .6-37.8 15.7-72.7 41.5-97.9 25.6-25 59.2-40.4 93.4-42.1 1 8.7 2.7 17.3 3.4 25.9z"/></svg>
+        Sign up with Apple
+      </button>
+    </div>
+
+    <p style="text-align:center;font-size:13px;color:var(--text-muted)">
+      Already have an account? <a href="login.html" style="color:var(--primary);font-weight:600;text-decoration:none">Sign In</a>
+    </p>
+  </div>
+
+  <!-- RIGHT: BRAND PANEL -->
+  <div class="auth-right">
+    <div style="position:relative;z-index:1;text-align:center">
+      <div class="auth-brand">Job<span>Track</span></div>
+      <p class="auth-tagline">Join 2,400+ CMU students and advisors already tracking career journeys with JobTrack.</p>
+      <div style="margin-top:40px;display:flex;flex-direction:column;gap:16px">
+        <div style="background:rgba(255,255,255,0.1);border-radius:16px;padding:18px;display:flex;align-items:center;gap:14px;text-align:left">
+          <div style="width:40px;height:40px;background:var(--gold);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0">🎯</div>
+          <div><div style="color:white;font-weight:600;font-size:14px">Track Every Application</div><div style="color:rgba(255,255,255,0.6);font-size:12px;margin-top:2px">Students stay on top of every status update</div></div>
+        </div>
+        <div style="background:rgba(255,255,255,0.1);border-radius:16px;padding:18px;display:flex;align-items:center;gap:14px;text-align:left">
+          <div style="width:40px;height:40px;background:var(--gold);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0">👨‍🏫</div>
+          <div><div style="color:white;font-weight:600;font-size:14px">Advisor-Guided Journey</div><div style="color:rgba(255,255,255,0.6);font-size:12px;margin-top:2px">Advisors monitor progress & leave notes</div></div>
+        </div>
+        <div style="background:rgba(255,255,255,0.1);border-radius:16px;padding:18px;display:flex;align-items:center;gap:14px;text-align:left">
+          <div style="width:40px;height:40px;background:var(--gold);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0">🗓️</div>
+          <div><div style="color:white;font-weight:600;font-size:14px">Interview Management</div><div style="color:rgba(255,255,255,0.6);font-size:12px;margin-top:2px">Schedule, prep, and track every interview</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+function selectRole(el) {
+  document.querySelectorAll('.role-card').forEach(c => c.classList.remove('selected'));
+  el.classList.add('selected');
+}
+</script>
+</body>
+</html>

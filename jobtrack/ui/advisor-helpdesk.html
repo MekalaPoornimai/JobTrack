@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JobTrack – Help Desk</title>
+<link rel="stylesheet" href="styles.css">
+<script src="https://mcp.figma.com/mcp/html-to-design/capture.js" async></script>
+<style>
+  .faq-item {
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 10px;
+    background: white;
+    transition: box-shadow 0.2s;
+  }
+  .faq-item:hover { box-shadow: var(--shadow); }
+  .faq-question {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-dark);
+    user-select: none;
+    transition: background 0.15s;
+    gap: 12px;
+  }
+  .faq-question:hover { background: var(--bg); }
+  .faq-question.open { background: #fef3f8; color: var(--primary); }
+  .faq-icon {
+    font-size: 18px;
+    transition: transform 0.25s;
+    flex-shrink: 0;
+    color: var(--primary);
+  }
+  .faq-question.open .faq-icon { transform: rotate(45deg); }
+  .faq-answer {
+    display: none;
+    padding: 0 20px 18px;
+    font-size: 13px;
+    color: var(--text-body);
+    line-height: 1.8;
+    border-top: 1px solid var(--border);
+    background: #fef9ff;
+  }
+  .faq-answer.open { display: block; }
+  .category-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 20px;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-align: center;
+    box-shadow: var(--shadow);
+  }
+  .category-card:hover {
+    border-color: var(--primary);
+    background: #fef3f8;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(106,0,50,0.12);
+  }
+  .ticket-item {
+    padding: 14px;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    background: white;
+    margin-bottom: 10px;
+    transition: box-shadow 0.15s;
+  }
+  .ticket-item:hover { box-shadow: var(--shadow); }
+</style>
+</head>
+<body>
+<nav class="navbar">
+  <a href="index.html" class="navbar-brand">Job<span style="color:var(--gold)">Track</span></a>
+  <div style="margin-left:auto;display:flex;align-items:center;gap:16px">
+    <span style="color:rgba(255,255,255,0.6);font-size:13px">🔔</span>
+    <div class="navbar-user">
+      <div class="avatar" style="width:34px;height:34px;font-size:13px;background:var(--gold);color:var(--primary)">RT</div>
+      <span class="navbar-user-name">Dr. Rebecca Thompson</span>
+    </div>
+  </div>
+</nav>
+
+<div class="app-layout">
+  <aside class="sidebar">
+    <div style="padding:16px 20px;margin-bottom:4px">
+      <div style="display:flex;align-items:center;gap:10px">
+        <div class="avatar" style="background:var(--primary)">RT</div>
+        <div>
+          <div style="font-size:13px;font-weight:700;color:var(--text-dark)">Dr. R. Thompson</div>
+          <div style="font-size:11px;color:var(--text-muted)">CS Department · Advisor</div>
+        </div>
+      </div>
+    </div>
+    <div class="divider" style="margin:0 0 8px"></div>
+    <div class="sidebar-section-title">Main</div>
+    <a href="advisor-dashboard.html" class="sidebar-link"><span class="icon">🏠</span>Dashboard</a>
+    <a href="advisor-students.html" class="sidebar-link"><span class="icon">🎓</span>My Students<span class="sidebar-badge">24</span></a>
+    <a href="advisor-notes.html" class="sidebar-link"><span class="icon">📝</span>Advising Notes<span class="sidebar-badge">8</span></a>
+    <div class="sidebar-section-title">Tools</div>
+    <a href="#" class="sidebar-link"><span class="icon">📊</span>Reports</a>
+    <a href="advisor-settings.html" class="sidebar-link"><span class="icon">⚙️</span>Settings</a>
+    <a href="advisor-helpdesk.html" class="sidebar-link active"><span class="icon">❓</span>Help Desk</a>
+    <a href="login.html" class="sidebar-link"><span class="icon">🚪</span>Sign Out</a>
+  </aside>
+
+  <main class="main-content" style="padding:0">
+
+    <!-- HERO SEARCH BANNER -->
+    <div style="background:linear-gradient(135deg, var(--primary) 0%, #8a1050 100%);padding:48px 40px;position:relative;overflow:hidden">
+      <div style="position:absolute;top:-80px;right:-60px;width:300px;height:300px;border-radius:50%;background:rgba(255,193,7,0.08)"></div>
+      <div style="position:absolute;bottom:-60px;left:-40px;width:200px;height:200px;border-radius:50%;background:rgba(255,255,255,0.05)"></div>
+      <div style="position:relative;z-index:1;max-width:680px;margin:0 auto;text-align:center">
+        <div style="font-size:13px;font-weight:600;color:var(--gold);letter-spacing:1px;text-transform:uppercase;margin-bottom:10px">JobTrack Help Center</div>
+        <h1 style="font-size:32px;font-weight:800;color:white;margin-bottom:10px;line-height:1.2">How can we help you?</h1>
+        <p style="font-size:15px;color:rgba(255,255,255,0.75);margin-bottom:28px">Search our knowledge base or browse categories below</p>
+        <div style="position:relative;max-width:540px;margin:0 auto">
+          <input type="text" id="searchInput" placeholder="Search — e.g., 'add a note', 'view student profile'..."
+            style="width:100%;padding:16px 20px 16px 48px;border:none;border-radius:12px;font-size:14px;font-family:'Poppins',sans-serif;outline:none;box-shadow:0 4px 20px rgba(0,0,0,0.2)"
+            oninput="filterFAQs(this.value)">
+          <span style="position:absolute;left:16px;top:50%;transform:translateY(-50%);font-size:18px">🔍</span>
+        </div>
+      </div>
+    </div>
+
+    <div style="padding:32px 40px">
+
+      <!-- CATEGORY CARDS -->
+      <div style="margin-bottom:32px">
+        <h2 style="font-size:18px;font-weight:700;color:var(--text-dark);margin-bottom:20px">Browse by Category</h2>
+        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px">
+          <div class="category-card" onclick="filterByCategory('students')">
+            <div style="font-size:36px;margin-bottom:10px">🎓</div>
+            <div style="font-size:14px;font-weight:700;color:var(--text-dark);margin-bottom:4px">Managing Students</div>
+            <div style="font-size:12px;color:var(--text-muted)">Pipeline, profiles, notes</div>
+            <div style="margin-top:10px;font-size:11px;font-weight:600;color:var(--primary)">8 articles →</div>
+          </div>
+          <div class="category-card" onclick="filterByCategory('notes')">
+            <div style="font-size:36px;margin-bottom:10px">📝</div>
+            <div style="font-size:14px;font-weight:700;color:var(--text-dark);margin-bottom:4px">Advising Notes</div>
+            <div style="font-size:12px;color:var(--text-muted)">Creating & managing notes</div>
+            <div style="margin-top:10px;font-size:11px;font-weight:600;color:var(--primary)">6 articles →</div>
+          </div>
+          <div class="category-card" onclick="filterByCategory('reports')">
+            <div style="font-size:36px;margin-bottom:10px">📊</div>
+            <div style="font-size:14px;font-weight:700;color:var(--text-dark);margin-bottom:4px">Reports & Analytics</div>
+            <div style="font-size:12px;color:var(--text-muted)">Placement reports, trends</div>
+            <div style="margin-top:10px;font-size:11px;font-weight:600;color:var(--primary)">5 articles →</div>
+          </div>
+          <div class="category-card" onclick="filterByCategory('account')">
+            <div style="font-size:36px;margin-bottom:10px">⚙️</div>
+            <div style="font-size:14px;font-weight:700;color:var(--text-dark);margin-bottom:4px">Account & Settings</div>
+            <div style="font-size:12px;color:var(--text-muted)">Profile, security, privacy</div>
+            <div style="margin-top:10px;font-size:11px;font-weight:600;color:var(--primary)">4 articles →</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MAIN CONTENT: FAQs + SIDEBAR -->
+      <div style="display:grid;grid-template-columns:1fr 340px;gap:28px">
+
+        <!-- FAQ SECTION -->
+        <div>
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px">
+            <h2 style="font-size:18px;font-weight:700;color:var(--text-dark)">Frequently Asked Questions</h2>
+            <span id="faqCount" style="font-size:12px;color:var(--text-muted)">5 questions</span>
+          </div>
+
+          <div id="faqList">
+            <!-- FAQ 1 -->
+            <div class="faq-item" data-category="students" data-keywords="view student profile pipeline">
+              <div class="faq-question" onclick="toggleFAQ(this)">
+                <span>🔍 How do I view a student's full profile from the Pipeline?</span>
+                <span class="faq-icon">+</span>
+              </div>
+              <div class="faq-answer">
+                <p style="margin-bottom:10px">To view a student's complete profile from the Student Pipeline:</p>
+                <ol style="padding-left:20px;margin-bottom:10px">
+                  <li style="margin-bottom:6px">Navigate to <strong>My Students → Student Pipeline</strong> from the sidebar</li>
+                  <li style="margin-bottom:6px">Find the student in the table</li>
+                  <li style="margin-bottom:6px">Click the <strong>"View"</strong> button in the Actions column</li>
+                </ol>
+                <p>The Student Profile View shows their full application history, skills, upcoming interviews, your advising notes, and key stats. You can also add a note directly from there.</p>
+              </div>
+            </div>
+
+            <!-- FAQ 2 -->
+            <div class="faq-item" data-category="notes" data-keywords="add note advising student">
+              <div class="faq-question" onclick="toggleFAQ(this)">
+                <span>📝 How do I add an advising note for a student?</span>
+                <span class="faq-icon">+</span>
+              </div>
+              <div class="faq-answer">
+                <p style="margin-bottom:10px">You can add advising notes in two ways:</p>
+                <ul style="padding-left:20px;margin-bottom:10px">
+                  <li style="margin-bottom:6px"><strong>From Student Pipeline:</strong> Click the "Add Note" button next to the student's row</li>
+                  <li style="margin-bottom:6px"><strong>From Student Profile View:</strong> Click the "+ Add Note for Student" button in the top-right or inside the Advisor Notes card</li>
+                  <li style="margin-bottom:6px"><strong>From Advising Notes page:</strong> Use the quick form on the right sidebar</li>
+                </ul>
+                <p>When adding a note, you can set the category, priority level, add tags, link to a specific application, and set a follow-up reminder date.</p>
+              </div>
+            </div>
+
+            <!-- FAQ 3 -->
+            <div class="faq-item" data-category="students" data-keywords="intervene at risk struggling student">
+              <div class="faq-question" onclick="toggleFAQ(this)">
+                <span>⚠️ How do I intervene when a student is flagged as "At Risk"?</span>
+                <span class="faq-icon">+</span>
+              </div>
+              <div class="faq-answer">
+                <p style="margin-bottom:10px">When a student shows the <strong>⚠️ At Risk</strong> or <strong>⚠️ Struggling</strong> status:</p>
+                <ol style="padding-left:20px;margin-bottom:10px">
+                  <li style="margin-bottom:6px">Click the <strong>"Intervene"</strong> button (appears instead of "View" for at-risk students)</li>
+                  <li style="margin-bottom:6px">You'll go directly to the Add Note form pre-populated with the student's info</li>
+                  <li style="margin-bottom:6px">Select <strong>"⚠️ Intervention"</strong> as the note category</li>
+                  <li style="margin-bottom:6px">Set priority to <strong>High</strong></li>
+                  <li style="margin-bottom:6px">Document your action plan and set a follow-up reminder</li>
+                </ol>
+                <p>Students are also highlighted on your Dashboard under "⚠️ Needs Attention" for quick access.</p>
+              </div>
+            </div>
+
+            <!-- FAQ 4 -->
+            <div class="faq-item" data-category="notes" data-keywords="private note student visibility">
+              <div class="faq-question" onclick="toggleFAQ(this)">
+                <span>🔒 Can students see my advising notes?</span>
+                <span class="faq-icon">+</span>
+              </div>
+              <div class="faq-answer">
+                <p style="margin-bottom:10px">By default, advising notes are visible to students. You have two options to control visibility:</p>
+                <ul style="padding-left:20px;margin-bottom:10px">
+                  <li style="margin-bottom:6px"><strong>Per-note:</strong> Toggle the 🔒 "Private Note" switch when creating a note — that note will only be visible to advisors and admins</li>
+                  <li style="margin-bottom:6px"><strong>Default setting:</strong> Go to Settings → Privacy → enable "Private Note Default" to make all new notes private by default</li>
+                </ul>
+                <p>Intervention-type notes are automatically marked as advisor-only for student wellbeing and privacy.</p>
+              </div>
+            </div>
+
+            <!-- FAQ 5 -->
+            <div class="faq-item" data-category="reports" data-keywords="pipeline filter status">
+              <div class="faq-question" onclick="toggleFAQ(this)">
+                <span>📊 How do I filter the Student Pipeline by status?</span>
+                <span class="faq-icon">+</span>
+              </div>
+              <div class="faq-answer">
+                <p style="margin-bottom:10px">At the top of the Student Pipeline page, you'll find filter tabs:</p>
+                <ul style="padding-left:20px;margin-bottom:10px">
+                  <li style="margin-bottom:6px"><strong>All Students (24)</strong> — shows every assigned student</li>
+                  <li style="margin-bottom:6px"><strong>Actively Applying (18)</strong> — students with recent applications</li>
+                  <li style="margin-bottom:6px"><strong>In Interviews (8)</strong> — students with scheduled interviews</li>
+                  <li style="margin-bottom:6px"><strong>Offers (9)</strong> — students who received offers</li>
+                  <li style="margin-bottom:6px"><strong>⚠️ Needs Help (3)</strong> — flagged at-risk students</li>
+                </ul>
+                <p>Click any tab to filter the table. You can also use the search bar to find a specific student by name.</p>
+              </div>
+            </div>
+
+            <!-- FAQ 6 -->
+            <div class="faq-item" data-category="account" data-keywords="settings notifications password security">
+              <div class="faq-question" onclick="toggleFAQ(this)">
+                <span>⚙️ How do I update my notification preferences?</span>
+                <span class="faq-icon">+</span>
+              </div>
+              <div class="faq-answer">
+                <p style="margin-bottom:10px">To manage your notifications:</p>
+                <ol style="padding-left:20px;margin-bottom:10px">
+                  <li style="margin-bottom:6px">Click <strong>Settings</strong> in the left sidebar (⚙️ icon)</li>
+                  <li style="margin-bottom:6px">Scroll to the <strong>"🔔 Notification Preferences"</strong> section</li>
+                  <li style="margin-bottom:6px">Toggle each notification type on or off</li>
+                  <li style="margin-bottom:6px">Choose your preferred delivery method: Email, In-App, or SMS</li>
+                  <li style="margin-bottom:6px">Click <strong>"Save Preferences"</strong></li>
+                </ol>
+                <p>You can receive alerts for student activity (applications, interviews, offers), inactivity warnings, follow-up reminders, and weekly pipeline summaries.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- NO RESULTS -->
+          <div id="noResults" style="display:none" class="empty-state">
+            <div class="empty-icon">🔍</div>
+            <div class="empty-title">No results found</div>
+            <div class="empty-desc">Try different search terms or browse the categories above</div>
+          </div>
+        </div>
+
+        <!-- SUPPORT TICKET SIDEBAR -->
+        <div style="display:flex;flex-direction:column;gap:20px">
+
+          <!-- MY TICKETS -->
+          <div class="card" style="border-top:4px solid var(--primary)">
+            <div class="card-header">
+              <div class="card-title" style="font-size:14px">My Support Tickets</div>
+              <button class="btn btn-primary btn-sm" onclick="document.getElementById('ticketModal').style.display='flex'">+ New</button>
+            </div>
+
+            <!-- Open Tickets -->
+            <div style="margin-bottom:14px">
+              <div style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.5px;color:var(--text-muted);margin-bottom:8px">Open</div>
+              <div class="ticket-item">
+                <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:6px">
+                  <div style="font-size:13px;font-weight:600;color:var(--text-dark)">#1023 – Report export issue</div>
+                  <span class="badge badge-pending" style="font-size:10px">Open</span>
+                </div>
+                <div style="font-size:12px;color:var(--text-muted)">Submitted Mar 20 · Category: Reports</div>
+                <div style="font-size:12px;color:var(--text-body);margin-top:4px">CSV export button not working on Admin Reports page.</div>
+              </div>
+              <div class="ticket-item">
+                <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:6px">
+                  <div style="font-size:13px;font-weight:600;color:var(--text-dark)">#1019 – Student data missing</div>
+                  <span class="badge badge-applied" style="font-size:10px;background:#fff3e0;color:#e65100">In Progress</span>
+                </div>
+                <div style="font-size:12px;color:var(--text-muted)">Submitted Mar 17 · Category: Students</div>
+                <div style="font-size:12px;color:var(--text-body);margin-top:4px">Brian Johnson's applications not loading.</div>
+              </div>
+            </div>
+
+            <!-- Resolved Tickets -->
+            <div>
+              <div style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.5px;color:var(--text-muted);margin-bottom:8px">Recently Resolved</div>
+              <div class="ticket-item" style="opacity:0.75">
+                <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:4px">
+                  <div style="font-size:13px;font-weight:600;color:var(--text-dark)">#1011 – Login issue</div>
+                  <span class="badge badge-interview" style="font-size:10px">✅ Resolved</span>
+                </div>
+                <div style="font-size:12px;color:var(--text-muted)">Resolved Mar 15 · Took 2 days</div>
+              </div>
+              <div class="ticket-item" style="opacity:0.75">
+                <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:4px">
+                  <div style="font-size:13px;font-weight:600;color:var(--text-dark)">#1005 – Note not saving</div>
+                  <span class="badge badge-interview" style="font-size:10px">✅ Resolved</span>
+                </div>
+                <div style="font-size:12px;color:var(--text-muted)">Resolved Mar 10 · Took 1 day</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- CONTACT OPTIONS -->
+          <div class="card">
+            <div class="card-title" style="margin-bottom:16px;font-size:14px">Contact Support</div>
+            <div style="display:flex;flex-direction:column;gap:10px">
+              <div style="display:flex;align-items:center;gap:12px;padding:14px;background:var(--bg);border-radius:10px;cursor:pointer" onclick="showToast('Opening live chat...')">
+                <span style="font-size:24px">💬</span>
+                <div>
+                  <div style="font-size:13px;font-weight:600;color:var(--text-dark)">Live Chat</div>
+                  <div style="font-size:11px;color:var(--success);font-weight:500">● Online now · Avg. 2 min response</div>
+                </div>
+              </div>
+              <div style="display:flex;align-items:center;gap:12px;padding:14px;background:var(--bg);border-radius:10px;cursor:pointer" onclick="showToast('Opening email client...')">
+                <span style="font-size:24px">📧</span>
+                <div>
+                  <div style="font-size:13px;font-weight:600;color:var(--text-dark)">Email Support</div>
+                  <div style="font-size:11px;color:var(--text-muted)">jobtrack-help@cmich.edu</div>
+                </div>
+              </div>
+              <div style="display:flex;align-items:center;gap:12px;padding:14px;background:var(--bg);border-radius:10px">
+                <span style="font-size:24px">📞</span>
+                <div>
+                  <div style="font-size:13px;font-weight:600;color:var(--text-dark)">Phone</div>
+                  <div style="font-size:11px;color:var(--text-muted)">(989) 774-7200 · Mon–Fri 8AM–5PM</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- QUICK LINKS -->
+          <div class="card">
+            <div class="card-title" style="margin-bottom:14px;font-size:14px">Quick Links</div>
+            <div style="display:flex;flex-direction:column;gap:6px">
+              <a href="advisor-students.html" style="display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:8px;color:var(--text-body);text-decoration:none;font-size:13px;background:var(--bg)">
+                <span>🎓</span> Student Pipeline Guide
+              </a>
+              <a href="advisor-notes.html" style="display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:8px;color:var(--text-body);text-decoration:none;font-size:13px;background:var(--bg)">
+                <span>📝</span> How to Write Advising Notes
+              </a>
+              <a href="advisor-settings.html" style="display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:8px;color:var(--text-body);text-decoration:none;font-size:13px;background:var(--bg)">
+                <span>⚙️</span> Account Settings Help
+              </a>
+              <a href="#" style="display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:8px;color:var(--text-body);text-decoration:none;font-size:13px;background:var(--bg)">
+                <span>📋</span> Advisor Quick-Start Guide
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<!-- SUBMIT TICKET MODAL -->
+<div id="ticketModal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.5);align-items:center;justify-content:center;z-index:200;padding:20px">
+  <div class="modal" style="width:580px">
+    <div class="modal-header">
+      <span class="modal-title">🎫 Submit a Support Ticket</span>
+      <span class="modal-close" onclick="document.getElementById('ticketModal').style.display='none'">×</span>
+    </div>
+    <div class="modal-body">
+      <div class="form-group">
+        <label class="form-label">Subject *</label>
+        <input type="text" class="form-control" placeholder="Brief description of the issue...">
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">Category *</label>
+          <select class="form-control form-select">
+            <option>Select category...</option>
+            <option>Student Management</option>
+            <option>Advising Notes</option>
+            <option>Reports & Analytics</option>
+            <option>Account & Login</option>
+            <option>Bug / Error</option>
+            <option>Feature Request</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Priority *</label>
+          <select class="form-control form-select">
+            <option>Low</option>
+            <option selected>Medium</option>
+            <option>High</option>
+            <option>Urgent</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Description *</label>
+        <textarea class="form-control" rows="5" placeholder="Please describe the issue in detail. Include:
+- What you were trying to do
+- What happened instead
+- Any error messages seen
+- Steps to reproduce the issue"></textarea>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Attachments <span style="color:var(--text-muted);font-weight:400">(optional)</span></label>
+        <div style="border:2px dashed var(--border);border-radius:10px;padding:20px;text-align:center;color:var(--text-muted);cursor:pointer;font-size:13px">
+          📎 Click to upload screenshots or files · Max 10MB
+        </div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-ghost" onclick="document.getElementById('ticketModal').style.display='none'">Cancel</button>
+      <button class="btn btn-primary" onclick="submitTicket()">Submit Ticket</button>
+    </div>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div id="toast" style="display:none;position:fixed;bottom:28px;right:28px;background:#1a1a1a;color:white;padding:14px 20px;border-radius:10px;font-size:13px;font-weight:500;box-shadow:0 8px 24px rgba(0,0,0,0.2);z-index:999;align-items:center;gap:10px">
+  <span>✅</span><span id="toastMsg">Action completed</span>
+</div>
+
+<script>
+  // FAQ accordion
+  function toggleFAQ(header) {
+    const allHeaders = document.querySelectorAll('.faq-question');
+    const allAnswers = document.querySelectorAll('.faq-answer');
+    const answer = header.nextElementSibling;
+    const isOpen = header.classList.contains('open');
+    allHeaders.forEach(h => h.classList.remove('open'));
+    allAnswers.forEach(a => a.classList.remove('open'));
+    if (!isOpen) {
+      header.classList.add('open');
+      answer.classList.add('open');
+    }
+  }
+
+  // Search FAQs
+  function filterFAQs(query) {
+    const items = document.querySelectorAll('.faq-item');
+    const noResults = document.getElementById('noResults');
+    const q = query.toLowerCase().trim();
+    let visible = 0;
+    items.forEach(item => {
+      const keywords = item.dataset.keywords || '';
+      const text = item.textContent.toLowerCase();
+      const match = !q || text.includes(q) || keywords.includes(q);
+      item.style.display = match ? '' : 'none';
+      if (match) visible++;
+    });
+    noResults.style.display = visible === 0 ? 'flex' : 'none';
+    document.getElementById('faqCount').textContent = visible + (visible === 1 ? ' question' : ' questions');
+  }
+
+  // Filter by category
+  function filterByCategory(cat) {
+    document.getElementById('searchInput').value = '';
+    const items = document.querySelectorAll('.faq-item');
+    const noResults = document.getElementById('noResults');
+    let visible = 0;
+    items.forEach(item => {
+      const match = item.dataset.category === cat;
+      item.style.display = match ? '' : 'none';
+      if (match) visible++;
+    });
+    noResults.style.display = visible === 0 ? 'flex' : 'none';
+    document.getElementById('faqCount').textContent = visible + (visible === 1 ? ' question' : ' questions');
+    document.querySelector('#faqList').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  // Submit ticket
+  function submitTicket() {
+    document.getElementById('ticketModal').style.display = 'none';
+    showToast('Support ticket submitted! We\'ll respond within 24 hours.');
+  }
+
+  function showToast(msg) {
+    const t = document.getElementById('toast');
+    document.getElementById('toastMsg').textContent = msg;
+    t.style.display = 'flex';
+    setTimeout(() => t.style.display = 'none', 3500);
+  }
+</script>
+</body>
+</html>

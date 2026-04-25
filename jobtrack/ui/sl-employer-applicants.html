@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Applicants | JobTrack CMU</title>
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="sl-styles.css">
+<script src="https://mcp.figma.com/mcp/html-to-design/capture.js" async></script>
+</head>
+<body>
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="sidebar-logo">Job<span>Track</span></div>
+    <div class="sidebar-tagline">CMU Career Services</div>
+  </div>
+  <div class="sidebar-nav">
+    <div class="nav-section">Navigation</div>
+    <a class="nav-item" href="sl-employer-dashboard.html"><span class="nav-icon">🏠</span> Dashboard</a>
+    <a class="nav-item" href="sl-employer-post-job.html"><span class="nav-icon">➕</span> Post a Job</a>
+    <a class="nav-item" href="#"><span class="nav-icon">📂</span> My Job Postings</a>
+    <a class="nav-item active" href="#"><span class="nav-icon">👥</span> Applicants</a>
+    <a class="nav-item" href="#"><span class="nav-icon">🗓️</span> Interviews</a>
+    <div class="nav-section" style="margin-top:16px;">Company</div>
+    <a class="nav-item" href="#"><span class="nav-icon">🏢</span> Company Profile</a>
+  </div>
+  <div class="sidebar-footer">
+    <div class="user-row">
+      <div class="user-avatar" style="background:#ffc107;color:#6a0032;font-size:11px;">TC</div>
+      <div>
+        <div class="user-name">TechCorp Inc.</div>
+        <div class="user-email">hr@techcorp.com</div>
+      </div>
+    </div>
+    <div class="logout-link">⬅ Sign Out</div>
+  </div>
+</div>
+
+<div class="main">
+  <div class="page-title">👥 Applicants</div>
+  <div class="page-subtitle">Review and manage applications from CMU students across all your job postings</div>
+
+  <!-- Metrics -->
+  <div class="metrics-row">
+    <div class="metric-card m-maroon">
+      <div class="metric-label">Total Applicants</div>
+      <div class="metric-value">5</div>
+      <div class="metric-delta delta-up">↑ 2 this week</div>
+    </div>
+    <div class="metric-card m-gold">
+      <div class="metric-label">Under Review</div>
+      <div class="metric-value">1</div>
+      <div class="metric-delta delta-neu">action needed</div>
+    </div>
+    <div class="metric-card m-green">
+      <div class="metric-label">Interview Stage</div>
+      <div class="metric-value">3</div>
+      <div class="metric-delta delta-up">↑ scheduling</div>
+    </div>
+    <div class="metric-card m-blue">
+      <div class="metric-label">Avg. GPA</div>
+      <div class="metric-value">3.71</div>
+      <div class="metric-delta delta-up">↑ high quality</div>
+    </div>
+  </div>
+
+  <!-- Filter Row -->
+  <div class="filter-row">
+    <input type="text" class="form-control search-box" placeholder="🔍  Search applicants...">
+    <select class="form-control">
+      <option selected>All Jobs</option>
+      <option>Software Eng. Intern</option>
+      <option>Full Stack Developer</option>
+      <option>ML Engineer Intern</option>
+    </select>
+    <select class="form-control">
+      <option selected>All Statuses</option>
+      <option>Applied</option>
+      <option>Under Review</option>
+      <option>Interview Scheduled</option>
+      <option>Offer Extended</option>
+    </select>
+    <select class="form-control">
+      <option selected>All Majors</option>
+      <option>Computer Science</option>
+      <option>Information Systems</option>
+    </select>
+    <button class="btn btn-outline btn-sm">📥 Export</button>
+  </div>
+
+  <div class="tabs">
+    <div class="tab active">All Applicants (5)</div>
+    <div class="tab">SE Intern (3)</div>
+    <div class="tab">Full Stack (1)</div>
+    <div class="tab">ML Intern (2)</div>
+  </div>
+
+  <!-- Applicant Table -->
+  <div class="table-wrap">
+    <div class="table-head">
+      Applicants — TechCorp Inc.
+      <div style="display:flex;gap:8px;">
+        <button class="btn btn-outline btn-sm">Bulk Action ▾</button>
+      </div>
+    </div>
+    <table class="st-table">
+      <thead>
+        <tr>
+          <th><input type="checkbox" style="accent-color:#6a0032;"></th>
+          <th>Applicant</th>
+          <th>Job Position</th>
+          <th>Major</th>
+          <th>GPA</th>
+          <th>Skills Match</th>
+          <th>Applied</th>
+          <th>Status</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><input type="checkbox" style="accent-color:#6a0032;"></td>
+          <td>
+            <div style="display:flex;align-items:center;gap:8px;">
+              <div class="s-avatar av-1" style="width:32px;height:32px;font-size:12px;">JS</div>
+              <div>
+                <div class="fw-600">Jordan Smith</div>
+                <div class="text-muted" style="font-size:11px;">smith1js@cmich.edu</div>
+              </div>
+            </div>
+          </td>
+          <td>SE Intern</td>
+          <td>Computer Science</td>
+          <td><strong>3.72</strong></td>
+          <td>
+            <div style="display:flex;align-items:center;gap:6px;">
+              <div style="font-size:13px;font-weight:700;color:#28a745;">4/4</div>
+              <div class="progress-bar" style="width:50px;"><div class="progress-fill pf-green" style="width:100%;"></div></div>
+            </div>
+          </td>
+          <td class="text-muted">Mar 10</td>
+          <td><span class="badge b-interview">🎯 Interview</span></td>
+          <td>
+            <button class="btn btn-primary btn-sm">Review</button>
+            <button class="btn btn-outline btn-sm" style="margin-left:4px;">📩 Message</button>
+          </td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" style="accent-color:#6a0032;"></td>
+          <td>
+            <div style="display:flex;align-items:center;gap:8px;">
+              <div class="s-avatar av-3" style="width:32px;height:32px;font-size:12px;">KP</div>
+              <div>
+                <div class="fw-600">Kevin Patel</div>
+                <div class="text-muted" style="font-size:11px;">patel4kp@cmich.edu</div>
+              </div>
+            </div>
+          </td>
+          <td>SE Intern</td>
+          <td>Computer Science</td>
+          <td><strong>3.88</strong></td>
+          <td>
+            <div style="display:flex;align-items:center;gap:6px;">
+              <div style="font-size:13px;font-weight:700;color:#28a745;">3/4</div>
+              <div class="progress-bar" style="width:50px;"><div class="progress-fill pf-green" style="width:75%;"></div></div>
+            </div>
+          </td>
+          <td class="text-muted">Mar 14</td>
+          <td><span class="badge b-applied">Applied</span></td>
+          <td>
+            <button class="btn btn-primary btn-sm">Review</button>
+            <button class="btn btn-outline btn-sm" style="margin-left:4px;">📩 Message</button>
+          </td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" style="accent-color:#6a0032;"></td>
+          <td>
+            <div style="display:flex;align-items:center;gap:8px;">
+              <div class="s-avatar av-1" style="width:32px;height:32px;font-size:12px;">JS</div>
+              <div>
+                <div class="fw-600">Jordan Smith</div>
+                <div class="text-muted" style="font-size:11px;">smith1js@cmich.edu</div>
+              </div>
+            </div>
+          </td>
+          <td>Full Stack Dev</td>
+          <td>Computer Science</td>
+          <td><strong>3.72</strong></td>
+          <td>
+            <div style="display:flex;align-items:center;gap:6px;">
+              <div style="font-size:13px;font-weight:700;color:#bf360c;">3/5</div>
+              <div class="progress-bar" style="width:50px;"><div class="progress-fill pf-gold" style="width:60%;"></div></div>
+            </div>
+          </td>
+          <td class="text-muted">Mar 12</td>
+          <td><span class="badge b-review">Under Review</span></td>
+          <td>
+            <button class="btn btn-primary btn-sm">Review</button>
+            <button class="btn btn-outline btn-sm" style="margin-left:4px;">📩 Message</button>
+          </td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" style="accent-color:#6a0032;"></td>
+          <td>
+            <div style="display:flex;align-items:center;gap:8px;">
+              <div class="s-avatar av-3" style="width:32px;height:32px;font-size:12px;">KP</div>
+              <div>
+                <div class="fw-600">Kevin Patel</div>
+                <div class="text-muted" style="font-size:11px;">patel4kp@cmich.edu</div>
+              </div>
+            </div>
+          </td>
+          <td>ML Intern</td>
+          <td>Computer Science</td>
+          <td><strong>3.88</strong></td>
+          <td>
+            <div style="display:flex;align-items:center;gap:6px;">
+              <div style="font-size:13px;font-weight:700;color:#28a745;">3/3</div>
+              <div class="progress-bar" style="width:50px;"><div class="progress-fill pf-green" style="width:100%;"></div></div>
+            </div>
+          </td>
+          <td class="text-muted">Mar 14</td>
+          <td><span class="badge b-interview">🎯 Interview</span></td>
+          <td>
+            <button class="btn btn-primary btn-sm">Review</button>
+            <button class="btn btn-outline btn-sm" style="margin-left:4px;">📩 Message</button>
+          </td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" style="accent-color:#6a0032;"></td>
+          <td>
+            <div style="display:flex;align-items:center;gap:8px;">
+              <div class="s-avatar av-1" style="width:32px;height:32px;font-size:12px;">JS</div>
+              <div>
+                <div class="fw-600">Jordan Smith</div>
+                <div class="text-muted" style="font-size:11px;">smith1js@cmich.edu</div>
+              </div>
+            </div>
+          </td>
+          <td>ML Intern</td>
+          <td>Computer Science</td>
+          <td><strong>3.72</strong></td>
+          <td>
+            <div style="display:flex;align-items:center;gap:6px;">
+              <div style="font-size:13px;font-weight:700;color:#bf360c;">2/3</div>
+              <div class="progress-bar" style="width:50px;"><div class="progress-fill pf-gold" style="width:67%;"></div></div>
+            </div>
+          </td>
+          <td class="text-muted">Mar 14</td>
+          <td><span class="badge b-review">Under Review</span></td>
+          <td>
+            <button class="btn btn-primary btn-sm">Review</button>
+            <button class="btn btn-outline btn-sm" style="margin-left:4px;">📩 Message</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+</body>
+</html>

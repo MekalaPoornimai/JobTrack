@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JobTrack – Student Profile</title>
+<link rel="stylesheet" href="styles.css">
+<script src="https://mcp.figma.com/mcp/html-to-design/capture.js" async></script>
+</head>
+<body>
+<nav class="navbar">
+  <a href="index.html" class="navbar-brand">Job<span style="color:var(--gold)">Track</span></a>
+  <div style="margin-left:auto;display:flex;align-items:center;gap:16px">
+    <div class="navbar-user">
+      <div class="avatar" style="width:34px;height:34px;font-size:13px;background:var(--gold);color:var(--primary)">JS</div>
+      <span class="navbar-user-name">Jordan Smith</span>
+    </div>
+  </div>
+</nav>
+
+<div class="app-layout">
+  <aside class="sidebar">
+    <div style="padding:16px 20px 0">
+      <div class="avatar" style="background:var(--gold);color:var(--primary);margin:0 auto 8px">JS</div>
+      <div style="text-align:center;font-size:13px;font-weight:700;color:var(--text-dark)">Jordan Smith</div>
+      <div style="text-align:center;font-size:11px;color:var(--text-muted);margin-bottom:16px">Computer Science · 2025</div>
+    </div>
+    <div class="divider" style="margin:0 0 8px"></div>
+    <a href="student-dashboard.html" class="sidebar-link"><span class="icon">🏠</span>Dashboard</a>
+    <a href="student-jobs.html" class="sidebar-link"><span class="icon">💼</span>Browse Jobs</a>
+    <a href="student-applications.html" class="sidebar-link"><span class="icon">📋</span>My Applications</a>
+    <a href="student-interviews.html" class="sidebar-link"><span class="icon">🗓️</span>Interviews</a>
+    <a href="student-profile.html" class="sidebar-link active"><span class="icon">👤</span>My Profile</a>
+  </aside>
+
+  <main class="main-content">
+    <!-- PROFILE BANNER -->
+    <div style="margin-bottom:24px">
+      <div style="background:linear-gradient(135deg, var(--primary) 0%, #8a1050 100%);height:140px;border-radius:16px 16px 0 0;position:relative">
+        <button class="btn btn-ghost btn-sm" style="position:absolute;top:16px;right:16px;background:rgba(255,255,255,0.2);color:white;border-color:rgba(255,255,255,0.3)">✏️ Edit Banner</button>
+      </div>
+      <div style="background:white;padding:0 28px 28px;border-radius:0 0 16px 16px;border:1px solid var(--border);border-top:none">
+        <div style="display:flex;align-items:flex-end;gap:20px;transform:translateY(-40px);margin-bottom:-12px">
+          <div style="width:88px;height:88px;border-radius:50%;background:var(--gold);display:flex;align-items:center;justify-content:center;font-size:32px;font-weight:800;color:var(--primary);border:4px solid white;flex-shrink:0">JS</div>
+          <div style="padding-bottom:8px">
+            <h1 style="font-size:20px;font-weight:700;color:var(--text-dark)">Jordan Smith</h1>
+            <div style="font-size:13px;color:var(--text-muted)">Computer Science · Central Michigan University · Class of 2025</div>
+          </div>
+          <button class="btn btn-outline btn-sm" style="margin-left:auto;margin-bottom:8px">✏️ Edit Profile</button>
+        </div>
+        <div style="display:flex;gap:20px;padding-top:8px;border-top:1px solid var(--border)">
+          <div style="display:flex;align-items:center;gap:6px;font-size:13px;color:var(--text-muted)">📧 smith1js@cmich.edu</div>
+          <div style="display:flex;align-items:center;gap:6px;font-size:13px;color:var(--text-muted)">📍 Mt. Pleasant, MI</div>
+          <div style="display:flex;align-items:center;gap:6px;font-size:13px;color:var(--text-muted)">🎓 GPA: 3.7</div>
+          <div style="margin-left:auto;display:flex;gap:8px">
+            <span class="badge badge-applied">Open to Work</span>
+            <span class="badge badge-gold">CMU Student</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PROFILE CONTENT -->
+    <div class="grid-2" style="gap:24px">
+      <!-- LEFT COLUMN -->
+      <div style="display:flex;flex-direction:column;gap:20px">
+        <!-- Profile Completion -->
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">Profile Completion</div>
+            <span style="font-size:13px;font-weight:700;color:var(--primary)">78%</span>
+          </div>
+          <div class="progress" style="margin-bottom:16px">
+            <div class="progress-bar" style="width:78%"></div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:8px">
+            <div style="display:flex;align-items:center;justify-content:space-between;font-size:12px;padding:8px;background:var(--bg);border-radius:8px">
+              <span style="display:flex;align-items:center;gap:6px"><span style="color:var(--success)">✅</span>Basic Information</span>
+              <span style="color:var(--success);font-weight:600">Done</span>
+            </div>
+            <div style="display:flex;align-items:center;justify-content:space-between;font-size:12px;padding:8px;background:var(--bg);border-radius:8px">
+              <span style="display:flex;align-items:center;gap:6px"><span style="color:var(--success)">✅</span>Education Details</span>
+              <span style="color:var(--success);font-weight:600">Done</span>
+            </div>
+            <div style="display:flex;align-items:center;justify-content:space-between;font-size:12px;padding:8px;background:#fff3cd;border-radius:8px">
+              <span style="display:flex;align-items:center;gap:6px"><span>⚠️</span>Resume Upload</span>
+              <button class="btn btn-primary btn-sm" style="padding:4px 10px;font-size:11px">Upload</button>
+            </div>
+            <div style="display:flex;align-items:center;justify-content:space-between;font-size:12px;padding:8px;background:#fff3cd;border-radius:8px">
+              <span style="display:flex;align-items:center;gap:6px"><span>⚠️</span>Skills & Technologies</span>
+              <button class="btn btn-primary btn-sm" style="padding:4px 10px;font-size:11px">Add</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- About -->
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">About Me</div>
+            <button class="btn btn-ghost btn-sm">✏️ Edit</button>
+          </div>
+          <p style="font-size:13px;color:var(--text-body);line-height:1.8">Passionate computer science student at CMU with a focus on software engineering and machine learning. Experienced in building full-stack web applications and working with cloud technologies. Looking for challenging internship opportunities in tech.</p>
+        </div>
+
+        <!-- Education -->
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">Education</div>
+            <button class="btn btn-ghost btn-sm">✏️ Edit</button>
+          </div>
+          <div style="display:flex;gap:16px">
+            <div style="width:44px;height:44px;background:var(--primary);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0">🎓</div>
+            <div>
+              <div style="font-size:14px;font-weight:700;color:var(--text-dark)">Central Michigan University</div>
+              <div style="font-size:13px;color:var(--text-muted)">B.S. Computer Science</div>
+              <div style="font-size:12px;color:var(--text-muted)">Aug 2021 – May 2025 · Mt. Pleasant, MI</div>
+              <div style="font-size:12px;color:var(--text-body);margin-top:6px">GPA: 3.7 / 4.0 · Dean's List · Relevant Coursework: Data Structures, Algorithms, Operating Systems, Machine Learning</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Resume -->
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">Resume</div>
+            <button class="btn btn-primary btn-sm">+ Upload New</button>
+          </div>
+          <div style="border:2px dashed var(--border);border-radius:12px;padding:24px;text-align:center">
+            <div style="font-size:36px;margin-bottom:12px">📄</div>
+            <div style="font-size:13px;font-weight:600;color:var(--text-dark);margin-bottom:4px">Jordan_Smith_Resume_2025.pdf</div>
+            <div style="font-size:12px;color:var(--text-muted);margin-bottom:16px">Uploaded Mar 10, 2025 · 284 KB</div>
+            <div style="display:flex;gap:8px;justify-content:center">
+              <button class="btn btn-outline btn-sm">👁️ Preview</button>
+              <button class="btn btn-ghost btn-sm">⬇️ Download</button>
+              <button class="btn btn-ghost btn-sm">🗑️ Replace</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT COLUMN -->
+      <div style="display:flex;flex-direction:column;gap:20px">
+        <!-- Skills -->
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">Skills & Technologies</div>
+            <button class="btn btn-ghost btn-sm">✏️ Edit</button>
+          </div>
+          <div style="margin-bottom:14px">
+            <div style="font-size:11px;font-weight:600;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:8px">Programming Languages</div>
+            <div style="display:flex;flex-wrap:wrap;gap:6px">
+              <span class="badge badge-maroon">Python</span>
+              <span class="badge badge-maroon">Java</span>
+              <span class="badge badge-maroon">JavaScript</span>
+              <span class="badge badge-maroon">C++</span>
+              <span class="badge badge-maroon">SQL</span>
+            </div>
+          </div>
+          <div style="margin-bottom:14px">
+            <div style="font-size:11px;font-weight:600;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:8px">Frameworks & Tools</div>
+            <div style="display:flex;flex-wrap:wrap;gap:6px">
+              <span class="badge badge-gold">React</span>
+              <span class="badge badge-gold">Node.js</span>
+              <span class="badge badge-gold">Django</span>
+              <span class="badge badge-gold">TensorFlow</span>
+              <span class="badge badge-gold">Docker</span>
+              <span class="badge badge-gold">Git</span>
+            </div>
+          </div>
+          <div>
+            <div style="font-size:11px;font-weight:600;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:8px">Cloud & Databases</div>
+            <div style="display:flex;flex-wrap:wrap;gap:6px">
+              <span class="badge badge-applied">AWS</span>
+              <span class="badge badge-applied">Azure</span>
+              <span class="badge badge-applied">PostgreSQL</span>
+              <span class="badge badge-applied">MongoDB</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Experience -->
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">Experience</div>
+            <button class="btn btn-ghost btn-sm">+ Add</button>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:16px">
+            <div style="display:flex;gap:12px">
+              <div style="width:40px;height:40px;background:var(--bg);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0">💻</div>
+              <div>
+                <div style="font-size:13px;font-weight:700;color:var(--text-dark)">Software Developer Intern</div>
+                <div style="font-size:12px;color:var(--primary);font-weight:500">Consumers Energy · Summer 2024</div>
+                <div style="font-size:12px;color:var(--text-muted);margin-top:4px;line-height:1.5">Built internal tools using Python and React. Optimized database queries reducing load time by 40%.</div>
+              </div>
+            </div>
+            <div style="display:flex;gap:12px">
+              <div style="width:40px;height:40px;background:var(--bg);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0">🎓</div>
+              <div>
+                <div style="font-size:13px;font-weight:700;color:var(--text-dark)">Teaching Assistant – CS 201</div>
+                <div style="font-size:12px;color:var(--primary);font-weight:500">CMU · Fall 2023</div>
+                <div style="font-size:12px;color:var(--text-muted);margin-top:4px;line-height:1.5">Assisted professor with grading and held weekly office hours for 80+ students in Data Structures.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Advisor Info -->
+        <div class="card" style="border-left:4px solid var(--gold)">
+          <div class="card-title" style="margin-bottom:14px">My Advisor</div>
+          <div style="display:flex;gap:12px;align-items:center">
+            <div class="avatar">DR</div>
+            <div>
+              <div style="font-size:13px;font-weight:700;color:var(--text-dark)">Dr. Rebecca Thompson</div>
+              <div style="font-size:12px;color:var(--text-muted)">Career Advisor · CS Department</div>
+              <div style="font-size:12px;color:var(--text-muted)">thompson1r@cmich.edu</div>
+            </div>
+            <button class="btn btn-outline btn-sm" style="margin-left:auto">Message</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+</body>
+</html>

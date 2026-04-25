@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Browse Jobs | JobTrack CMU</title>
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="sl-styles.css">
+<script src="https://mcp.figma.com/mcp/html-to-design/capture.js" async></script>
+</head>
+<body>
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="sidebar-logo">Job<span>Track</span></div>
+    <div class="sidebar-tagline">CMU Career Services</div>
+  </div>
+  <div class="sidebar-nav">
+    <div class="nav-section">Navigation</div>
+    <a class="nav-item" href="sl-student-dashboard.html"><span class="nav-icon">🏠</span> Dashboard</a>
+    <a class="nav-item active" href="#"><span class="nav-icon">🔍</span> Browse Jobs</a>
+    <a class="nav-item" href="sl-student-applications.html"><span class="nav-icon">📋</span> My Applications</a>
+    <a class="nav-item" href="sl-student-interviews.html"><span class="nav-icon">🗓️</span> Interviews</a>
+    <a class="nav-item" href="sl-student-profile.html"><span class="nav-icon">👤</span> My Profile</a>
+    <div class="nav-section" style="margin-top:16px;">Resources</div>
+    <a class="nav-item" href="#"><span class="nav-icon">📄</span> Resume Builder</a>
+    <a class="nav-item" href="#"><span class="nav-icon">💡</span> Career Tips</a>
+  </div>
+  <div class="sidebar-footer">
+    <div class="user-row">
+      <div class="user-avatar">JS</div>
+      <div>
+        <div class="user-name">Jordan Smith</div>
+        <div class="user-email">smith1js@cmich.edu</div>
+      </div>
+    </div>
+    <div class="logout-link">⬅ Sign Out</div>
+  </div>
+</div>
+
+<div class="main">
+  <div class="page-title">🔍 Browse Jobs</div>
+  <div class="page-subtitle">6 active job postings available · Showing jobs matching your skills</div>
+
+  <!-- Metrics -->
+  <div class="metrics-row">
+    <div class="metric-card m-maroon">
+      <div class="metric-label">Total Active Jobs</div>
+      <div class="metric-value">6</div>
+      <div class="metric-delta delta-neu">across 3 employers</div>
+    </div>
+    <div class="metric-card m-gold">
+      <div class="metric-label">Matching Your Skills</div>
+      <div class="metric-value">4</div>
+      <div class="metric-delta delta-up">↑ 2 new this week</div>
+    </div>
+    <div class="metric-card m-green">
+      <div class="metric-label">Internships</div>
+      <div class="metric-value">4</div>
+      <div class="metric-delta delta-neu">paid positions</div>
+    </div>
+    <div class="metric-card m-blue">
+      <div class="metric-label">Full-time Roles</div>
+      <div class="metric-value">2</div>
+      <div class="metric-delta delta-neu">entry level</div>
+    </div>
+  </div>
+
+  <!-- Filters (Streamlit sidebar-style filters displayed inline) -->
+  <div class="card" style="margin-bottom:18px;padding:16px 18px;">
+    <div style="font-weight:600;font-size:13.5px;margin-bottom:12px;">🔧 Filter Jobs</div>
+    <div class="filter-row" style="gap:12px;">
+      <div style="flex:2;">
+        <label class="form-label" style="font-size:12px;">Search</label>
+        <input type="text" class="form-control" placeholder="🔍  Search job title, company, skills..." style="width:100%;">
+      </div>
+      <div>
+        <label class="form-label" style="font-size:12px;">Job Type</label>
+        <select class="form-control">
+          <option>All Types</option>
+          <option selected>Internship</option>
+          <option>Full-time</option>
+          <option>Part-time</option>
+          <option>Co-op</option>
+        </select>
+      </div>
+      <div>
+        <label class="form-label" style="font-size:12px;">Location</label>
+        <select class="form-control">
+          <option selected>All Locations</option>
+          <option>Detroit, MI</option>
+          <option>Grand Rapids, MI</option>
+          <option>Remote</option>
+          <option>Midland, MI</option>
+        </select>
+      </div>
+      <div>
+        <label class="form-label" style="font-size:12px;">Salary Min</label>
+        <select class="form-control">
+          <option selected>Any</option>
+          <option>$15/hr+</option>
+          <option>$20/hr+</option>
+          <option>$50k+</option>
+        </select>
+      </div>
+      <div style="align-self:flex-end;">
+        <button class="btn btn-primary" style="white-space:nowrap;">Apply Filters</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sort bar -->
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;">
+    <div style="font-size:13.5px;color:#6b6b6b;">Showing <strong>6</strong> jobs</div>
+    <div style="display:flex;align-items:center;gap:8px;font-size:13.5px;color:#495057;">
+      Sort by:
+      <select class="form-control" style="width:auto;padding:5px 10px;font-size:13px;">
+        <option>Most Recent</option>
+        <option>Best Match</option>
+        <option>Salary (High→Low)</option>
+        <option>Deadline (Soonest)</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- Job Cards -->
+  <div class="job-card" style="border-left:4px solid #ffc107;">
+    <div style="flex:1;">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:3px;">
+        <div class="job-title">Software Engineering Intern</div>
+        <span class="badge b-active">⚡ Best Match</span>
+      </div>
+      <div class="job-company">🏢 TechCorp Inc. · Detroit, MI · <span class="badge b-verified">✓ Verified</span></div>
+      <div class="job-meta" style="margin-bottom:8px;">
+        <span class="badge b-intern">Internship</span>
+        <span class="badge b-active">Active</span>
+        <span class="chip chip-maroon">Python</span>
+        <span class="chip chip-maroon">React</span>
+        <span class="chip chip-maroon">JavaScript</span>
+        <span class="chip chip-gray">Problem Solving</span>
+      </div>
+      <div style="font-size:12.5px;color:#6b6b6b;line-height:1.5;">Join our engineering team to build scalable web applications using Python and React. Work alongside senior engineers on real features.</div>
+    </div>
+    <div style="text-align:right;flex-shrink:0;min-width:130px;">
+      <div class="job-salary">$18 – $25/hr</div>
+      <div class="job-deadline">📅 Deadline: May 1</div>
+      <button class="btn btn-primary btn-sm" style="margin-top:10px;width:100%;justify-content:center;">Apply Now</button>
+      <button class="btn btn-outline btn-sm" style="margin-top:6px;width:100%;justify-content:center;">Save Job</button>
+    </div>
+  </div>
+
+  <div class="job-card">
+    <div style="flex:1;">
+      <div class="job-title">ML Engineer Intern</div>
+      <div class="job-company">🏢 TechCorp Inc. · Detroit, MI · <span class="badge b-verified">✓ Verified</span></div>
+      <div class="job-meta" style="margin-bottom:8px;">
+        <span class="badge b-intern">Internship</span>
+        <span class="chip chip-maroon">Python</span>
+        <span class="chip chip-maroon">Machine Learning</span>
+        <span class="chip chip-maroon">SQL</span>
+      </div>
+      <div style="font-size:12.5px;color:#6b6b6b;line-height:1.5;">Work on machine learning pipelines and model deployment for our recommendation system.</div>
+    </div>
+    <div style="text-align:right;flex-shrink:0;min-width:130px;">
+      <div class="job-salary">$20 – $28/hr</div>
+      <div class="job-deadline">📅 Deadline: May 10</div>
+      <button class="btn btn-primary btn-sm" style="margin-top:10px;width:100%;justify-content:center;">Apply Now</button>
+      <button class="btn btn-outline btn-sm" style="margin-top:6px;width:100%;justify-content:center;">Save Job</button>
+    </div>
+  </div>
+
+  <div class="job-card">
+    <div style="flex:1;">
+      <div class="job-title">Full Stack Developer</div>
+      <div class="job-company">🏢 TechCorp Inc. · Detroit, MI · <span class="badge b-verified">✓ Verified</span></div>
+      <div class="job-meta" style="margin-bottom:8px;">
+        <span class="badge b-fulltime">Full-time</span>
+        <span class="chip chip-maroon">JavaScript</span>
+        <span class="chip chip-maroon">React</span>
+        <span class="chip chip-maroon">Node.js</span>
+        <span class="chip chip-gray">SQL</span>
+      </div>
+      <div style="font-size:12.5px;color:#6b6b6b;line-height:1.5;">Build and maintain customer-facing web applications. 2+ years experience required. Bachelor's in CS or related.</div>
+    </div>
+    <div style="text-align:right;flex-shrink:0;min-width:130px;">
+      <div class="job-salary">$65k – $85k/yr</div>
+      <div class="job-deadline">📅 Deadline: Apr 15</div>
+      <button class="btn btn-primary btn-sm" style="margin-top:10px;width:100%;justify-content:center;">Apply Now</button>
+      <button class="btn btn-outline btn-sm" style="margin-top:6px;width:100%;justify-content:center;">Save Job</button>
+    </div>
+  </div>
+
+  <div class="job-card">
+    <div style="flex:1;">
+      <div class="job-title">Data Analyst Intern</div>
+      <div class="job-company">🏢 Innovate Solutions · Grand Rapids, MI · <span class="badge b-verified">✓ Verified</span></div>
+      <div class="job-meta" style="margin-bottom:8px;">
+        <span class="badge b-intern">Internship</span>
+        <span class="chip chip-gray">SQL</span>
+        <span class="chip chip-gray">Excel</span>
+        <span class="chip chip-gray">Tableau</span>
+      </div>
+      <div style="font-size:12.5px;color:#6b6b6b;line-height:1.5;">Analyze business datasets and create dashboards to support decision-making. Work with cross-functional teams.</div>
+    </div>
+    <div style="text-align:right;flex-shrink:0;min-width:130px;">
+      <div class="job-salary">$17 – $22/hr</div>
+      <div class="job-deadline">📅 Deadline: May 15</div>
+      <button class="btn btn-primary btn-sm" style="margin-top:10px;width:100%;justify-content:center;">Apply Now</button>
+      <button class="btn btn-outline btn-sm" style="margin-top:6px;width:100%;justify-content:center;">Save Job</button>
+    </div>
+  </div>
+
+  <div class="job-card">
+    <div style="flex:1;">
+      <div class="job-title">Business Analyst</div>
+      <div class="job-company">🏢 Innovate Solutions · Remote</div>
+      <div class="job-meta" style="margin-bottom:8px;">
+        <span class="badge b-fulltime">Full-time</span>
+        <span class="chip chip-gray">Project Management</span>
+        <span class="chip chip-gray">Communication</span>
+        <span class="chip chip-gray">Excel</span>
+      </div>
+      <div style="font-size:12.5px;color:#6b6b6b;line-height:1.5;">Gather business requirements, document workflows, and support IT project delivery.</div>
+    </div>
+    <div style="text-align:right;flex-shrink:0;min-width:130px;">
+      <div class="job-salary">$55k – $70k/yr</div>
+      <div class="job-deadline">📅 Deadline: Apr 30</div>
+      <button class="btn btn-primary btn-sm" style="margin-top:10px;width:100%;justify-content:center;">Apply Now</button>
+      <button class="btn btn-outline btn-sm" style="margin-top:6px;width:100%;justify-content:center;">Save Job</button>
+    </div>
+  </div>
+
+  <div class="job-card">
+    <div style="flex:1;">
+      <div class="job-title">Financial Systems Intern</div>
+      <div class="job-company">🏢 Global Finance Co. · Midland, MI</div>
+      <div class="job-meta" style="margin-bottom:8px;">
+        <span class="badge b-intern">Internship</span>
+        <span class="chip chip-gray">Excel</span>
+        <span class="chip chip-gray">SQL</span>
+      </div>
+      <div style="font-size:12.5px;color:#6b6b6b;line-height:1.5;">Support the finance technology team in maintaining and improving internal reporting systems.</div>
+    </div>
+    <div style="text-align:right;flex-shrink:0;min-width:130px;">
+      <div class="job-salary">$16 – $20/hr</div>
+      <div class="job-deadline">📅 Deadline: Jun 1</div>
+      <button class="btn btn-primary btn-sm" style="margin-top:10px;width:100%;justify-content:center;">Apply Now</button>
+      <button class="btn btn-outline btn-sm" style="margin-top:6px;width:100%;justify-content:center;">Save Job</button>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

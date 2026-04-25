@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Reports | JobTrack CMU</title>
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="sl-styles.css">
+<script src="https://mcp.figma.com/mcp/html-to-design/capture.js" async></script>
+</head>
+<body>
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="sidebar-logo">Job<span>Track</span></div>
+    <div class="sidebar-tagline">CMU Career Services — Admin</div>
+  </div>
+  <div class="sidebar-nav">
+    <div class="nav-section">Admin Panel</div>
+    <a class="nav-item" href="sl-admin-dashboard.html"><span class="nav-icon">🏠</span> Dashboard</a>
+    <a class="nav-item active" href="#"><span class="nav-icon">📊</span> Reports</a>
+    <a class="nav-item" href="#"><span class="nav-icon">🏢</span> Manage Employers</a>
+    <a class="nav-item" href="#"><span class="nav-icon">🎓</span> All Students</a>
+    <a class="nav-item" href="#"><span class="nav-icon">👩‍🏫</span> All Advisors</a>
+    <div class="nav-section" style="margin-top:16px;">System</div>
+    <a class="nav-item" href="#"><span class="nav-icon">⚙️</span> Settings</a>
+    <a class="nav-item" href="#"><span class="nav-icon">📋</span> Audit Log</a>
+  </div>
+  <div class="sidebar-footer">
+    <div class="user-row">
+      <div class="user-avatar" style="background:#ffc107;color:#6a0032;font-size:11px;">SA</div>
+      <div>
+        <div class="user-name">Sarah Admin</div>
+        <div class="user-email">admin@cmich.edu</div>
+      </div>
+    </div>
+    <div class="logout-link">⬅ Sign Out</div>
+  </div>
+</div>
+
+<div class="main">
+  <div class="flex-between" style="margin-bottom:4px;">
+    <div class="page-title">📊 Reports &amp; Analytics</div>
+    <div style="display:flex;gap:8px;">
+      <select class="form-control" style="width:auto;">
+        <option selected>Spring 2025</option>
+        <option>Fall 2024</option>
+        <option>Spring 2024</option>
+      </select>
+      <button class="btn btn-primary">📥 Export PDF</button>
+      <button class="btn btn-outline">📊 Export Excel</button>
+    </div>
+  </div>
+  <div class="page-subtitle">Central Michigan University Career Services · Comprehensive Placement &amp; Activity Report</div>
+
+  <!-- KPI Metrics -->
+  <div class="metrics-row">
+    <div class="metric-card m-maroon">
+      <div class="metric-label">Total Students</div>
+      <div class="metric-value">4</div>
+      <div class="metric-delta delta-neu">registered</div>
+    </div>
+    <div class="metric-card m-gold">
+      <div class="metric-label">Applications Filed</div>
+      <div class="metric-value">8</div>
+      <div class="metric-delta delta-up">↑ 2.0 avg/student</div>
+    </div>
+    <div class="metric-card m-green">
+      <div class="metric-label">Interview Rate</div>
+      <div class="metric-value">25%</div>
+      <div class="metric-delta delta-up">↑ vs 15% last yr</div>
+    </div>
+    <div class="metric-card m-blue">
+      <div class="metric-label">Placement Rate</div>
+      <div class="metric-value">0%</div>
+      <div class="metric-delta delta-neu">offers in pipeline</div>
+    </div>
+  </div>
+
+  <div class="tabs">
+    <div class="tab active">Applications Report</div>
+    <div class="tab">Placement Report</div>
+    <div class="tab">Employer Report</div>
+    <div class="tab">Advisor Report</div>
+  </div>
+
+  <div class="cols-7-3">
+    <div>
+      <!-- Applications by Status -->
+      <div class="card" style="margin-bottom:20px;">
+        <div class="card-title">📋 Applications by Status</div>
+        <div style="display:flex;gap:16px;margin-bottom:18px;">
+          <div style="flex:1;text-align:center;padding:14px;background:#e3f2fd;border-radius:8px;">
+            <div style="font-size:28px;font-weight:800;color:#1565c0;">3</div>
+            <div style="font-size:12px;color:#1565c0;font-weight:600;margin-top:3px;">Applied</div>
+          </div>
+          <div style="flex:1;text-align:center;padding:14px;background:#fff3e0;border-radius:8px;">
+            <div style="font-size:28px;font-weight:800;color:#bf360c;">2</div>
+            <div style="font-size:12px;color:#bf360c;font-weight:600;margin-top:3px;">Under Review</div>
+          </div>
+          <div style="flex:1;text-align:center;padding:14px;background:#f3e5f5;border-radius:8px;">
+            <div style="font-size:28px;font-weight:800;color:#6a1b9a;">2</div>
+            <div style="font-size:12px;color:#6a1b9a;font-weight:600;margin-top:3px;">Interview Stage</div>
+          </div>
+          <div style="flex:1;text-align:center;padding:14px;background:#e8f5e9;border-radius:8px;">
+            <div style="font-size:28px;font-weight:800;color:#1b5e20;">0</div>
+            <div style="font-size:12px;color:#1b5e20;font-weight:600;margin-top:3px;">Offer Extended</div>
+          </div>
+          <div style="flex:1;text-align:center;padding:14px;background:#ffebee;border-radius:8px;">
+            <div style="font-size:28px;font-weight:800;color:#b71c1c;">1</div>
+            <div style="font-size:12px;color:#b71c1c;font-weight:600;margin-top:3px;">Rejected</div>
+          </div>
+        </div>
+        <!-- Simulated bar chart using CSS -->
+        <div style="display:flex;gap:12px;align-items:flex-end;height:140px;padding:0 10px;border-bottom:2px solid #e6e6e6;margin-bottom:8px;">
+          <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;">
+            <div style="font-size:11px;color:#6b6b6b;font-weight:600;">3</div>
+            <div style="width:100%;background:#1976d2;border-radius:4px 4px 0 0;height:90px;"></div>
+            <div style="font-size:11px;color:#6b6b6b;">Applied</div>
+          </div>
+          <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;">
+            <div style="font-size:11px;color:#6b6b6b;font-weight:600;">2</div>
+            <div style="width:100%;background:#ffc107;border-radius:4px 4px 0 0;height:60px;"></div>
+            <div style="font-size:11px;color:#6b6b6b;">Review</div>
+          </div>
+          <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;">
+            <div style="font-size:11px;color:#6b6b6b;font-weight:600;">2</div>
+            <div style="width:100%;background:#6a0032;border-radius:4px 4px 0 0;height:60px;"></div>
+            <div style="font-size:11px;color:#6b6b6b;">Interview</div>
+          </div>
+          <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;">
+            <div style="font-size:11px;color:#6b6b6b;font-weight:600;">0</div>
+            <div style="width:100%;background:#28a745;border-radius:4px 4px 0 0;height:3px;"></div>
+            <div style="font-size:11px;color:#6b6b6b;">Offer</div>
+          </div>
+          <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;">
+            <div style="font-size:11px;color:#6b6b6b;font-weight:600;">1</div>
+            <div style="width:100%;background:#dc3545;border-radius:4px 4px 0 0;height:30px;"></div>
+            <div style="font-size:11px;color:#6b6b6b;">Rejected</div>
+          </div>
+        </div>
+        <div style="font-size:11.5px;color:#9b9b9b;text-align:center;">Application Status Distribution — Spring 2025</div>
+      </div>
+
+      <!-- Applications by Job Posting -->
+      <div class="table-wrap" style="margin-bottom:20px;">
+        <div class="table-head">📂 Applications by Job Posting</div>
+        <table class="st-table">
+          <thead>
+            <tr>
+              <th>Job Title</th>
+              <th>Company</th>
+              <th>Type</th>
+              <th>Total Apps</th>
+              <th>Interview</th>
+              <th>Offer</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="fw-600">Software Eng. Intern</td>
+              <td>TechCorp Inc.</td>
+              <td><span class="badge b-intern">Internship</span></td>
+              <td><strong>3</strong></td>
+              <td><span class="badge b-interview">2</span></td>
+              <td>0</td>
+              <td><span class="badge b-active">Active</span></td>
+            </tr>
+            <tr>
+              <td class="fw-600">ML Engineer Intern</td>
+              <td>TechCorp Inc.</td>
+              <td><span class="badge b-intern">Internship</span></td>
+              <td><strong>2</strong></td>
+              <td><span class="badge b-interview">1</span></td>
+              <td>0</td>
+              <td><span class="badge b-active">Active</span></td>
+            </tr>
+            <tr>
+              <td class="fw-600">Data Analyst Intern</td>
+              <td>Innovate Solutions</td>
+              <td><span class="badge b-intern">Internship</span></td>
+              <td><strong>1</strong></td>
+              <td>0</td>
+              <td>0</td>
+              <td><span class="badge b-active">Active</span></td>
+            </tr>
+            <tr>
+              <td class="fw-600">Business Analyst</td>
+              <td>Innovate Solutions</td>
+              <td><span class="badge b-fulltime">Full-time</span></td>
+              <td><strong>1</strong></td>
+              <td>0</td>
+              <td>0</td>
+              <td><span class="badge b-active">Active</span></td>
+            </tr>
+            <tr>
+              <td class="fw-600">Full Stack Developer</td>
+              <td>TechCorp Inc.</td>
+              <td><span class="badge b-fulltime">Full-time</span></td>
+              <td><strong>1</strong></td>
+              <td>0</td>
+              <td>0</td>
+              <td><span class="badge b-active">Active</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Applications by Major -->
+      <div class="card">
+        <div class="card-title">🎓 Applications by Major</div>
+        <table class="st-table">
+          <thead>
+            <tr>
+              <th>Major</th>
+              <th>Students</th>
+              <th>Applications</th>
+              <th>Avg Apps/Student</th>
+              <th>Interview Rate</th>
+              <th>Placement Rate</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="fw-600">Computer Science</td>
+              <td>2</td>
+              <td>5</td>
+              <td>2.5</td>
+              <td>
+                <div style="display:flex;align-items:center;gap:6px;">
+                  <span>40%</span>
+                  <div class="progress-bar" style="width:60px;"><div class="progress-fill pf-maroon" style="width:40%;"></div></div>
+                </div>
+              </td>
+              <td><span class="badge b-withdrawn">0%</span></td>
+            </tr>
+            <tr>
+              <td class="fw-600">Information Systems</td>
+              <td>1</td>
+              <td>2</td>
+              <td>2.0</td>
+              <td>
+                <div style="display:flex;align-items:center;gap:6px;">
+                  <span>0%</span>
+                  <div class="progress-bar" style="width:60px;"><div class="progress-fill pf-gold" style="width:0%;"></div></div>
+                </div>
+              </td>
+              <td><span class="badge b-withdrawn">0%</span></td>
+            </tr>
+            <tr>
+              <td class="fw-600">Business Administration</td>
+              <td>1</td>
+              <td>1</td>
+              <td>1.0</td>
+              <td>
+                <div style="display:flex;align-items:center;gap:6px;">
+                  <span>0%</span>
+                  <div class="progress-bar" style="width:60px;"><div class="progress-fill pf-blue" style="width:0%;"></div></div>
+                </div>
+              </td>
+              <td><span class="badge b-withdrawn">0%</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Right Panel -->
+    <div>
+      <!-- Top Stats -->
+      <div class="card">
+        <div class="card-title">🏆 Top Applying Students</div>
+        <div style="display:flex;flex-direction:column;gap:12px;">
+          <div style="display:flex;align-items:center;gap:10px;">
+            <div class="s-avatar av-1" style="width:34px;height:34px;font-size:13px;">JS</div>
+            <div style="flex:1;">
+              <div class="fw-600" style="font-size:13.5px;">Jordan Smith</div>
+              <div class="text-muted">CS · 2025</div>
+            </div>
+            <div style="text-align:right;">
+              <div style="font-size:18px;font-weight:700;color:#6a0032;">8</div>
+              <div class="text-muted">apps</div>
+            </div>
+          </div>
+          <div style="display:flex;align-items:center;gap:10px;">
+            <div class="s-avatar av-3" style="width:34px;height:34px;font-size:13px;">KP</div>
+            <div style="flex:1;">
+              <div class="fw-600" style="font-size:13.5px;">Kevin Patel</div>
+              <div class="text-muted">CS · 2027</div>
+            </div>
+            <div style="text-align:right;">
+              <div style="font-size:18px;font-weight:700;color:#6a0032;">2</div>
+              <div class="text-muted">apps</div>
+            </div>
+          </div>
+          <div style="display:flex;align-items:center;gap:10px;">
+            <div class="s-avatar av-2" style="width:34px;height:34px;font-size:13px;">AJ</div>
+            <div style="flex:1;">
+              <div class="fw-600" style="font-size:13.5px;">Alex Johnson</div>
+              <div class="text-muted">IS · 2026</div>
+            </div>
+            <div style="text-align:right;">
+              <div style="font-size:18px;font-weight:700;color:#6a0032;">2</div>
+              <div class="text-muted">apps</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Top Employers -->
+      <div class="card">
+        <div class="card-title">🏢 Most Active Employers</div>
+        <div class="progress-wrap">
+          <div class="progress-label"><span>TechCorp Inc.</span><span>3 jobs</span></div>
+          <div class="progress-bar"><div class="progress-fill pf-maroon" style="width:75%"></div></div>
+        </div>
+        <div class="progress-wrap">
+          <div class="progress-label"><span>Innovate Solutions</span><span>2 jobs</span></div>
+          <div class="progress-bar"><div class="progress-fill pf-gold" style="width:50%"></div></div>
+        </div>
+        <div class="progress-wrap">
+          <div class="progress-label"><span>Global Finance Co.</span><span>1 job</span></div>
+          <div class="progress-bar"><div class="progress-fill pf-blue" style="width:25%"></div></div>
+        </div>
+      </div>
+
+      <!-- Most Sought Skills -->
+      <div class="card">
+        <div class="card-title">🛠️ Most Required Skills</div>
+        <div class="progress-wrap">
+          <div class="progress-label"><span>Python</span><span>3 jobs</span></div>
+          <div class="progress-bar"><div class="progress-fill pf-maroon" style="width:75%"></div></div>
+        </div>
+        <div class="progress-wrap">
+          <div class="progress-label"><span>SQL</span><span>3 jobs</span></div>
+          <div class="progress-bar"><div class="progress-fill pf-maroon" style="width:75%"></div></div>
+        </div>
+        <div class="progress-wrap">
+          <div class="progress-label"><span>JavaScript / React</span><span>2 jobs</span></div>
+          <div class="progress-bar"><div class="progress-fill pf-gold" style="width:50%"></div></div>
+        </div>
+        <div class="progress-wrap">
+          <div class="progress-label"><span>Excel</span><span>2 jobs</span></div>
+          <div class="progress-bar"><div class="progress-fill pf-gold" style="width:50%"></div></div>
+        </div>
+        <div class="progress-wrap">
+          <div class="progress-label"><span>Machine Learning</span><span>1 job</span></div>
+          <div class="progress-bar"><div class="progress-fill pf-blue" style="width:25%"></div></div>
+        </div>
+      </div>
+
+      <!-- Semester Summary -->
+      <div class="card" style="background:linear-gradient(135deg,#6a0032,#9a0048);color:#fff;">
+        <div style="font-size:15px;font-weight:700;margin-bottom:12px;">📅 Spring 2025 Summary</div>
+        <div style="display:flex;flex-direction:column;gap:8px;font-size:13px;">
+          <div style="display:flex;justify-content:space-between;">
+            <span style="opacity:.85;">Total Users</span><strong>10</strong>
+          </div>
+          <div style="display:flex;justify-content:space-between;">
+            <span style="opacity:.85;">Job Postings</span><strong>6</strong>
+          </div>
+          <div style="display:flex;justify-content:space-between;">
+            <span style="opacity:.85;">Applications</span><strong>8</strong>
+          </div>
+          <div style="display:flex;justify-content:space-between;">
+            <span style="opacity:.85;">Interviews</span><strong>2</strong>
+          </div>
+          <div style="display:flex;justify-content:space-between;">
+            <span style="opacity:.85;">Placements</span><strong>0</strong>
+          </div>
+          <div style="margin-top:8px;padding-top:8px;border-top:1px solid rgba(255,255,255,.2);display:flex;justify-content:space-between;">
+            <span style="color:#ffc107;font-weight:700;">Placement Goal</span>
+            <strong style="color:#ffc107;">50%</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

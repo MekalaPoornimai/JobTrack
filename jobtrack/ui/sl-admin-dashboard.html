@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Admin Dashboard | JobTrack CMU</title>
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="sl-styles.css">
+<script src="https://mcp.figma.com/mcp/html-to-design/capture.js" async></script>
+</head>
+<body>
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="sidebar-logo">Job<span>Track</span></div>
+    <div class="sidebar-tagline">CMU Career Services — Admin</div>
+  </div>
+  <div class="sidebar-nav">
+    <div class="nav-section">Admin Panel</div>
+    <a class="nav-item active" href="#"><span class="nav-icon">🏠</span> Dashboard</a>
+    <a class="nav-item" href="sl-admin-reports.html"><span class="nav-icon">📊</span> Reports</a>
+    <a class="nav-item" href="#"><span class="nav-icon">🏢</span> Manage Employers</a>
+    <a class="nav-item" href="#"><span class="nav-icon">🎓</span> All Students</a>
+    <a class="nav-item" href="#"><span class="nav-icon">👩‍🏫</span> All Advisors</a>
+    <div class="nav-section" style="margin-top:16px;">System</div>
+    <a class="nav-item" href="#"><span class="nav-icon">⚙️</span> Settings</a>
+    <a class="nav-item" href="#"><span class="nav-icon">📋</span> Audit Log</a>
+  </div>
+  <div class="sidebar-footer">
+    <div class="user-row">
+      <div class="user-avatar" style="background:#ffc107;color:#6a0032;font-size:11px;">SA</div>
+      <div>
+        <div class="user-name">Sarah Admin</div>
+        <div class="user-email">admin@cmich.edu</div>
+      </div>
+    </div>
+    <div class="logout-link">⬅ Sign Out</div>
+  </div>
+</div>
+
+<div class="main">
+  <div class="page-title">⚙️ Admin Dashboard</div>
+  <div class="page-subtitle">Career Services Administration · Central Michigan University · Spring 2025</div>
+
+  <!-- Top Metrics -->
+  <div class="metrics-row">
+    <div class="metric-card m-maroon">
+      <div class="metric-label">Total Students</div>
+      <div class="metric-value">4</div>
+      <div class="metric-delta delta-up">↑ registered this semester</div>
+    </div>
+    <div class="metric-card m-gold">
+      <div class="metric-label">Active Job Postings</div>
+      <div class="metric-value">6</div>
+      <div class="metric-delta delta-up">↑ 2 posted this week</div>
+    </div>
+    <div class="metric-card m-green">
+      <div class="metric-label">Total Applications</div>
+      <div class="metric-value">8</div>
+      <div class="metric-delta delta-up">↑ 3 this week</div>
+    </div>
+    <div class="metric-card m-blue">
+      <div class="metric-label">Registered Employers</div>
+      <div class="metric-value">3</div>
+      <div class="metric-delta delta-neu">2 verified</div>
+    </div>
+  </div>
+
+  <!-- Second Row Metrics -->
+  <div class="metrics-row" style="margin-bottom:24px;">
+    <div class="metric-card">
+      <div class="metric-label">Interviews Scheduled</div>
+      <div class="metric-value">2</div>
+      <div class="metric-delta delta-up">↑ this week</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-label">Advisors Active</div>
+      <div class="metric-value">2</div>
+      <div class="metric-delta delta-neu">2 departments</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-label">Placement Rate</div>
+      <div class="metric-value">0%</div>
+      <div class="metric-delta delta-neu">offers pending</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-label">Advising Notes</div>
+      <div class="metric-value">8</div>
+      <div class="metric-delta delta-up">↑ 3 this week</div>
+    </div>
+  </div>
+
+  <div class="cols-7-3">
+    <div>
+      <!-- System Overview Table -->
+      <div class="table-wrap" style="margin-bottom:20px;">
+        <div class="table-head">📊 System Activity Overview</div>
+        <table class="st-table">
+          <thead>
+            <tr>
+              <th>Metric</th>
+              <th>Count</th>
+              <th>This Week</th>
+              <th>Trend</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="fw-600">👥 Student Registrations</td>
+              <td>4</td>
+              <td>+0</td>
+              <td style="color:#6b6b6b;">→ Stable</td>
+              <td><span class="badge b-active">Normal</span></td>
+            </tr>
+            <tr>
+              <td class="fw-600">📋 Job Applications</td>
+              <td>8</td>
+              <td>+3</td>
+              <td style="color:#28a745;">↑ Rising</td>
+              <td><span class="badge b-active">Active</span></td>
+            </tr>
+            <tr>
+              <td class="fw-600">📂 Job Postings</td>
+              <td>6</td>
+              <td>+0</td>
+              <td style="color:#6b6b6b;">→ Stable</td>
+              <td><span class="badge b-active">Active</span></td>
+            </tr>
+            <tr>
+              <td class="fw-600">🗓️ Interviews</td>
+              <td>2</td>
+              <td>+1</td>
+              <td style="color:#28a745;">↑ Rising</td>
+              <td><span class="badge b-scheduled">Scheduled</span></td>
+            </tr>
+            <tr>
+              <td class="fw-600">📝 Advising Notes</td>
+              <td>8</td>
+              <td>+3</td>
+              <td style="color:#28a745;">↑ Active</td>
+              <td><span class="badge b-active">Normal</span></td>
+            </tr>
+            <tr>
+              <td class="fw-600">🏢 Employer Verifications</td>
+              <td>1 pending</td>
+              <td>+1</td>
+              <td style="color:#bf360c;">⚠ Action Needed</td>
+              <td><span class="badge b-review">Pending</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Employer Table -->
+      <div class="table-wrap" style="margin-bottom:20px;">
+        <div class="table-head">
+          🏢 Registered Employers
+          <span class="badge b-review" style="margin-left:8px;">1 Pending Verification</span>
+        </div>
+        <table class="st-table">
+          <thead>
+            <tr>
+              <th>Company</th>
+              <th>Industry</th>
+              <th>Active Jobs</th>
+              <th>Applicants</th>
+              <th>Verified</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="fw-600">TechCorp Inc.</td>
+              <td>Information Technology</td>
+              <td>3</td>
+              <td>5</td>
+              <td><span class="badge b-active">✓ Verified</span></td>
+              <td><button class="btn btn-outline btn-sm">Manage</button></td>
+            </tr>
+            <tr>
+              <td class="fw-600">Innovate Solutions</td>
+              <td>Software Development</td>
+              <td>2</td>
+              <td>3</td>
+              <td><span class="badge b-active">✓ Verified</span></td>
+              <td><button class="btn btn-outline btn-sm">Manage</button></td>
+            </tr>
+            <tr>
+              <td class="fw-600">Global Finance Co.</td>
+              <td>Financial Services</td>
+              <td>1</td>
+              <td>1</td>
+              <td><span class="badge b-review">⏳ Pending</span></td>
+              <td>
+                <button class="btn btn-primary btn-sm">Verify</button>
+                <button class="btn btn-outline btn-sm" style="margin-left:4px;">Manage</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Recent Applications Table -->
+      <div class="table-wrap">
+        <div class="table-head">
+          📋 Recent Applications
+          <a href="sl-admin-reports.html" class="btn btn-outline btn-sm">Full Report</a>
+        </div>
+        <table class="st-table">
+          <thead>
+            <tr>
+              <th>Student</th>
+              <th>Job</th>
+              <th>Company</th>
+              <th>Status</th>
+              <th>Applied</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="fw-600">Jordan Smith</td>
+              <td>SE Intern</td>
+              <td>TechCorp Inc.</td>
+              <td><span class="badge b-interview">Interview</span></td>
+              <td class="text-muted">Mar 10</td>
+            </tr>
+            <tr>
+              <td class="fw-600">Kevin Patel</td>
+              <td>ML Intern</td>
+              <td>TechCorp Inc.</td>
+              <td><span class="badge b-interview">Interview</span></td>
+              <td class="text-muted">Mar 14</td>
+            </tr>
+            <tr>
+              <td class="fw-600">Alex Johnson</td>
+              <td>Data Analyst Intern</td>
+              <td>Innovate Solutions</td>
+              <td><span class="badge b-review">Under Review</span></td>
+              <td class="text-muted">Mar 8</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Right Panel -->
+    <div>
+      <!-- Alert -->
+      <div class="alert alert-warning">
+        ⚠️ <strong>1 employer</strong> awaiting verification: Global Finance Co. <a href="#" style="color:#bf360c;font-weight:600;">Review →</a>
+      </div>
+
+      <!-- Role Distribution -->
+      <div class="card">
+        <div class="card-title">👥 User Distribution</div>
+        <div style="display:flex;flex-direction:column;gap:10px;">
+          <div class="progress-wrap">
+            <div class="progress-label"><span>Students</span><span>4</span></div>
+            <div class="progress-bar"><div class="progress-fill pf-maroon" style="width:40%"></div></div>
+          </div>
+          <div class="progress-wrap">
+            <div class="progress-label"><span>Employers</span><span>3</span></div>
+            <div class="progress-bar"><div class="progress-fill pf-gold" style="width:30%"></div></div>
+          </div>
+          <div class="progress-wrap">
+            <div class="progress-label"><span>Advisors</span><span>2</span></div>
+            <div class="progress-bar"><div class="progress-fill pf-green" style="width:20%"></div></div>
+          </div>
+          <div class="progress-wrap">
+            <div class="progress-label"><span>Admins</span><span>1</span></div>
+            <div class="progress-bar"><div class="progress-fill pf-blue" style="width:10%"></div></div>
+          </div>
+        </div>
+        <div style="margin-top:10px;padding:8px;background:#f8f9fa;border-radius:6px;text-align:center;font-size:12.5px;color:#6b6b6b;">
+          Total Users: <strong>10</strong>
+        </div>
+      </div>
+
+      <!-- Quick Actions -->
+      <div class="card">
+        <div class="card-title">⚡ Quick Actions</div>
+        <div style="display:flex;flex-direction:column;gap:8px;">
+          <button class="btn btn-primary" style="justify-content:center;">✉️ Send Announcement</button>
+          <a href="sl-admin-reports.html" class="btn btn-outline" style="justify-content:center;">📊 Generate Report</a>
+          <button class="btn btn-outline" style="justify-content:center;">🏢 Verify Employer</button>
+          <button class="btn btn-outline" style="justify-content:center;">📥 Export Data</button>
+        </div>
+      </div>
+
+      <!-- Placement Goal -->
+      <div class="card">
+        <div class="card-title">🎯 Semester Placement Goal</div>
+        <div style="text-align:center;padding:10px 0;">
+          <div style="font-size:2.2rem;font-weight:700;color:#6a0032;">0%</div>
+          <div style="font-size:13px;color:#6b6b6b;">Goal: 50% placement rate</div>
+        </div>
+        <div class="progress-wrap">
+          <div class="progress-label"><span>Students Placed</span><span>0/4</span></div>
+          <div class="progress-bar"><div class="progress-fill pf-maroon" style="width:0%"></div></div>
+        </div>
+        <div class="alert alert-info" style="margin-top:10px;font-size:12.5px;padding:8px 12px;">
+          💡 2 students in interview stage — placements expected soon.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

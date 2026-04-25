@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JobTrack – Job Detail</title>
+<link rel="stylesheet" href="styles.css">
+<script src="https://mcp.figma.com/mcp/html-to-design/capture.js" async></script>
+</head>
+<body>
+<nav class="navbar">
+  <a href="index.html" class="navbar-brand">Job<span style="color:var(--gold)">Track</span></a>
+  <div style="margin-left:auto;display:flex;align-items:center;gap:16px">
+    <span style="color:rgba(255,255,255,0.6);font-size:13px">🔔</span>
+    <div class="navbar-user">
+      <div class="avatar" style="width:34px;height:34px;font-size:13px;background:var(--gold);color:var(--primary)">JS</div>
+      <span class="navbar-user-name">Jordan Smith</span>
+    </div>
+  </div>
+</nav>
+
+<div class="app-layout">
+  <aside class="sidebar">
+    <div style="padding:16px 20px 0">
+      <div class="avatar" style="background:var(--gold);color:var(--primary);margin:0 auto 8px">JS</div>
+      <div style="text-align:center;font-size:13px;font-weight:700;color:var(--text-dark)">Jordan Smith</div>
+      <div style="text-align:center;font-size:11px;color:var(--text-muted);margin-bottom:16px">Computer Science · 2025</div>
+    </div>
+    <div class="divider" style="margin:0 0 8px"></div>
+    <a href="student-dashboard.html" class="sidebar-link"><span class="icon">🏠</span>Dashboard</a>
+    <a href="student-jobs.html" class="sidebar-link active"><span class="icon">💼</span>Browse Jobs</a>
+    <a href="student-applications.html" class="sidebar-link"><span class="icon">📋</span>My Applications</a>
+    <a href="student-interviews.html" class="sidebar-link"><span class="icon">🗓️</span>Interviews</a>
+    <a href="student-profile.html" class="sidebar-link"><span class="icon">👤</span>My Profile</a>
+  </aside>
+
+  <main class="main-content">
+    <div class="breadcrumb">
+      <a href="student-jobs.html">Browse Jobs</a>
+      <span class="breadcrumb-sep">›</span>
+      <span>Software Engineer Intern</span>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 340px;gap:24px">
+      <!-- LEFT: JOB DETAIL -->
+      <div>
+        <!-- Header Card -->
+        <div class="card" style="margin-bottom:20px">
+          <div style="display:flex;align-items:flex-start;gap:20px">
+            <div style="width:72px;height:72px;background:var(--bg);border:1px solid var(--border);border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:36px;flex-shrink:0">🏢</div>
+            <div style="flex:1">
+              <div style="display:flex;align-items:flex-start;justify-content:space-between">
+                <div>
+                  <h1 style="font-size:22px;font-weight:700;color:var(--text-dark);margin-bottom:4px">Software Engineer Intern</h1>
+                  <div style="font-size:15px;color:var(--text-muted);margin-bottom:12px">Microsoft Corporation</div>
+                </div>
+                <span class="badge" style="background:#e8f5e9;color:#2e7d32;font-size:12px;padding:5px 14px">🟢 Active</span>
+              </div>
+              <div style="display:flex;flex-wrap:wrap;gap:16px">
+                <div style="display:flex;align-items:center;gap:6px;font-size:13px;color:var(--text-muted)">📍 Redmond, WA (Hybrid)</div>
+                <div style="display:flex;align-items:center;gap:6px;font-size:13px;color:var(--text-muted)">💰 $45–$50/hr</div>
+                <div style="display:flex;align-items:center;gap:6px;font-size:13px;color:var(--text-muted)">⏱️ Internship (12 weeks)</div>
+                <div style="display:flex;align-items:center;gap:6px;font-size:13px;color:var(--text-muted)">🎓 Bachelor's Degree</div>
+                <div style="display:flex;align-items:center;gap:6px;font-size:13px;color:var(--text-muted)">⏰ Deadline: Apr 1, 2025</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tabs -->
+        <div class="tabs">
+          <div class="tab active">Job Description</div>
+          <div class="tab">Company Info</div>
+          <div class="tab">Requirements</div>
+        </div>
+
+        <!-- Description -->
+        <div class="card" style="margin-bottom:20px">
+          <h2 style="font-size:16px;font-weight:700;color:var(--text-dark);margin-bottom:16px">About this Role</h2>
+          <p style="font-size:13px;color:var(--text-body);line-height:1.8;margin-bottom:16px">
+            Microsoft Azure is looking for passionate software engineering interns to join our team for a 12-week summer internship. As a Software Engineer Intern, you will have the opportunity to work on real-world projects that impact millions of users worldwide.
+          </p>
+          <p style="font-size:13px;color:var(--text-body);line-height:1.8;margin-bottom:20px">
+            You will collaborate with experienced engineers, product managers, and designers to design, develop, and deploy features in production environments. This is a hands-on role where your contributions will make a direct impact.
+          </p>
+
+          <h3 style="font-size:14px;font-weight:700;color:var(--text-dark);margin-bottom:12px">What You'll Do</h3>
+          <ul style="list-style:none;padding:0;display:flex;flex-direction:column;gap:8px;margin-bottom:20px">
+            <li style="display:flex;gap:8px;font-size:13px;color:var(--text-body)"><span style="color:var(--primary)">▸</span>Design, code, and test scalable software solutions</li>
+            <li style="display:flex;gap:8px;font-size:13px;color:var(--text-body)"><span style="color:var(--primary)">▸</span>Collaborate with cross-functional teams on feature development</li>
+            <li style="display:flex;gap:8px;font-size:13px;color:var(--text-body)"><span style="color:var(--primary)">▸</span>Participate in code reviews and contribute to engineering best practices</li>
+            <li style="display:flex;gap:8px;font-size:13px;color:var(--text-body)"><span style="color:var(--primary)">▸</span>Present your work to team members and leadership at project demos</li>
+            <li style="display:flex;gap:8px;font-size:13px;color:var(--text-body)"><span style="color:var(--primary)">▸</span>Work in an Agile/Scrum development environment</li>
+          </ul>
+
+          <h3 style="font-size:14px;font-weight:700;color:var(--text-dark);margin-bottom:12px">Requirements</h3>
+          <ul style="list-style:none;padding:0;display:flex;flex-direction:column;gap:8px;margin-bottom:20px">
+            <li style="display:flex;gap:8px;font-size:13px;color:var(--text-body)"><span style="color:var(--success)">✓</span>Currently pursuing a Bachelor's or Master's in CS, Engineering, or related field</li>
+            <li style="display:flex;gap:8px;font-size:13px;color:var(--text-body)"><span style="color:var(--success)">✓</span>Strong foundation in data structures, algorithms, and object-oriented design</li>
+            <li style="display:flex;gap:8px;font-size:13px;color:var(--text-body)"><span style="color:var(--success)">✓</span>Experience with Python, C#, Java, or similar languages</li>
+            <li style="display:flex;gap:8px;font-size:13px;color:var(--text-body)"><span style="color:var(--success)">✓</span>Familiarity with cloud platforms (Azure, AWS, or GCP)</li>
+            <li style="display:flex;gap:8px;font-size:13px;color:var(--text-body)"><span style="color:var(--success)">✓</span>Strong problem-solving and communication skills</li>
+          </ul>
+
+          <h3 style="font-size:14px;font-weight:700;color:var(--text-dark);margin-bottom:12px">Skills Required</h3>
+          <div style="display:flex;flex-wrap:wrap;gap:8px">
+            <span class="badge badge-maroon">Python</span>
+            <span class="badge badge-maroon">C#</span>
+            <span class="badge badge-maroon">Azure</span>
+            <span class="badge badge-maroon">REST APIs</span>
+            <span class="badge badge-maroon">Git</span>
+            <span class="badge badge-maroon">Agile</span>
+            <span class="badge badge-maroon">SQL</span>
+            <span class="badge badge-maroon">Docker</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT: APPLY SIDEBAR -->
+      <div>
+        <div class="card" style="margin-bottom:16px;border:2px solid var(--primary)">
+          <div style="text-align:center;margin-bottom:20px">
+            <div style="font-size:28px;font-weight:800;color:var(--primary)">$45–$50</div>
+            <div style="font-size:12px;color:var(--text-muted)">per hour · Paid Internship</div>
+          </div>
+          <button class="btn btn-primary btn-block btn-lg" style="margin-bottom:10px">Apply Now</button>
+          <button class="btn btn-ghost btn-block" style="margin-bottom:16px">💾 Save Job</button>
+          <div class="divider"></div>
+          <div style="display:flex;flex-direction:column;gap:12px">
+            <div style="display:flex;justify-content:space-between;font-size:12px">
+              <span style="color:var(--text-muted)">Applications</span>
+              <span style="font-weight:600;color:var(--text-dark)">248 applicants</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;font-size:12px">
+              <span style="color:var(--text-muted)">Application deadline</span>
+              <span style="font-weight:600;color:var(--danger)">Apr 1, 2025</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;font-size:12px">
+              <span style="color:var(--text-muted)">Start date</span>
+              <span style="font-weight:600;color:var(--text-dark)">June 2025</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;font-size:12px">
+              <span style="color:var(--text-muted)">Duration</span>
+              <span style="font-weight:600;color:var(--text-dark)">12 weeks</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Company Card -->
+        <div class="card" style="margin-bottom:16px">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px">
+            <div style="width:44px;height:44px;background:var(--bg);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:22px">🏢</div>
+            <div>
+              <div style="font-size:14px;font-weight:700;color:var(--text-dark)">Microsoft</div>
+              <div style="font-size:12px;color:var(--text-muted)">Technology · 220,000+ employees</div>
+            </div>
+          </div>
+          <p style="font-size:12px;color:var(--text-muted);line-height:1.6;margin-bottom:12px">Microsoft is a global technology company that empowers every person and organization on the planet to achieve more.</p>
+          <div style="display:flex;gap:8px;flex-wrap:wrap">
+            <span class="badge badge-applied">Cloud</span>
+            <span class="badge badge-applied">AI</span>
+            <span class="badge badge-applied">Software</span>
+          </div>
+        </div>
+
+        <!-- Similar Jobs -->
+        <div class="card">
+          <div class="card-title" style="margin-bottom:14px">Similar Jobs</div>
+          <div style="display:flex;flex-direction:column;gap:10px">
+            <div style="padding:10px;background:var(--bg);border-radius:10px">
+              <div style="font-size:12px;font-weight:600;color:var(--text-dark)">SWE Intern</div>
+              <div style="font-size:11px;color:var(--text-muted)">Google · Remote</div>
+            </div>
+            <div style="padding:10px;background:var(--bg);border-radius:10px">
+              <div style="font-size:12px;font-weight:600;color:var(--text-dark)">Backend Engineer Intern</div>
+              <div style="font-size:11px;color:var(--text-muted)">Meta · Menlo Park</div>
+            </div>
+            <div style="padding:10px;background:var(--bg);border-radius:10px">
+              <div style="font-size:12px;font-weight:600;color:var(--text-dark)">Cloud Intern</div>
+              <div style="font-size:11px;color:var(--text-muted)">AWS · Seattle</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+</body>
+</html>

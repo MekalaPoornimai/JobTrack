@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>My Students | JobTrack CMU</title>
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="sl-styles.css">
+<script src="https://mcp.figma.com/mcp/html-to-design/capture.js" async></script>
+</head>
+<body>
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="sidebar-logo">Job<span>Track</span></div>
+    <div class="sidebar-tagline">CMU Career Services</div>
+  </div>
+  <div class="sidebar-nav">
+    <div class="nav-section">Navigation</div>
+    <a class="nav-item" href="sl-advisor-dashboard.html"><span class="nav-icon">🏠</span> Dashboard</a>
+    <a class="nav-item active" href="#"><span class="nav-icon">🎓</span> My Students</a>
+    <a class="nav-item" href="sl-advisor-notes.html"><span class="nav-icon">📝</span> Advising Notes</a>
+    <div class="nav-section" style="margin-top:16px;">Reports</div>
+    <a class="nav-item" href="#"><span class="nav-icon">📊</span> Placement Report</a>
+    <a class="nav-item" href="#"><span class="nav-icon">📈</span> Activity Report</a>
+  </div>
+  <div class="sidebar-footer">
+    <div class="user-row">
+      <div class="user-avatar" style="background:#ffc107;color:#6a0032;">LC</div>
+      <div>
+        <div class="user-name">Dr. Lisa Chen</div>
+        <div class="user-email">chen5lc@cmich.edu</div>
+      </div>
+    </div>
+    <div class="logout-link">⬅ Sign Out</div>
+  </div>
+</div>
+
+<div class="main">
+  <div class="page-title">🎓 My Students</div>
+  <div class="page-subtitle">Monitor application progress and provide guidance to assigned students</div>
+
+  <!-- Metrics -->
+  <div class="metrics-row">
+    <div class="metric-card m-maroon">
+      <div class="metric-label">Total Assigned</div>
+      <div class="metric-value">4</div>
+      <div class="metric-delta delta-neu">this semester</div>
+    </div>
+    <div class="metric-card m-gold">
+      <div class="metric-label">Actively Applying</div>
+      <div class="metric-value">3</div>
+      <div class="metric-delta delta-up">↑ good progress</div>
+    </div>
+    <div class="metric-card m-green">
+      <div class="metric-label">Interview Stage</div>
+      <div class="metric-value">2</div>
+      <div class="metric-delta delta-up">Jordan, Kevin</div>
+    </div>
+    <div class="metric-card m-blue">
+      <div class="metric-label">Placements</div>
+      <div class="metric-value">0</div>
+      <div class="metric-delta delta-neu">offers pending</div>
+    </div>
+  </div>
+
+  <!-- Search & Filter -->
+  <div class="filter-row">
+    <input type="text" class="form-control search-box" placeholder="🔍  Search students...">
+    <select class="form-control">
+      <option>All Majors</option>
+      <option>Computer Science</option>
+      <option>Information Systems</option>
+      <option>Business Administration</option>
+    </select>
+    <select class="form-control">
+      <option>All Years</option>
+      <option>2025</option>
+      <option>2026</option>
+      <option>2027</option>
+    </select>
+    <select class="form-control">
+      <option>All Statuses</option>
+      <option>Interview Stage</option>
+      <option>Applied</option>
+      <option>Under Review</option>
+    </select>
+  </div>
+
+  <!-- Tabs -->
+  <div class="tabs">
+    <div class="tab active">All Students (4)</div>
+    <div class="tab">Needs Attention (1)</div>
+    <div class="tab">Interview Stage (2)</div>
+    <div class="tab">Placed (0)</div>
+  </div>
+
+  <!-- Student Cards -->
+  <div class="student-card">
+    <div class="s-avatar av-1" style="width:52px;height:52px;font-size:18px;">JS</div>
+    <div style="flex:1;">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;">
+        <div>
+          <div style="font-size:16px;font-weight:700;">Jordan Smith</div>
+          <div class="text-muted">Computer Science · Class of 2025 · GPA 3.72</div>
+          <div class="text-muted" style="margin-top:2px;">smith1js@cmich.edu · 📞 989-555-0101</div>
+        </div>
+        <span class="badge b-interview">🎯 Interview Stage</span>
+      </div>
+      <div style="display:flex;gap:16px;margin-top:12px;padding-top:12px;border-top:1px solid #f0f0f0;">
+        <div style="text-align:center;">
+          <div style="font-weight:700;color:#6a0032;font-size:18px;">8</div>
+          <div class="text-muted">Applications</div>
+        </div>
+        <div style="text-align:center;">
+          <div style="font-weight:700;color:#6a1b9a;font-size:18px;">2</div>
+          <div class="text-muted">Interviews</div>
+        </div>
+        <div style="text-align:center;">
+          <div style="font-weight:700;color:#28a745;font-size:18px;">0</div>
+          <div class="text-muted">Offers</div>
+        </div>
+        <div style="text-align:center;">
+          <div style="font-weight:700;color:#6b6b6b;font-size:18px;">3</div>
+          <div class="text-muted">Notes</div>
+        </div>
+        <div style="flex:1;">
+          <div class="text-muted" style="margin-bottom:4px;">Skills:</div>
+          <div>
+            <span class="chip chip-maroon">Python</span>
+            <span class="chip chip-maroon">React</span>
+            <span class="chip chip-maroon">JavaScript</span>
+            <span class="chip chip-gray">+5 more</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:6px;flex-shrink:0;">
+      <button class="btn btn-primary btn-sm">View Profile</button>
+      <button class="btn btn-outline btn-sm">📝 Add Note</button>
+      <button class="btn btn-outline btn-sm">📋 Applications</button>
+    </div>
+  </div>
+
+  <div class="student-card">
+    <div class="s-avatar av-2" style="width:52px;height:52px;font-size:18px;">AJ</div>
+    <div style="flex:1;">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;">
+        <div>
+          <div style="font-size:16px;font-weight:700;">Alex Johnson</div>
+          <div class="text-muted">Information Systems · Class of 2026 · GPA 3.45</div>
+          <div class="text-muted" style="margin-top:2px;">johnson2aj@cmich.edu · 📞 989-555-0102</div>
+        </div>
+        <span class="badge b-review">Under Review</span>
+      </div>
+      <div style="display:flex;gap:16px;margin-top:12px;padding-top:12px;border-top:1px solid #f0f0f0;">
+        <div style="text-align:center;">
+          <div style="font-weight:700;color:#6a0032;font-size:18px;">2</div>
+          <div class="text-muted">Applications</div>
+        </div>
+        <div style="text-align:center;">
+          <div style="font-weight:700;color:#6a1b9a;font-size:18px;">0</div>
+          <div class="text-muted">Interviews</div>
+        </div>
+        <div style="text-align:center;">
+          <div style="font-weight:700;color:#28a745;font-size:18px;">0</div>
+          <div class="text-muted">Offers</div>
+        </div>
+        <div style="text-align:center;">
+          <div style="font-weight:700;color:#6b6b6b;font-size:18px;">2</div>
+          <div class="text-muted">Notes</div>
+        </div>
+        <div style="flex:1;">
+          <div class="text-muted" style="margin-bottom:4px;">Skills:</div>
+          <div>
+            <span class="chip chip-gray">SQL</span>
+            <span class="chip chip-gray">Data Analysis</span>
+            <span class="chip chip-gray">Tableau</span>
+          </div>
+        </div>
+      </div>
+      <div class="alert alert-warning" style="margin-top:10px;padding:8px 12px;font-size:12.5px;">
+        ⚠️ <strong>Needs Attention:</strong> Only 2 applications submitted. Encourage more applications before deadlines close.
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:6px;flex-shrink:0;">
+      <button class="btn btn-primary btn-sm">View Profile</button>
+      <button class="btn btn-outline btn-sm">📝 Add Note</button>
+      <button class="btn btn-outline btn-sm">📋 Applications</button>
+    </div>
+  </div>
+
+  <div class="student-card">
+    <div class="s-avatar av-3" style="width:52px;height:52px;font-size:18px;">KP</div>
+    <div style="flex:1;">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;">
+        <div>
+          <div style="font-size:16px;font-weight:700;">Kevin Patel</div>
+          <div class="text-muted">Computer Science · Class of 2027 · GPA 3.88</div>
+          <div class="text-muted" style="margin-top:2px;">patel4kp@cmich.edu · 📞 989-555-0104</div>
+        </div>
+        <span class="badge b-interview">🎯 Interview Stage</span>
+      </div>
+      <div style="display:flex;gap:16px;margin-top:12px;padding-top:12px;border-top:1px solid #f0f0f0;">
+        <div style="text-align:center;">
+          <div style="font-weight:700;color:#6a0032;font-size:18px;">2</div>
+          <div class="text-muted">Applications</div>
+        </div>
+        <div style="text-align:center;">
+          <div style="font-weight:700;color:#6a1b9a;font-size:18px;">1</div>
+          <div class="text-muted">Interviews</div>
+        </div>
+        <div style="text-align:center;">
+          <div style="font-weight:700;color:#28a745;font-size:18px;">0</div>
+          <div class="text-muted">Offers</div>
+        </div>
+        <div style="text-align:center;">
+          <div style="font-weight:700;color:#6b6b6b;font-size:18px;">1</div>
+          <div class="text-muted">Notes</div>
+        </div>
+        <div style="flex:1;">
+          <div class="text-muted" style="margin-bottom:4px;">Skills:</div>
+          <div>
+            <span class="chip chip-maroon">Python</span>
+            <span class="chip chip-maroon">Machine Learning</span>
+            <span class="chip chip-gray">SQL</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:6px;flex-shrink:0;">
+      <button class="btn btn-primary btn-sm">View Profile</button>
+      <button class="btn btn-outline btn-sm">📝 Add Note</button>
+      <button class="btn btn-outline btn-sm">📋 Applications</button>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

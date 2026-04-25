@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>My Interviews | JobTrack CMU</title>
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="sl-styles.css">
+<script src="https://mcp.figma.com/mcp/html-to-design/capture.js" async></script>
+</head>
+<body>
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="sidebar-logo">Job<span>Track</span></div>
+    <div class="sidebar-tagline">CMU Career Services</div>
+  </div>
+  <div class="sidebar-nav">
+    <div class="nav-section">Navigation</div>
+    <a class="nav-item" href="sl-student-dashboard.html"><span class="nav-icon">🏠</span> Dashboard</a>
+    <a class="nav-item" href="sl-student-jobs.html"><span class="nav-icon">🔍</span> Browse Jobs</a>
+    <a class="nav-item" href="sl-student-applications.html"><span class="nav-icon">📋</span> My Applications</a>
+    <a class="nav-item active" href="#"><span class="nav-icon">🗓️</span> Interviews</a>
+    <a class="nav-item" href="sl-student-profile.html"><span class="nav-icon">👤</span> My Profile</a>
+    <div class="nav-section" style="margin-top:16px;">Resources</div>
+    <a class="nav-item" href="#"><span class="nav-icon">📄</span> Resume Builder</a>
+    <a class="nav-item" href="#"><span class="nav-icon">💡</span> Career Tips</a>
+  </div>
+  <div class="sidebar-footer">
+    <div class="user-row">
+      <div class="user-avatar">JS</div>
+      <div>
+        <div class="user-name">Jordan Smith</div>
+        <div class="user-email">smith1js@cmich.edu</div>
+      </div>
+    </div>
+    <div class="logout-link">⬅ Sign Out</div>
+  </div>
+</div>
+
+<div class="main">
+  <div class="page-title">🗓️ My Interviews</div>
+  <div class="page-subtitle">Upcoming and past interviews · Prepare and track your progress</div>
+
+  <!-- Metrics -->
+  <div class="metrics-row">
+    <div class="metric-card m-maroon">
+      <div class="metric-label">Scheduled</div>
+      <div class="metric-value">2</div>
+      <div class="metric-delta delta-up">↑ 1 this week</div>
+    </div>
+    <div class="metric-card m-gold">
+      <div class="metric-label">Completed</div>
+      <div class="metric-value">0</div>
+      <div class="metric-delta delta-neu">this semester</div>
+    </div>
+    <div class="metric-card m-green">
+      <div class="metric-label">Interview Rate</div>
+      <div class="metric-value">25%</div>
+      <div class="metric-delta delta-up">↑ above avg (15%)</div>
+    </div>
+    <div class="metric-card m-blue">
+      <div class="metric-label">Prep Score</div>
+      <div class="metric-value">72%</div>
+      <div class="metric-delta delta-neu">Complete prep notes</div>
+    </div>
+  </div>
+
+  <!-- Upcoming Banner -->
+  <div class="alert alert-warning">
+    ⏰ <strong>Next Interview in 4 days:</strong> Software Eng. Intern @ TechCorp · March 20, 2025 at 2:00 PM via Video Call.
+    Join link: <a href="#" style="color:#bf360c;font-weight:600;">Microsoft Teams</a>
+  </div>
+
+  <div class="tabs">
+    <div class="tab active">Upcoming (2)</div>
+    <div class="tab">Completed (0)</div>
+    <div class="tab">Cancelled (0)</div>
+    <div class="tab">All</div>
+  </div>
+
+  <!-- Interview Cards -->
+  <div class="interview-card">
+    <div class="interview-date-box">
+      <div class="date-day">20</div>
+      <div class="date-month">Mar</div>
+    </div>
+    <div class="interview-info" style="flex:1;">
+      <div class="interview-title">Software Engineering Intern</div>
+      <div class="interview-company">TechCorp Inc. · Detroit, MI</div>
+      <div class="interview-meta">
+        <span class="badge b-video">📹 Video</span>
+        <span>⏰ 2:00 PM EST</span>
+        <span>⌛ 45 minutes</span>
+        <span class="badge b-scheduled">Scheduled</span>
+      </div>
+      <div style="margin-top:10px;font-size:13px;color:#495057;">
+        <strong>Join Link:</strong> <a href="#" style="color:#6a0032;">Microsoft Teams Meeting →</a>
+      </div>
+      <div style="margin-top:8px;padding:10px 12px;background:#fff8e1;border-radius:6px;font-size:12.5px;color:#bf360c;line-height:1.5;">
+        📌 <strong>Prep Notes:</strong> Review Python basics and STAR behavioral responses. Research TechCorp products.
+      </div>
+    </div>
+    <div style="flex-shrink:0;display:flex;flex-direction:column;gap:8px;">
+      <button class="btn btn-primary btn-sm">📝 Edit Prep Notes</button>
+      <button class="btn btn-outline btn-sm">🔗 Join Meeting</button>
+      <button class="btn btn-sm" style="background:#ffebee;color:#c62828;">Cancel</button>
+    </div>
+  </div>
+
+  <div class="interview-card">
+    <div class="interview-date-box" style="background:#7b1fa2;">
+      <div class="date-day">22</div>
+      <div class="date-month">Mar</div>
+    </div>
+    <div class="interview-info" style="flex:1;">
+      <div class="interview-title">ML Engineer Intern</div>
+      <div class="interview-company">TechCorp Inc. · Detroit, MI</div>
+      <div class="interview-meta">
+        <span class="badge b-tech">💻 Technical</span>
+        <span>⏰ 10:00 AM EST</span>
+        <span>⌛ 60 minutes</span>
+        <span class="badge b-scheduled">Scheduled</span>
+      </div>
+      <div style="margin-top:10px;font-size:13px;color:#495057;">
+        <strong>Join Link:</strong> <a href="#" style="color:#6a0032;">Microsoft Teams Meeting →</a>
+      </div>
+      <div style="margin-top:8px;padding:10px 12px;background:#f3e5f5;border-radius:6px;font-size:12.5px;color:#6a1b9a;line-height:1.5;">
+        📌 <strong>Prep Notes:</strong> Prepare for Python coding challenge. Review pandas and scikit-learn APIs. Practice LeetCode medium problems.
+      </div>
+    </div>
+    <div style="flex-shrink:0;display:flex;flex-direction:column;gap:8px;">
+      <button class="btn btn-primary btn-sm">📝 Edit Prep Notes</button>
+      <button class="btn btn-outline btn-sm">🔗 Join Meeting</button>
+      <button class="btn btn-sm" style="background:#ffebee;color:#c62828;">Cancel</button>
+    </div>
+  </div>
+
+  <!-- Interview Prep Section -->
+  <div class="divider"></div>
+  <div class="section-title">📚 Interview Preparation Checklist</div>
+
+  <div class="card">
+    <div class="card-title">Software Eng. Intern @ TechCorp — Prep Checklist</div>
+    <div style="display:flex;flex-direction:column;gap:10px;">
+      <label style="display:flex;align-items:center;gap:10px;font-size:13.5px;cursor:pointer;">
+        <input type="checkbox" checked style="accent-color:#6a0032;width:15px;height:15px;">
+        Research TechCorp's products and tech stack
+      </label>
+      <label style="display:flex;align-items:center;gap:10px;font-size:13.5px;cursor:pointer;">
+        <input type="checkbox" checked style="accent-color:#6a0032;width:15px;height:15px;">
+        Review Python and React fundamentals
+      </label>
+      <label style="display:flex;align-items:center;gap:10px;font-size:13.5px;cursor:pointer;">
+        <input type="checkbox" style="accent-color:#6a0032;width:15px;height:15px;">
+        Prepare 3 STAR behavioral stories
+      </label>
+      <label style="display:flex;align-items:center;gap:10px;font-size:13.5px;cursor:pointer;">
+        <input type="checkbox" style="accent-color:#6a0032;width:15px;height:15px;">
+        Practice explaining a project from your resume
+      </label>
+      <label style="display:flex;align-items:center;gap:10px;font-size:13.5px;cursor:pointer;">
+        <input type="checkbox" style="accent-color:#6a0032;width:15px;height:15px;">
+        Prepare 3 questions to ask the interviewer
+      </label>
+      <label style="display:flex;align-items:center;gap:10px;font-size:13.5px;cursor:pointer;">
+        <input type="checkbox" style="accent-color:#6a0032;width:15px;height:15px;">
+        Test Teams link and audio/video setup
+      </label>
+    </div>
+    <div style="margin-top:14px;">
+      <div class="progress-wrap">
+        <div class="progress-label"><span>Prep Progress</span><span>2/6 complete</span></div>
+        <div class="progress-bar"><div class="progress-fill pf-gold" style="width:33%"></div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
